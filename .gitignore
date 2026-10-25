@@ -1,0 +1,18 @@
+# Godot
+.godot/
+.import/
+/android/
+export_credentials.cfg
+*.translation
+
+# Versiones exportadas
+/build/
+
+# Claves de firma: nunca al repo
+*.keystore
+*.jks
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.tmp

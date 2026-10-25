@@ -1,0 +1,15 @@
+# Saltos de línea normalizados, para que Windows y Linux no peleen.
+* text=auto eol=lf
+
+# Archivos binarios del arte y el audio.
+*.png binary
+*.jpg binary
+*.webp binary
+*.glb binary
+*.blend binary
+*.fbx binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.ttf binary
+*.otf binary
