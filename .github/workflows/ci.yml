@@ -1,0 +1,129 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: "4.5.1"
+
+jobs:
+  pruebas:
+    name: Revisar código y correr pruebas
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Revisar estilo del código (gdlint)
+        run: |
+          pip install --quiet "gdtoolkit==4.*"
+          gdlint scripts tests
+
+      - name: Instalar Godot
+        run: |
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip" -O godot.zip
+          unzip -q godot.zip
+          sudo mv "Godot_v${GODOT_VERSION}-stable_linux.x86_64" /usr/local/bin/godot
+          godot --version
+
+      - name: Importar el proyecto
+        run: godot --headless --path . --import 2>&1 | tee import.log
+
+      - name: Correr las pruebas
+        run: |
+          set -o pipefail
+          timeout 300 godot --headless --path . res://tests/ejecutar_tests.tscn 2>&1 | tee pruebas.log
+          if grep -nE "SCRIPT ERROR|Parse Error|Failed to load script" import.log pruebas.log; then
+            echo "::error::Godot mostró errores de script"
+            exit 1
+          fi
+
+  exportar:
+    name: Exportar para Android, web, Linux y Windows
+    needs: pruebas
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar Godot
+        run: |
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip" -O godot.zip
+          unzip -q godot.zip
+          sudo mv "Godot_v${GODOT_VERSION}-stable_linux.x86_64" /usr/local/bin/godot
+
+      - name: Recuperar plantillas de exportación
+        id: cache-plantillas
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
+          key: plantillas-godot-${{ env.GODOT_VERSION }}
+
+      - name: Descargar plantillas de exportación
+        if: steps.cache-plantillas.outputs.cache-hit != 'true'
+        run: |
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz" -O plantillas.tpz
+          unzip -q plantillas.tpz
+          mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          mv templates/* ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
+
+      - name: Preparar Android (SDK, Java y clave de prueba)
+        run: |
+          keytool -genkeypair -v -keystore "$RUNNER_TEMP/debug.keystore" -storepass android -keypass android \
+            -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US"
+          echo "GODOT_ANDROID_KEYSTORE_DEBUG_PATH=$RUNNER_TEMP/debug.keystore" >> "$GITHUB_ENV"
+          echo "GODOT_ANDROID_KEYSTORE_DEBUG_USER=androiddebugkey" >> "$GITHUB_ENV"
+          echo "GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD=android" >> "$GITHUB_ENV"
+          mkdir -p ~/.config/godot
+          for archivo in editor_settings-4.tres "editor_settings-${GODOT_VERSION%.*}.tres"; do
+            {
+              echo '[gd_resource type="EditorSettings" format=3]'
+              echo ''
+              echo '[resource]'
+              echo "export/android/android_sdk_path = \"$ANDROID_SDK_ROOT\""
+              echo "export/android/java_sdk_path = \"$JAVA_HOME_17_X64\""
+            } > ~/.config/godot/$archivo
+          done
+
+      - name: Importar el proyecto
+        run: godot --headless --path . --import
+
+      - name: Exportar
+        run: |
+          mkdir -p build/android build/web build/linux build/windows
+          # Godot no tiene que importar lo exportado, si no se cuela en las otras versiones.
+          touch build/.gdignore
+          godot --headless --path . --export-debug "Android" build/android/pes-comodoro.apk
+          godot --headless --path . --export-release "Web" build/web/index.html
+          godot --headless --path . --export-release "Linux" build/linux/pes-comodoro.x86_64
+          godot --headless --path . --export-release "Windows" build/windows/pes-comodoro.exe
+          ls -la build/*
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pes-comodoro-android
+          path: build/android/pes-comodoro.apk
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pes-comodoro-web
+          path: build/web/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pes-comodoro-linux
+          path: build/linux/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pes-comodoro-windows
+          path: build/windows/
+          if-no-files-found: error
