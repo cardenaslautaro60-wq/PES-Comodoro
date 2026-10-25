@@ -27,11 +27,27 @@ func test_la_escena_arma_todo() -> void:
 	afirmar(escena.get_node_or_null("ArcoIzquierdo/ZonaGol") != null, "falta el arco izquierdo")
 
 
+func test_la_pelota_arranca_quieta_en_el_centro() -> void:
+	var velocidad := escena.pelota.linear_velocity.length()
+	var distancia := escena.pelota.global_position.distance_to(EscenaDePrueba.POSICION_SAQUE)
+	afirmar(velocidad < 0.5, "la pelota arranca moviéndose (%.1f m/s)" % velocidad)
+	afirmar(distancia < 0.1, "la pelota no arranca en el centro (está a %.2f m)" % distancia)
+
+
 func test_la_pelota_cae_y_queda_en_el_pasto() -> void:
 	escena.pelota.global_position = Vector3(10, 3, 10)
-	await esperar_fisica(240)
+	# Se guarda la altura cada medio segundo para entender qué pasó si falla.
+	var recorrido: Array[String] = []
+	for i in 8:
+		await esperar_fisica(30)
+		var p := escena.pelota.global_position
+		var v := escena.pelota.linear_velocity
+		recorrido.append("pos %s vel %s" % [p.snapped(Vector3.ONE * 0.01), v.snapped(Vector3.ONE * 0.01)])
 	var altura := escena.pelota.global_position.y
-	afirmar(altura > 0.0 and altura < 0.3, "la pelota no quedó apoyada en el pasto (altura %.2f)" % altura)
+	afirmar(
+		altura > 0.0 and altura < 0.3,
+		"la pelota no quedó apoyada en el pasto (altura %.2f). Recorrido: %s" % [altura, " | ".join(recorrido)]
+	)
 
 
 func test_el_jugador_patea_la_pelota() -> void:
