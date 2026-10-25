@@ -27,6 +27,13 @@ func test_la_escena_arma_todo() -> void:
 	afirmar(escena.get_node_or_null("ArcoIzquierdo/ZonaGol") != null, "falta el arco izquierdo")
 
 
+func test_la_pelota_arranca_quieta_en_el_centro() -> void:
+	var velocidad := escena.pelota.linear_velocity.length()
+	var distancia := escena.pelota.global_position.distance_to(EscenaDePrueba.POSICION_SAQUE)
+	afirmar(velocidad < 0.5, "la pelota arranca moviéndose (%.1f m/s)" % velocidad)
+	afirmar(distancia < 0.1, "la pelota no arranca en el centro (está a %.2f m)" % distancia)
+
+
 func test_la_pelota_cae_y_queda_en_el_pasto() -> void:
 	escena.pelota.global_position = Vector3(10, 3, 10)
 	# Se guarda la altura cada medio segundo para entender qué pasó si falla.

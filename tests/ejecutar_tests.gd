@@ -7,7 +7,6 @@ extends Node
 const ARCHIVOS_DE_PRUEBA := [
 	"res://tests/test_controles.gd",
 	"res://tests/test_escena_prueba.gd",
-	"res://tests/test_diagnostico.gd",
 ]
 const CARPETAS_CON_SCRIPTS := ["res://scripts"]
 

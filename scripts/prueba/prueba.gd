@@ -33,6 +33,9 @@ const VERDE_BORDE := Color(0.20, 0.42, 0.15)
 const BLANCO := Color(0.95, 0.95, 0.95)
 const COLOR_LOCAL := Color(0.80, 0.12, 0.15)
 
+const POSICION_SAQUE := Vector3(0, RADIO_PELOTA + 0.02, 0)
+const POSICION_JUGADOR := Vector3(-1.5, ALTO_JUGADOR / 2, 0)
+
 var goles_local := 0
 var goles_visitante := 0
 
@@ -62,7 +65,6 @@ func _ready() -> void:
 	_crear_jugador()
 	_crear_camara()
 	_crear_interfaz()
-	reiniciar_jugada()
 
 
 func _process(_delta: float) -> void:
@@ -84,9 +86,9 @@ func _physics_process(_delta: float) -> void:
 func reiniciar_jugada() -> void:
 	pelota.linear_velocity = Vector3.ZERO
 	pelota.angular_velocity = Vector3.ZERO
-	pelota.global_position = Vector3(0, RADIO_PELOTA + 0.02, 0)
+	pelota.global_position = POSICION_SAQUE
 	pelota.sleeping = false
-	jugador.global_position = Vector3(-1.5, ALTO_JUGADOR / 2, 0)
+	jugador.global_position = POSICION_JUGADOR
 	jugador.velocity = Vector3.ZERO
 	jugador.direccion_mirada = Vector3(1, 0, 0)
 
@@ -338,6 +340,8 @@ func _crear_pelota() -> void:
 	var vista := MeshInstance3D.new()
 	vista.mesh = malla
 	pelota.add_child(vista)
+	# La posición se pone antes de entrar al árbol, así el cuerpo nace donde va.
+	pelota.position = POSICION_SAQUE
 	add_child(pelota)
 
 
@@ -369,6 +373,10 @@ func _crear_jugador() -> void:
 	vista_marca.mesh = marca
 	vista_marca.position = Vector3(0, 0.35, -RADIO_JUGADOR)
 	jugador.add_child(vista_marca)
+	# El jugador es un cuerpo cinemático: si nace en un lugar y se lo mueve antes del
+	# primer paso de física, Godot lo toma como un movimiento muy rápido y le pega a
+	# la pelota. Por eso nace directamente en su posición.
+	jugador.position = POSICION_JUGADOR
 	add_child(jugador)
 
 
