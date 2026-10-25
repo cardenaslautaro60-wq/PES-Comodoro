@@ -99,6 +99,8 @@ jobs:
       - name: Exportar
         run: |
           mkdir -p build/android build/web build/linux build/windows
+          # Godot no tiene que importar lo exportado, si no se cuela en las otras versiones.
+          touch build/.gdignore
           godot --headless --path . --export-debug "Android" build/android/pes-comodoro.apk
           godot --headless --path . --export-release "Web" build/web/index.html
           godot --headless --path . --export-release "Linux" build/linux/pes-comodoro.x86_64
