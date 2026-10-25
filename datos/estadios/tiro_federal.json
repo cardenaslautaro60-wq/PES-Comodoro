@@ -1,0 +1,45 @@
+{
+  "formato_version": 1,
+  "id": "tiro_federal",
+  "nombre": "Cancha de Tiro Federal",
+  "apodo": null,
+  "clubes": [
+    "tiro_federal"
+  ],
+  "direccion": "Av. Manuel Quintana 850",
+  "barrio": "Barrio Moreno",
+  "inaugurado": null,
+  "capacidad": null,
+  "superficie": "a_confirmar",
+  "dimensiones_m": {
+    "largo": 105,
+    "ancho": 68,
+    "confianza": "propuesta"
+  },
+  "tribunas": [
+    {
+      "lado": "lateral",
+      "tipo": "tribuna chica",
+      "capacidad_aprox": null
+    }
+  ],
+  "pista_atletismo": false,
+  "iluminacion": null,
+  "entorno": {
+    "fondo": [
+      "cerro_chenque"
+    ],
+    "viento": "fuerte",
+    "nota": "Viento patagónico: el juego puede usarlo como efecto en la pelota."
+  },
+  "confianza": "propuesta",
+  "notas": "",
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-atletico-tiro-federal-de-comodoro-rivadavia/"
+  ],
+  "pendiente": [
+    "Capacidad",
+    "Superficie",
+    "Fotos"
+  ]
+}

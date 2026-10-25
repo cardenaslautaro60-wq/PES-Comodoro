@@ -1,0 +1,107 @@
+{
+  "formato_version": 1,
+  "id": "petroquimica",
+  "nombre_oficial": "Club Social y Deportivo Petroquímica Comodoro Rivadavia",
+  "nombre_corto": "Petroquímica",
+  "abreviatura": "PET",
+  "apodos": [
+    "Verdolaga",
+    "El Verde",
+    "Cementero"
+  ],
+  "fundacion": "1924-12-15",
+  "nota_fundacion": "Hasta 1979 se llamó Club Recreativo y Deportivo Comferpet.",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Barrio Don Bosco, Km 8",
+  "sede": "Cabo 1º Agustín Montaño y Buenaventura Rosas Martins, Km 8",
+  "colores": [
+    "#1B7A3A",
+    "#FFFFFF"
+  ],
+  "nombres_colores": [
+    "verde",
+    "blanco"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "liso",
+      "color_base": "#1B7A3A",
+      "color_secundario": "#FFFFFF",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#FFFFFF",
+      "numero": "#FFFFFF",
+      "pantalon": "#FFFFFF",
+      "medias": "#1B7A3A",
+      "sponsor_parodia": "Cemento Chenque",
+      "confianza": "probable",
+      "nota": "Camiseta verde (Once Patagónico). Pantalón y medias propuestos."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#FFFFFF",
+      "color_secundario": "#1B7A3A",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#1B7A3A",
+      "numero": "#151515",
+      "pantalon": "#1B7A3A",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "Cemento Chenque",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#F07F1A",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#F07F1A",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo clásico",
+      "colores": [
+        "#1B7A3A",
+        "#FFFFFF"
+      ],
+      "simbolo": "Una torre de destilería estilizada",
+      "texto": "CSDP",
+      "archivo": null
+    }
+  },
+  "estadio_id": "km8_petroquimica",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 4,
+  "plantel": "res://datos/planteles/petroquimica.json",
+  "contacto": {
+    "web": null,
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-social-y-deportivo-petroquimica-comodoro-rivadavia/",
+    "https://www.estadiosdeargentina.com.ar/cancha-de-deportivo-petroquimica/"
+  ],
+  "pendiente": [
+    "Redes oficiales",
+    "Descripción del escudo",
+    "Camiseta suplente"
+  ]
+}

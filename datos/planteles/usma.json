@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "usma",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "usma_01",
+      "nombre": "Lucas Mansilla",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 18,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 57,
+        "pase": 67,
+        "tiro": 43,
+        "defensa": 86,
+        "estamina": 69,
+        "atajada": 74
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_02",
+      "nombre": "Agustín Acuña",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 30,
+      "altura_cm": 191,
+      "atributos": {
+        "velocidad": 48,
+        "pase": 60,
+        "tiro": 44,
+        "defensa": 75,
+        "estamina": 53,
+        "atajada": 69
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_03",
+      "nombre": "Lisandro Nahuelquir",
+      "apodo": null,
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 59,
+        "pase": 68,
+        "tiro": 61,
+        "defensa": 77,
+        "estamina": 70
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_04",
+      "nombre": "Rodrigo Cárcamo",
+      "apodo": null,
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 22,
+      "altura_cm": 173,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 60,
+        "tiro": 47,
+        "defensa": 81,
+        "estamina": 70
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_05",
+      "nombre": "Sergio Zúñiga",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "ambos",
+      "edad": 20,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 50,
+        "pase": 52,
+        "tiro": 49,
+        "defensa": 72,
+        "estamina": 63
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 0,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "usma_06",
+      "nombre": "Milton Jaramillo",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 176,
+      "atributos": {
+        "velocidad": 58,
+        "pase": 56,
+        "tiro": 54,
+        "defensa": 67,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_07",
+      "nombre": "Gastón Nahuelquir",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 30,
+      "altura_cm": 177,
+      "atributos": {
+        "velocidad": 81,
+        "pase": 73,
+        "tiro": 52,
+        "defensa": 77,
+        "estamina": 70
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "usma_08",
+      "nombre": "Elías Paillacán",
+      "apodo": null,
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 25,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 68,
+        "pase": 62,
+        "tiro": 60,
+        "defensa": 73,
+        "estamina": 74
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "usma_09",
+      "nombre": "Valentín Jaramillo",
+      "apodo": "el Petiso",
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 67,
+        "tiro": 51,
+        "defensa": 70,
+        "estamina": 73
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_10",
+      "nombre": "Iván Saldivia",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 80,
+        "tiro": 61,
+        "defensa": 69,
+        "estamina": 82
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_11",
+      "nombre": "Julián Ibáñez",
+      "apodo": null,
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 18,
+      "altura_cm": 170,
+      "atributos": {
+        "velocidad": 69,
+        "pase": 72,
+        "tiro": 69,
+        "defensa": 75,
+        "estamina": 84
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "usma_12",
+      "nombre": "Tobías Aballay",
+      "apodo": "el Mono",
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "ambos",
+      "edad": 30,
+      "altura_cm": 176,
+      "atributos": {
+        "velocidad": 66,
+        "pase": 71,
+        "tiro": 56,
+        "defensa": 62,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "usma_13",
+      "nombre": "Nahuel Cárcamo",
+      "apodo": "el Tano",
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 23,
+      "altura_cm": 176,
+      "atributos": {
+        "velocidad": 55,
+        "pase": 67,
+        "tiro": 66,
+        "defensa": 69,
+        "estamina": 64
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_14",
+      "nombre": "Federico Aballay",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 30,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 70,
+        "pase": 85,
+        "tiro": 70,
+        "defensa": 68,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 1,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "usma_15",
+      "nombre": "Kevin Coñuecar",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 33,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 68,
+        "tiro": 74,
+        "defensa": 51,
+        "estamina": 58
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_16",
+      "nombre": "Walter Barría",
+      "apodo": null,
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 72,
+        "pase": 78,
+        "tiro": 74,
+        "defensa": 67,
+        "estamina": 73
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "usma_17",
+      "nombre": "Sergio Benítez",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 22,
+      "altura_cm": 178,
+      "atributos": {
+        "velocidad": 71,
+        "pase": 63,
+        "tiro": 67,
+        "defensa": 54,
+        "estamina": 66
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "usma_18",
+      "nombre": "Cristian Tapia",
+      "apodo": null,
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 33,
+      "altura_cm": 178,
+      "atributos": {
+        "velocidad": 77,
+        "pase": 68,
+        "tiro": 82,
+        "defensa": 58,
+        "estamina": 73
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_19",
+      "nombre": "Yamil Soto",
+      "apodo": null,
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 31,
+      "altura_cm": 184,
+      "atributos": {
+        "velocidad": 77,
+        "pase": 60,
+        "tiro": 83,
+        "defensa": 57,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "usma_20",
+      "nombre": "Nicolás Aballay",
+      "apodo": null,
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 31,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 74,
+        "pase": 62,
+        "tiro": 71,
+        "defensa": 40,
+        "estamina": 57
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": true
+      }
+    }
+  ]
+}

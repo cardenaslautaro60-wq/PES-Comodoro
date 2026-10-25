@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "jorge_newbery",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "jorge_newbery_01",
+      "nombre": "Kevin Quintana",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 24,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 66,
+        "tiro": 52,
+        "defensa": 79,
+        "estamina": 70,
+        "atajada": 88
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "jorge_newbery_02",
+      "nombre": "Santiago Aguirre",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 24,
+      "altura_cm": 194,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 58,
+        "tiro": 37,
+        "defensa": 81,
+        "estamina": 64,
+        "atajada": 81
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 4,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "jorge_newbery_03",
+      "nombre": "Sergio Arce",
+      "apodo": null,
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 74,
+        "pase": 73,
+        "tiro": 55,
+        "defensa": 81,
+        "estamina": 79
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "jorge_newbery_04",
+      "nombre": "Nicolás Barría",
+      "apodo": null,
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 72,
+        "pase": 68,
+        "tiro": 66,
+        "defensa": 86,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "jorge_newbery_05",
+      "nombre": "Yamil Delgado",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 25,
+      "altura_cm": 178,
+      "atributos": {
+        "velocidad": 69,
+        "pase": 58,
+        "tiro": 53,
+        "defensa": 81,
+        "estamina": 68
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "jorge_newbery_06",
+      "nombre": "Facundo Oyarzo",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 18,
+      "altura_cm": 184,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 68,
+        "tiro": 47,
+        "defensa": 83,
+        "estamina": 77
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "jorge_newbery_07",
+      "nombre": "Walter Nahuelquir",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 170,
+      "atributos": {
+        "velocidad": 80,
+        "pase": 77,
+        "tiro": 60,
+        "defensa": 73,
+        "estamina": 80
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "jorge_newbery_08",
+      "nombre": "Ignacio Aballay",
+      "apodo": null,
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 25,
+      "altura_cm": 184,
+      "atributos": {
+        "velocidad": 74,
+        "pase": 75,
+        "tiro": 64,
+        "defensa": 81,
+        "estamina": 81
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "jorge_newbery_09",
+      "nombre": "Luciano Vargas",
+      "apodo": null,
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 79,
+        "pase": 60,
+        "tiro": 59,
+        "defensa": 79,
+        "estamina": 80
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "jorge_newbery_10",
+      "nombre": "Marcos Correa",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 27,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 76,
+        "pase": 84,
+        "tiro": 70,
+        "defensa": 84,
+        "estamina": 87
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "jorge_newbery_11",
+      "nombre": "Tobías Quintana",
+      "apodo": null,
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 33,
+      "altura_cm": 181,
+      "atributos": {
+        "velocidad": 67,
+        "pase": 77,
+        "tiro": 67,
+        "defensa": 84,
+        "estamina": 81
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "jorge_newbery_12",
+      "nombre": "Enzo Cayún",
+      "apodo": null,
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 29,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 68,
+        "pase": 82,
+        "tiro": 63,
+        "defensa": 71,
+        "estamina": 82
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 0,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "jorge_newbery_13",
+      "nombre": "Lautaro Nahuelquir",
+      "apodo": null,
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 30,
+      "altura_cm": 174,
+      "atributos": {
+        "velocidad": 67,
+        "pase": 69,
+        "tiro": 61,
+        "defensa": 65,
+        "estamina": 75
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "jorge_newbery_14",
+      "nombre": "Pablo Llancaqueo",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 23,
+      "altura_cm": 188,
+      "atributos": {
+        "velocidad": 76,
+        "pase": 78,
+        "tiro": 87,
+        "defensa": 70,
+        "estamina": 79
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "jorge_newbery_15",
+      "nombre": "Lisandro Gatica",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 18,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 71,
+        "tiro": 80,
+        "defensa": 65,
+        "estamina": 77
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "jorge_newbery_16",
+      "nombre": "Leandro Gallardo",
+      "apodo": "el Chino",
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 33,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 87,
+        "pase": 80,
+        "tiro": 73,
+        "defensa": 64,
+        "estamina": 84
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "jorge_newbery_17",
+      "nombre": "Julián Mansilla",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 31,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 83,
+        "pase": 76,
+        "tiro": 73,
+        "defensa": 57,
+        "estamina": 78
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 5,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "jorge_newbery_18",
+      "nombre": "Ignacio Huenchul",
+      "apodo": null,
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 18,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 75,
+        "pase": 76,
+        "tiro": 92,
+        "defensa": 56,
+        "estamina": 70
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 0,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "jorge_newbery_19",
+      "nombre": "Ezequiel Benítez",
+      "apodo": "el Ruso",
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 81,
+        "pase": 73,
+        "tiro": 88,
+        "defensa": 57,
+        "estamina": 79
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "jorge_newbery_20",
+      "nombre": "Gastón Gallardo",
+      "apodo": null,
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 28,
+      "altura_cm": 170,
+      "atributos": {
+        "velocidad": 73,
+        "pase": 59,
+        "tiro": 85,
+        "defensa": 57,
+        "estamina": 60
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "formato_version": 1,
+  "id": "tiro_federal",
+  "nombre_oficial": "Club Atlético Tiro Federal",
+  "nombre_corto": "Tiro Federal",
+  "abreviatura": "TIR",
+  "apodos": [
+    "Tiro",
+    "El del Barrio Cemento"
+  ],
+  "fundacion": "1917-05-06",
+  "nota_fundacion": "",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Barrio Moreno",
+  "sede": "Av. Manuel Quintana 850, Comodoro Rivadavia",
+  "colores": [
+    "#6CB4E4",
+    "#FFFFFF"
+  ],
+  "nombres_colores": [
+    "celeste",
+    "blanco"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "rayas_verticales",
+      "color_base": "#6CB4E4",
+      "color_secundario": "#FFFFFF",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#FFFFFF",
+      "numero": "#151515",
+      "pantalon": "#151515",
+      "medias": "#6CB4E4",
+      "sponsor_parodia": "Bloques Moreno",
+      "confianza": "propuesta",
+      "nota": "Colores celeste y blanco confirmados; las rayas son propuesta."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#14306B",
+      "color_secundario": "#6CB4E4",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#6CB4E4",
+      "numero": "#FFFFFF",
+      "pantalon": "#14306B",
+      "medias": "#14306B",
+      "sponsor_parodia": "Bloques Moreno",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#F07F1A",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#F07F1A",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo clásico",
+      "colores": [
+        "#6CB4E4",
+        "#FFFFFF"
+      ],
+      "simbolo": "Una diana de tiro con una pelota en el centro",
+      "texto": "CATF",
+      "archivo": null
+    }
+  },
+  "estadio_id": "tiro_federal",
+  "divisiones": [
+    "apertura_2025"
+  ],
+  "nivel": 2,
+  "plantel": "res://datos/planteles/tiro_federal.json",
+  "contacto": {
+    "web": null,
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-atletico-tiro-federal-de-comodoro-rivadavia/"
+  ],
+  "pendiente": [
+    "Diseño de camiseta",
+    "Redes oficiales",
+    "Descripción del escudo"
+  ]
+}

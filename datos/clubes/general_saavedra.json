@@ -1,0 +1,107 @@
+{
+  "formato_version": 1,
+  "id": "general_saavedra",
+  "nombre_oficial": "Club Atlético General Saavedra",
+  "nombre_corto": "Gral. Saavedra",
+  "abreviatura": "GSA",
+  "apodos": [
+    "El Parque"
+  ],
+  "fundacion": "1928-10-22",
+  "nota_fundacion": "",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Barrio General Saavedra, Km 3",
+  "sede": "Km 3, Barrio General Saavedra",
+  "colores": [
+    "#1F4FA8",
+    "#151515",
+    "#FFFFFF"
+  ],
+  "nombres_colores": [
+    "azul",
+    "negro",
+    "blanco"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "rayas_verticales",
+      "color_base": "#1F4FA8",
+      "color_secundario": "#151515",
+      "color_terciario": "#FFFFFF",
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#151515",
+      "sponsor_parodia": "Kiosco El Parque",
+      "confianza": "confirmado",
+      "nota": "Rayas verticales azules, negras y blancas (Once Patagónico)."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#FFFFFF",
+      "color_secundario": "#1F4FA8",
+      "color_terciario": "#151515",
+      "hombreras": null,
+      "cuello": "#1F4FA8",
+      "numero": "#151515",
+      "pantalon": "#FFFFFF",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "Kiosco El Parque",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#2E9E4F",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#2E9E4F",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo clásico",
+      "colores": [
+        "#1F4FA8",
+        "#151515",
+        "#FFFFFF"
+      ],
+      "simbolo": "Tres franjas con un árbol (por 'El Parque')",
+      "texto": "CAGS",
+      "archivo": null
+    }
+  },
+  "estadio_id": "saavedra",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 3,
+  "plantel": "res://datos/planteles/general_saavedra.json",
+  "contacto": {
+    "web": null,
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-atletico-general-saavedra/"
+  ],
+  "pendiente": [
+    "Redes oficiales",
+    "Descripción del escudo",
+    "Camiseta suplente"
+  ]
+}

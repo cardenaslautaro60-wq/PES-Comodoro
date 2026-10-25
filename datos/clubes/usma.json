@@ -1,0 +1,105 @@
+{
+  "formato_version": 1,
+  "id": "usma",
+  "nombre_oficial": "Club Atlético Unión San Martín Azcuénaga",
+  "nombre_corto": "USMA",
+  "abreviatura": "USM",
+  "apodos": [
+    "Los Patricios"
+  ],
+  "fundacion": "1931-06-23",
+  "nota_fundacion": "",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Barrio Azcuénaga, Km 5 (zona norte)",
+  "sede": "Barrio Azcuénaga, Km 5, Comodoro Rivadavia",
+  "colores": [
+    "#1F4FA8",
+    "#C8102E"
+  ],
+  "nombres_colores": [
+    "azul",
+    "rojo"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "rayas_verticales",
+      "color_base": "#1F4FA8",
+      "color_secundario": "#C8102E",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#C8102E",
+      "numero": "#FFFFFF",
+      "pantalon": "#1F4FA8",
+      "medias": "#1F4FA8",
+      "sponsor_parodia": "Remises Km 5",
+      "confianza": "confirmado",
+      "nota": "Rayas verticales azules y rojas (Once Patagónico). Pantalón y medias propuestos."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#FFFFFF",
+      "color_secundario": "#1F4FA8",
+      "color_terciario": "#C8102E",
+      "hombreras": null,
+      "cuello": "#1F4FA8",
+      "numero": "#151515",
+      "pantalon": "#FFFFFF",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "Remises Km 5",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#F5C400",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#151515",
+      "pantalon": "#151515",
+      "medias": "#F5C400",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo partido en franjas",
+      "colores": [
+        "#1F4FA8",
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "simbolo": "Franjas azules y rojas con una estrella",
+      "texto": "USMA",
+      "archivo": null
+    }
+  },
+  "estadio_id": "armando_avila",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 4,
+  "plantel": "res://datos/planteles/usma.json",
+  "contacto": {
+    "web": null,
+    "facebook": "https://www.facebook.com/p/Club-Atl%C3%A9tico-USMA-100063456252494/",
+    "x": "https://x.com/PrensaUSMA",
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-atletico-union-san-martin-azcuenaga/",
+    "https://www.estadiosdeargentina.com.ar/cancha-de-usma-comodoro-rivadavia/"
+  ],
+  "pendiente": [
+    "Camiseta suplente",
+    "Descripción del escudo"
+  ]
+}

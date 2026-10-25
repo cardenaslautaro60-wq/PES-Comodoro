@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "florentino_ameghino",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "florentino_ameghino_01",
+      "nombre": "Ramiro Montiel",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 23,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 50,
+        "pase": 50,
+        "tiro": 34,
+        "defensa": 62,
+        "estamina": 55,
+        "atajada": 65
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_02",
+      "nombre": "Damián Vargas",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 25,
+      "altura_cm": 194,
+      "atributos": {
+        "velocidad": 38,
+        "pase": 51,
+        "tiro": 30,
+        "defensa": 68,
+        "estamina": 52,
+        "atajada": 62
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_03",
+      "nombre": "Alan Huenchul",
+      "apodo": null,
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 19,
+      "altura_cm": 170,
+      "atributos": {
+        "velocidad": 60,
+        "pase": 47,
+        "tiro": 45,
+        "defensa": 64,
+        "estamina": 56
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_04",
+      "nombre": "Elías Barría",
+      "apodo": null,
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 36,
+      "altura_cm": 169,
+      "atributos": {
+        "velocidad": 48,
+        "pase": 53,
+        "tiro": 43,
+        "defensa": 65,
+        "estamina": 67
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_05",
+      "nombre": "Tomás Uribe",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 22,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 42,
+        "pase": 48,
+        "tiro": 37,
+        "defensa": 70,
+        "estamina": 52
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_06",
+      "nombre": "Franco Cárcamo",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 19,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 50,
+        "pase": 48,
+        "tiro": 30,
+        "defensa": 64,
+        "estamina": 56
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "florentino_ameghino_07",
+      "nombre": "Dante Alvarado",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 20,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 60,
+        "pase": 62,
+        "tiro": 43,
+        "defensa": 66,
+        "estamina": 73
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "florentino_ameghino_08",
+      "nombre": "Tomás Llancaqueo",
+      "apodo": null,
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 181,
+      "atributos": {
+        "velocidad": 67,
+        "pase": 58,
+        "tiro": 55,
+        "defensa": 62,
+        "estamina": 74
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 2,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "florentino_ameghino_09",
+      "nombre": "Pablo Catrilaf",
+      "apodo": null,
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 180,
+      "atributos": {
+        "velocidad": 52,
+        "pase": 46,
+        "tiro": 37,
+        "defensa": 60,
+        "estamina": 56
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_10",
+      "nombre": "Rodrigo Aguirre",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 29,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 69,
+        "tiro": 50,
+        "defensa": 65,
+        "estamina": 73
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_11",
+      "nombre": "Enzo Delgado",
+      "apodo": null,
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 52,
+        "pase": 64,
+        "tiro": 62,
+        "defensa": 55,
+        "estamina": 67
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "florentino_ameghino_12",
+      "nombre": "Santiago Millapi",
+      "apodo": null,
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 30,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 51,
+        "pase": 57,
+        "tiro": 45,
+        "defensa": 59,
+        "estamina": 53
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "florentino_ameghino_13",
+      "nombre": "Lisandro Montiel",
+      "apodo": null,
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 173,
+      "atributos": {
+        "velocidad": 49,
+        "pase": 66,
+        "tiro": 55,
+        "defensa": 55,
+        "estamina": 64
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_14",
+      "nombre": "Emanuel Jaramillo",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 66,
+        "pase": 69,
+        "tiro": 59,
+        "defensa": 47,
+        "estamina": 58
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_15",
+      "nombre": "Lautaro Villarroel",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 30,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 59,
+        "pase": 62,
+        "tiro": 62,
+        "defensa": 38,
+        "estamina": 49
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "florentino_ameghino_16",
+      "nombre": "Nicolás Peralta",
+      "apodo": null,
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 19,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 70,
+        "pase": 61,
+        "tiro": 68,
+        "defensa": 46,
+        "estamina": 61
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_17",
+      "nombre": "Ezequiel Paillacán",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 30,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 55,
+        "pase": 50,
+        "tiro": 52,
+        "defensa": 45,
+        "estamina": 60
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "florentino_ameghino_18",
+      "nombre": "Gastón Benítez",
+      "apodo": "el Gringo",
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 30,
+      "altura_cm": 178,
+      "atributos": {
+        "velocidad": 68,
+        "pase": 51,
+        "tiro": 77,
+        "defensa": 43,
+        "estamina": 58
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "florentino_ameghino_19",
+      "nombre": "Bruno Tapia",
+      "apodo": null,
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 34,
+      "altura_cm": 169,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 58,
+        "tiro": 73,
+        "defensa": 45,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "florentino_ameghino_20",
+      "nombre": "Tobías Uribe",
+      "apodo": "el Ventarrón",
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 28,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 55,
+        "pase": 56,
+        "tiro": 66,
+        "defensa": 37,
+        "estamina": 49
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 3,
+        "barba": false
+      }
+    }
+  ]
+}

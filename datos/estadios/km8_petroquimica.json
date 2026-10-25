@@ -1,0 +1,45 @@
+{
+  "formato_version": 1,
+  "id": "km8_petroquimica",
+  "nombre": "Estadio de Petroquímica",
+  "apodo": "Kilómetro 8",
+  "clubes": [
+    "petroquimica"
+  ],
+  "direccion": "Cabo 1º Agustín Montaño y Buenaventura Rosas Martins",
+  "barrio": "Barrio Don Bosco, Km 8",
+  "inaugurado": null,
+  "capacidad": 3000,
+  "superficie": "a_confirmar",
+  "dimensiones_m": {
+    "largo": 105,
+    "ancho": 68,
+    "confianza": "propuesta"
+  },
+  "tribunas": [
+    {
+      "lado": "lateral",
+      "tipo": "tribuna",
+      "capacidad_aprox": null
+    }
+  ],
+  "pista_atletismo": false,
+  "iluminacion": null,
+  "entorno": {
+    "fondo": [
+      "meseta"
+    ],
+    "viento": "fuerte",
+    "nota": "Viento patagónico: el juego puede usarlo como efecto en la pelota."
+  },
+  "confianza": "probable",
+  "notas": "La cancha se renovó con apoyo del municipio en noviembre de 2023.",
+  "fuentes": [
+    "https://www.estadiosdeargentina.com.ar/cancha-de-deportivo-petroquimica/"
+  ],
+  "pendiente": [
+    "Superficie (natural o sintético)",
+    "Iluminación",
+    "Fotos"
+  ]
+}

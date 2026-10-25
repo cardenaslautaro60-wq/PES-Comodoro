@@ -1,0 +1,108 @@
+{
+  "formato_version": 1,
+  "id": "huracan",
+  "nombre_oficial": "Club Atlético Huracán",
+  "nombre_corto": "Huracán",
+  "abreviatura": "HUR",
+  "apodos": [
+    "El Globo",
+    "Globito Petrolero"
+  ],
+  "fundacion": "1927-12-22",
+  "nota_fundacion": "",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Barrio Industrial (estadio)",
+  "sede": "San Martín 263, Comodoro Rivadavia",
+  "colores": [
+    "#FFFFFF",
+    "#C8102E"
+  ],
+  "nombres_colores": [
+    "blanco",
+    "rojo"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "liso",
+      "color_base": "#FFFFFF",
+      "color_secundario": "#C8102E",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#C8102E",
+      "numero": "#151515",
+      "pantalon": "#FFFFFF",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "Alfajores Km 3",
+      "confianza": "probable",
+      "nota": "Colores blanco y rojo confirmados (Once Patagónico). Diseño exacto a confirmar."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#C8102E",
+      "color_secundario": "#FFFFFF",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#FFFFFF",
+      "numero": "#FFFFFF",
+      "pantalon": "#C8102E",
+      "medias": "#C8102E",
+      "sponsor_parodia": "Alfajores Km 3",
+      "confianza": "probable",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#1B7A3A",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#1B7A3A",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo con borde redondeado",
+      "colores": [
+        "#FFFFFF",
+        "#C8102E",
+        "#14306B"
+      ],
+      "simbolo": "Un globo aerostático con una torre de petróleo",
+      "texto": "CAH",
+      "archivo": null
+    }
+  },
+  "estadio_id": "cesar_munoz",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 5,
+  "plantel": "res://datos/planteles/huracan.json",
+  "contacto": {
+    "web": null,
+    "facebook": "https://www.facebook.com/CAHuracanCR",
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-atletico-huracan-de-comodoro-rivadavia/",
+    "https://es.wikipedia.org/wiki/Club_Atlético_Huracán_(Comodoro_Rivadavia)",
+    "https://www.estadiosdeargentina.com.ar/cancha-de-huracan-de-comodoro-rivadavia/"
+  ],
+  "pendiente": [
+    "Diseño exacto de titular y suplente",
+    "Descripción del escudo",
+    "Instagram oficial"
+  ]
+}

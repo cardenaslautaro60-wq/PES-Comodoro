@@ -1,0 +1,47 @@
+{
+  "formato_version": 1,
+  "id": "rada_tilly",
+  "nombre": "Cancha del Club Atlético Rada Tilly",
+  "apodo": null,
+  "clubes": [
+    "rada_tilly"
+  ],
+  "direccion": "Entrada de Camiones, Acceso Sur, Rada Tilly",
+  "barrio": "Rada Tilly",
+  "inaugurado": null,
+  "capacidad": null,
+  "superficie": "a_confirmar",
+  "dimensiones_m": {
+    "largo": 105,
+    "ancho": 68,
+    "confianza": "propuesta"
+  },
+  "tribunas": [
+    {
+      "lado": "lateral",
+      "tipo": "tribuna chica",
+      "capacidad_aprox": null
+    }
+  ],
+  "pista_atletismo": false,
+  "iluminacion": null,
+  "entorno": {
+    "fondo": [
+      "mar",
+      "punta_piedras"
+    ],
+    "viento": "fuerte",
+    "nota": "Viento patagónico: el juego puede usarlo como efecto en la pelota."
+  },
+  "confianza": "propuesta",
+  "notas": "",
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-atletico-rada-tilly/"
+  ],
+  "pendiente": [
+    "Nombre",
+    "Capacidad",
+    "Superficie",
+    "Fotos"
+  ]
+}

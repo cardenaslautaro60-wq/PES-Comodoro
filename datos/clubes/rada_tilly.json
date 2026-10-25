@@ -1,0 +1,106 @@
+{
+  "formato_version": 1,
+  "id": "rada_tilly",
+  "nombre_oficial": "Club Atlético Rada Tilly",
+  "nombre_corto": "Rada Tilly",
+  "abreviatura": "RAD",
+  "apodos": [
+    "Aurinegro",
+    "Rada"
+  ],
+  "fundacion": "2002-07-29",
+  "nota_fundacion": "Es de la ciudad de Rada Tilly, pegada a Comodoro.",
+  "ciudad": "Rada Tilly",
+  "barrio": "Rada Tilly",
+  "sede": "Entrada de Camiones, Acceso Sur, Rada Tilly",
+  "colores": [
+    "#F5C400",
+    "#151515"
+  ],
+  "nombres_colores": [
+    "amarillo",
+    "negro"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "rayas_verticales",
+      "color_base": "#F5C400",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#151515",
+      "pantalon": "#151515",
+      "medias": "#F5C400",
+      "sponsor_parodia": "Playa Rada",
+      "confianza": "propuesta",
+      "nota": "Colores amarillo y negro confirmados; las rayas son propuesta."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#151515",
+      "color_secundario": "#F5C400",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#F5C400",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#151515",
+      "sponsor_parodia": "Playa Rada",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#6CB4E4",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#151515",
+      "pantalon": "#151515",
+      "medias": "#6CB4E4",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo redondeado",
+      "colores": [
+        "#F5C400",
+        "#151515"
+      ],
+      "simbolo": "Una ola y el Punta Piedras de fondo",
+      "texto": "CART",
+      "archivo": null
+    }
+  },
+  "estadio_id": "rada_tilly",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 3,
+  "plantel": "res://datos/planteles/rada_tilly.json",
+  "contacto": {
+    "web": null,
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-atletico-rada-tilly/"
+  ],
+  "pendiente": [
+    "Diseño de camiseta",
+    "Nombre del estadio",
+    "Redes oficiales",
+    "Descripción del escudo"
+  ]
+}
