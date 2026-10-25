@@ -158,7 +158,9 @@ func _crear_cancha() -> void:
 	piso.name = "Piso"
 	var material_piso := PhysicsMaterial.new()
 	material_piso.friction = 0.8
-	material_piso.bounce = 0.5
+	# Godot suma el rebote de los dos cuerpos que chocan. Con el piso en 0,
+	# el rebote lo define solo la pelota (si la suma pasa de 1, la pelota gana altura en cada pique).
+	material_piso.bounce = 0.0
 	piso.physics_material_override = material_piso
 	var caja := BoxShape3D.new()
 	caja.size = Vector3(LARGO + 24, 1, ANCHO + 24)
