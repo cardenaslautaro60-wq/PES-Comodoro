@@ -165,6 +165,11 @@ func _physics_process(delta: float) -> void:
 					pelota.colocar(lugar_saque)
 					pelota.dar_a(ejecutor)
 		Estado.DETENIDO, Estado.FESTEJO:
+			if estado == Estado.DETENIDO:
+				# Con la pelota parada el reloj sigue, como en la tele.
+				_correr_reloj(delta)
+				if estado != Estado.DETENIDO:
+					return
 			_espera -= delta
 			if _espera <= 0.0 and _siguiente.is_valid():
 				var siguiente := _siguiente
@@ -352,6 +357,7 @@ func _correr_reloj(delta: float) -> void:
 		return
 	_liberar_ejecutor()
 	_bloquear_a_todos(2.0)
+	_siguiente = Callable()
 	pelota.soltar()
 	if periodo == 1:
 		_cambiar_estado(Estado.ENTRETIEMPO)
