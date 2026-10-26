@@ -13,7 +13,7 @@ config_version=5
 config/name="PES: Comodoro"
 config/description="Fútbol 3D con los clubes de Comodoro Rivadavia."
 config/version="0.1.0"
-run/main_scene="res://escenas/prueba/prueba.tscn"
+run/main_scene="res://escenas/partido/entrenamiento.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
