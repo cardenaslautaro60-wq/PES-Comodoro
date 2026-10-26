@@ -174,3 +174,24 @@ func _esperar_fin(director: DirectorCinematicas, segundos_reales: float) -> bool
 	# Un cuadro más para que el partido reaccione a la señal de fin.
 	await get_tree().process_frame
 	return not director.activa
+
+
+func test_la_intro_termina_y_se_saltea() -> void:
+	var escena_intro := (load("res://escenas/cinematicas/intro.tscn") as PackedScene).instantiate()
+	escena_intro.set("cambiar_de_escena", false)
+	var termino := [false]
+	escena_intro.connect("terminada", func() -> void: termino[0] = true)
+	add_child(escena_intro)
+	var pantalla := escena_intro.get("pantalla") as PantallaCinematica
+	afirmar(pantalla != null and pantalla.activa, "la intro no arrancó")
+	var limite := Time.get_ticks_msec() + 3000
+	while pantalla._tiempo_activa < PantallaCinematica.BLOQUEO_AL_EMPEZAR and Time.get_ticks_msec() < limite:
+		await get_tree().process_frame
+	var toque := InputEventScreenTouch.new()
+	toque.pressed = true
+	pantalla._input(toque)
+	for i in 5:
+		await get_tree().process_frame
+	afirmar(termino[0], "la intro no se salteó con un toque")
+	escena_intro.queue_free()
+	await get_tree().process_frame

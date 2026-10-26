@@ -20,6 +20,12 @@ Las cinemáticas del partido: presentación con la salida de los equipos, festej
 
 El **entretiempo** está hecho pero el entrenamiento no tiene reloj, así que no se ve todavía. Lo llama el partido completo (área C).
 
+## Intro del juego
+
+`escenas/cinematicas/intro.tscn` (unos 8 segundos): la cámara baja desde el cerro hasta el pasto, cruza una pelota y aparece el título del juego (sale de `application/config/name`). Se saltea con un toque.
+
+El menú del área G la muestra una sola vez al abrir el juego (`Navegacion.INTRO`). Al terminar llama a `Navegacion.ir_a(Navegacion.MENU_PRINCIPAL)`. Si ese autoload todavía no existe, va al menú principal o, si tampoco está, al entrenamiento. Si existe `Sonido.musica_de_menu()`, la usa.
+
 ## Las piezas
 
 | Clase | Archivo | Qué hace |
@@ -74,6 +80,6 @@ await cinematicas.final_del_partido()
 
 ## Pendiente
 
-- **Intro corta del juego:** va con el menú principal (área G) y el logo.
+- **Logo** en la intro, cuando haya uno.
 - **Hinchada y sonido** en las cinemáticas (áreas E y G).
 - Las tomas están ajustadas con los modelos provisorios. Con los modelos y el estadio de verdad hay que retocar distancias y alturas (todo está en `director_cinematicas.gd`).
