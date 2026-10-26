@@ -69,8 +69,8 @@ await cinematicas.final_del_partido()
 
 ## Para el área G (menús, interfaz y sonido)
 
-- El botón **REPE** del entrenamiento es provisorio. En el partido conviene ponerlo en el menú de pausa, llamando a `cinematicas.repeticion_manual()`.
-- Para el sonido: `cinematica_empezada("gol")` es el momento del grito de gol y de la hinchada, y `cinematica_empezada("final")` el del silbato final.
+- El botón **REPE** del entrenamiento es provisorio: la pausa del área G ya muestra "Ver la repetición" cuando existe `cinematicas.repeticion_manual()`. Cuando entren los dos PR, se saca el REPE.
+- El sonido no se engancha a las cinemáticas: el grito de gol sale de la señal `gol` del partido y el silbato final del reloj. Así no suena dos veces.
 
 ## Rendimiento en el celular
 
