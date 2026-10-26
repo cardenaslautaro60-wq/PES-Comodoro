@@ -55,11 +55,12 @@ cinematicas.partido = self
 add_child(cinematicas)
 
 await cinematicas.presentar_partido()  # Al empezar
-await cinematicas.festejar_gol(lado)   # Con el lado de Cancha.gol
+await cinematicas.festejar_gol(lado, equipo)  # Lado de Cancha.gol y equipo que hizo el gol (0 o 1)
 await cinematicas.entretiempo()
 await cinematicas.final_del_partido()
 ```
 
+- `equipo` es opcional: si no se pasa, se deduce del lado como en el primer tiempo. Con cambio de lado en el entretiempo, pasalo siempre.
 - Cada función vuelve cuando terminó o se salteó. **El director no reinicia la jugada:** después del festejo, el partido decide (saque del medio, etc.). La presentación deja a los jugadores formados en la mitad de la cancha, así que hay que ubicarlos para el saque.
 - Mientras dura una cinemática, el director apaga el `ControlHumano`, suelta todos los botones y maneja a los jugadores llenando su `entrada`. **La IA tiene que quedarse quieta:** escuchá `cinematica_empezada(nombre)` y `cinematica_terminada(nombre, salteada)`, o mirá `cinematicas.activa`.
 - Si cambian los jugadores (por ejemplo, un cambio), llamá `cinematicas.registrar_actores()` para que la repetición los grabe.

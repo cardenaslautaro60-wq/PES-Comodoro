@@ -195,3 +195,14 @@ func test_la_intro_termina_y_se_saltea() -> void:
 	afirmar(termino[0], "la intro no se salteó con un toque")
 	escena_intro.queue_free()
 	await get_tree().process_frame
+
+
+func test_festejo_con_cambio_de_lado() -> void:
+	var director := escena.cinematicas
+	await _saltear_tocando(director)
+	# Segundo tiempo: el visitante (1) hace un gol en el arco de x positivo.
+	escena.pelota.ultimo_en_tocar = escena.jugadores[4]
+	director.festejar_gol(1, 1)
+	afirmar(director.pantalla.titulo_visible() == "¡GOOOL!", "no arrancó el festejo")
+	var subtitulo := director.pantalla._subtitulo.text
+	afirmar(not subtitulo.contains("en contra"), "el gol del visitante salió como en contra: " + subtitulo)

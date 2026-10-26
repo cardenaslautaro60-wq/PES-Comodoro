@@ -166,12 +166,14 @@ func presentar_partido() -> void:
 
 
 ## Festejo de gol y su repetición. `lado` es el de `Cancha.gol`: 1 si entró en el
-## arco de x positivo (gol del local) y -1 si entró en el otro.
-func festejar_gol(lado: int) -> void:
+## arco de x positivo y -1 si entró en el otro. `equipo` es el que hizo el gol
+## (0 local, 1 visitante); si no se pasa, se deduce del lado como en el primer
+## tiempo (el local ataca hacia x positivo). Con cambio de lado, pasalo siempre.
+func festejar_gol(lado: int, equipo := -1) -> void:
 	if not _empezar(GOL, false):
 		return
 	var pelota := _pelota()
-	var equipo_goleador := 0 if lado > 0 else 1
+	var equipo_goleador := equipo if equipo >= 0 else (0 if lado > 0 else 1)
 	var autor := pelota.ultimo_en_tocar
 	var en_contra := autor != null and autor.equipo != equipo_goleador
 	var festejante := autor if autor != null and not en_contra else _mas_cerca(equipo_goleador, pelota.global_position)
