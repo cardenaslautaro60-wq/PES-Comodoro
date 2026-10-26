@@ -38,6 +38,10 @@ El menú del área G la muestra una sola vez al abrir el juego (`Navegacion.INTR
 | `Gestos` | `gestos.gd` | Festejo, lamento, saludo y aplauso de los jugadores. |
 | `FondoComodoroProvisorio` | `fondo_comodoro_provisorio.gd` | Un cerro de cima chata y el mar, en low poly, hasta que esté el panorama del estadio. |
 
+## En el partido del menú
+
+`escenas/partido/partido.tscn` (área G) envuelve al entrenamiento, así que ya tiene las cinemáticas: presentación al empezar, festejo y repetición en cada gol, entretiempo y final con el reloj. Mientras pasa una cinemática, el reloj se frena y el marcador se esconde. Si se toca "atrás" o pausa, la cinemática se saltea. Ahí no corre el final a los 3 goles del entrenamiento (`goles_para_terminar = 0`).
+
 ## Cómo se usa desde el partido (área C)
 
 El director necesita un nodo `partido` con estas propiedades (las tiene `entrenamiento.gd`):
