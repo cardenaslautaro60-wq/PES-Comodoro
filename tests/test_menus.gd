@@ -152,3 +152,17 @@ func test_la_intro_va_solo_al_arrancar_en_el_menu() -> void:
 	afirmar(not Navegacion.debe_mostrar_intro(Navegacion.PARTIDO), "la intro sólo va antes del menú")
 	# Al correr las pruebas el juego ya arrancó, así que la intro no se repite.
 	afirmar(not Navegacion.debe_mostrar_intro(Navegacion.MENU_PRINCIPAL) or not hay_intro, "la intro no debería repetirse")
+
+
+func test_la_pausa_ofrece_la_repeticion_si_hay() -> void:
+	await abrir(Navegacion.PARTIDO)
+	var pausa: Node = pantalla.get("pausa")
+	pausa.set("hay_repeticion", true)
+	var pedida := [false]
+	pausa.connect("repeticion_pedida", func() -> void: pedida[0] = true)
+	pausa.call("abrir")
+	var boton := pausa.find_child("Repeticion", true, false) as Button
+	afirmar(boton != null, "falta el botón de repetición")
+	if boton:
+		boton.pressed.emit()
+	afirmar(pedida[0] and not get_tree().paused, "la repetición debería cerrar la pausa y pedirse")

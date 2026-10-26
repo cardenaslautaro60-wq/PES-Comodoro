@@ -7,6 +7,7 @@ extends Control
 signal reanudado
 signal salir_pedido
 signal formacion_cambiada(formacion: String)
+signal repeticion_pedida
 
 const TemaUI := preload("res://scripts/ui/tema.gd")
 const Selector := preload("res://scripts/ui/selector.gd")
@@ -14,6 +15,8 @@ const PizarraFormacion := preload("res://scripts/ui/pizarra_formacion.gd")
 const ESCENA_OPCIONES := preload("res://escenas/menus/opciones.tscn")
 
 var abierta := false
+## El partido lo pone en true si la escena de juego tiene repetición manual (área F).
+var hay_repeticion := false
 ## Id del titular elegido para salir, mientras se elige quién entra.
 var sale_elegido := ""
 
@@ -104,6 +107,8 @@ func mostrar_inicio() -> void:
 	var cambios := _boton("Cambios (quedan %d)" % restantes, mostrar_cambios)
 	cambios.name = "Cambios"
 	cambios.disabled = restantes <= 0 or ConfigPartido.suplentes["local"].is_empty()
+	if hay_repeticion:
+		_boton("Ver la repetición", _pedir_repeticion).name = "Repeticion"
 	_boton("Formación", mostrar_formacion).name = "Formacion"
 	_boton("Opciones", _abrir_opciones).name = "Opciones"
 	var salir := _boton("Salir del partido", _pedir_salida)
@@ -194,6 +199,11 @@ func _lista_jugadores(nombre: String, titulo: String, ids: Array, en_cancha: boo
 	return columna
 
 
+func _pedir_repeticion() -> void:
+	cerrar()
+	repeticion_pedida.emit()
+
+
 func _abrir_opciones() -> void:
 	_opciones = ESCENA_OPCIONES.instantiate()
 	_opciones.set("dentro_del_partido", true)
@@ -235,7 +245,7 @@ func _titulo(texto: String) -> void:
 func _boton(texto: String, accion: Callable, principal := false) -> Button:
 	var boton := Button.new()
 	boton.text = texto
-	boton.custom_minimum_size.y = 70
+	boton.custom_minimum_size.y = 62
 	if principal:
 		boton.add_theme_stylebox_override("normal", TemaUI.caja(TemaUI.ACENTO))
 		boton.add_theme_color_override("font_color", TemaUI.FONDO)

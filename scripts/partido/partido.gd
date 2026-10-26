@@ -74,6 +74,8 @@ func _ready() -> void:
 	pausa = Pausa.new()
 	pausa.name = "Pausa"
 	pausa.salir_pedido.connect(_salir)
+	pausa.repeticion_pedida.connect(_ver_repeticion)
+	pausa.hay_repeticion = _cinematicas() != null
 	capa_pausa.add_child(pausa)
 
 	if juego.has_signal("gol"):
@@ -227,6 +229,18 @@ func _al_terminar_partido() -> void:
 	await get_tree().create_timer(ESPERA_ANTES_DEL_RESULTADO).timeout
 	if is_inside_tree():
 		Navegacion.ir_a(Navegacion.RESULTADO)
+
+
+## Director de cinemáticas del área F, si la escena de juego lo tiene.
+func _cinematicas() -> Object:
+	var director = juego.get("cinematicas")
+	return director if director is Object and director.has_method("repeticion_manual") else null
+
+
+func _ver_repeticion() -> void:
+	var director := _cinematicas()
+	if director:
+		director.call("repeticion_manual")
 
 
 func _salir() -> void:

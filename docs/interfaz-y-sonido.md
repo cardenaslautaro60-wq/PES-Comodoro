@@ -60,6 +60,8 @@ La acción `pausa` (Escape, P o Start del joystick) está registrada en `Control
 
 La intro va en `escenas/cinematicas/intro.tscn` (`Navegacion.INTRO`). Si esa escena existe, se ve una vez al abrir el juego, antes del menú principal; si no existe, el juego arranca directo en el menú. Cuando termina o se saltea con un toque, la intro llama a `Navegacion.ir_a(Navegacion.MENU_PRINCIPAL)`. La escena principal del proyecto sigue siendo el menú.
 
+Si la escena de juego tiene `cinematicas` con `repeticion_manual()`, la pausa muestra el botón **Ver la repetición**, que cierra la pausa y la pide.
+
 ## Sonido
 
 Canales: **Master** y adentro **Musica**, **Efectos** y **Ambiente**. Cada uno tiene su volumen en Opciones.
