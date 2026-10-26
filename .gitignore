@@ -17,6 +17,5 @@ export_credentials.cfg
 Thumbs.db
 *.tmp
 
-# Generados por Godot al importar (cada uno los crea en su compu)
+# Identificadores que genera Godot en cada compu (el código usa rutas res://)
 *.uid
-*.import
