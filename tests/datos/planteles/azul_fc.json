@@ -1,0 +1,105 @@
+{
+  "formato_version": 1,
+  "club_id": "azul_fc",
+  "formacion": "4-3-3",
+  "jugadores": [
+    {
+      "id": "azul_fc_01",
+      "nombre": "Jugador 1",
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_02",
+      "nombre": "Jugador 2",
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_03",
+      "nombre": "Jugador 3",
+      "dorsal": 3,
+      "posicion": "DFC",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_04",
+      "nombre": "Jugador 4",
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_05",
+      "nombre": "Jugador 5",
+      "dorsal": 5,
+      "posicion": "LAT",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_06",
+      "nombre": "Jugador 6",
+      "dorsal": 6,
+      "posicion": "MC",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_07",
+      "nombre": "Jugador 7",
+      "dorsal": 7,
+      "posicion": "MC",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_08",
+      "nombre": "Jugador 8",
+      "dorsal": 8,
+      "posicion": "EXT",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_09",
+      "nombre": "Jugador 9",
+      "dorsal": 9,
+      "posicion": "EXT",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_10",
+      "nombre": "Jugador 10",
+      "dorsal": 10,
+      "posicion": "DC",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_11",
+      "nombre": "Jugador 11",
+      "dorsal": 11,
+      "posicion": "DC",
+      "titular": true
+    },
+    {
+      "id": "azul_fc_12",
+      "nombre": "Jugador 12",
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false
+    },
+    {
+      "id": "azul_fc_13",
+      "nombre": "Jugador 13",
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false
+    },
+    {
+      "id": "azul_fc_14",
+      "nombre": "Jugador 14",
+      "dorsal": 14,
+      "posicion": "MC",
+      "titular": false
+    }
+  ]
+}

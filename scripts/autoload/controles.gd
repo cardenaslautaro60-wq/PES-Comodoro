@@ -13,12 +13,14 @@ const TECLAS := {
 	"pase": [KEY_J, KEY_SPACE],
 	"tiro": [KEY_K],
 	"sprint": [KEY_SHIFT],
+	"pausa": [KEY_ESCAPE, KEY_P],
 }
 
 const BOTONES_JOYSTICK := {
 	"pase": JOY_BUTTON_A,
 	"tiro": JOY_BUTTON_B,
 	"sprint": JOY_BUTTON_RIGHT_SHOULDER,
+	"pausa": JOY_BUTTON_START,
 }
 
 const ZONA_MUERTA_JOYSTICK := 0.2

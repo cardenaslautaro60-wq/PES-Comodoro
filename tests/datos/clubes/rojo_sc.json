@@ -1,0 +1,73 @@
+{
+  "formato_version": 1,
+  "id": "rojo_sc",
+  "nombre_oficial": "Club Rojo SC",
+  "nombre_corto": "Rojo SC",
+  "abreviatura": "ROJ",
+  "apodos": [
+    "El Rojo SC"
+  ],
+  "colores": [
+    "#C8102E",
+    "#FFFFFF"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "rayas_verticales",
+      "color_base": "#C8102E",
+      "color_secundario": "#FFFFFF",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#FFFFFF",
+      "numero": "#FFFFFF",
+      "pantalon": "#C8102E",
+      "medias": "#C8102E",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "suplente": {
+      "patron": "rayas_verticales",
+      "color_base": "#FFFFFF",
+      "color_secundario": "#C8102E",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#C8102E",
+      "numero": "#FFFFFF",
+      "pantalon": "#FFFFFF",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "rayas_verticales",
+      "color_base": "#2E9E4F",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#2E9E4F",
+      "medias": "#2E9E4F",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": ""
+    }
+  },
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "parodia": {
+      "forma": "círculo",
+      "colores": [
+        "#C8102E",
+        "#FFFFFF",
+        "#FFFFFF"
+      ],
+      "texto": "ROJ"
+    }
+  },
+  "estadio_id": "cancha_roja",
+  "nivel": 4
+}
