@@ -9,6 +9,9 @@ const OPCIONES := "res://escenas/menus/opciones.tscn"
 const CREDITOS := "res://escenas/menus/creditos.tscn"
 const PARTIDO := "res://escenas/partido/partido.tscn"
 const RESULTADO := "res://escenas/menus/resultado.tscn"
+## Intro corta del juego (área F). Si existe, se ve una vez al abrir el juego, antes
+## del menú. Cuando termina o se saltea, tiene que llamar a `ir_a(MENU_PRINCIPAL)`.
+const INTRO := "res://escenas/cinematicas/intro.tscn"
 const DURACION_FUNDIDO := 0.18
 
 ## Las pruebas lo ponen en true: así no se cambia de escena de verdad y se puede
@@ -18,6 +21,7 @@ var ultimo_destino := ""
 
 var _cortina: ColorRect
 var _cambiando := false
+var _intro_vista := false
 
 
 func _ready() -> void:
@@ -32,6 +36,23 @@ func _ready() -> void:
 	_cortina.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_cortina.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	capa.add_child(_cortina)
+	_mostrar_intro_al_arrancar.call_deferred()
+
+
+## La intro va una sola vez, al abrir el juego en el menú principal y si el área F
+## ya la agregó. Abriendo otra escena desde el editor no aparece.
+func debe_mostrar_intro(escena_inicial: String) -> bool:
+	return not _intro_vista and escena_inicial == MENU_PRINCIPAL and ResourceLoader.exists(INTRO)
+
+
+func _mostrar_intro_al_arrancar() -> void:
+	var escena := get_tree().current_scene
+	if escena == null or simular:
+		return
+	if debe_mostrar_intro(escena.scene_file_path):
+		_intro_vista = true
+		get_tree().change_scene_to_file(INTRO)
+	_intro_vista = true
 
 
 func ir_a(ruta: String) -> void:

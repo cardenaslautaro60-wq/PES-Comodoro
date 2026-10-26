@@ -145,3 +145,10 @@ func test_partido_viste_a_los_jugadores_con_el_club_elegido() -> void:
 	afirmar(primero.get("nombre_jugador") == "Jugador 10", "el 10 debería llamarse como en el plantel")
 	var color: Color = primero.get("color_equipo")
 	afirmar(color.is_equal_approx(ConfigPartido.color_camiseta("local")), "el local no tiene el color de su camiseta")
+
+
+func test_la_intro_va_solo_al_arrancar_en_el_menu() -> void:
+	var hay_intro := ResourceLoader.exists(Navegacion.INTRO)
+	afirmar(not Navegacion.debe_mostrar_intro(Navegacion.PARTIDO), "la intro sólo va antes del menú")
+	# Al correr las pruebas el juego ya arrancó, así que la intro no se repite.
+	afirmar(not Navegacion.debe_mostrar_intro(Navegacion.MENU_PRINCIPAL) or not hay_intro, "la intro no debería repetirse")

@@ -56,6 +56,10 @@ Lo elegido en los menús está en `ConfigPartido`: `formacion["local"]`, `titula
 
 La acción `pausa` (Escape, P o Start del joystick) está registrada en `Controles`.
 
+## Para el área F (intro del juego)
+
+La intro va en `escenas/cinematicas/intro.tscn` (`Navegacion.INTRO`). Si esa escena existe, se ve una vez al abrir el juego, antes del menú principal; si no existe, el juego arranca directo en el menú. Cuando termina o se saltea con un toque, la intro llama a `Navegacion.ir_a(Navegacion.MENU_PRINCIPAL)`. La escena principal del proyecto sigue siendo el menú.
+
 ## Sonido
 
 Canales: **Master** y adentro **Musica**, **Efectos** y **Ambiente**. Cada uno tiene su volumen en Opciones.
