@@ -1,0 +1,18 @@
+{
+  "nombre": "4-4-2",
+  "descripcion": "Clásica: dos líneas de cuatro y dos delanteros.",
+  "nota": "x: de 0 (el arco propio) a 0,5 (la mitad de la cancha), en la salida del medio. z: de -1 a 1, el ancho de la cancha (-1 es la izquierda mirando al arco rival).",
+  "puestos": [
+    {"rol": "ARQ", "x": 0.01, "z": 0.0},
+    {"rol": "LAT", "x": 0.17, "z": -0.75},
+    {"rol": "DFC", "x": 0.15, "z": -0.25},
+    {"rol": "DFC", "x": 0.15, "z": 0.25},
+    {"rol": "LAT", "x": 0.17, "z": 0.75},
+    {"rol": "EXT", "x": 0.32, "z": -0.7},
+    {"rol": "MC", "x": 0.30, "z": -0.22},
+    {"rol": "MC", "x": 0.30, "z": 0.22},
+    {"rol": "EXT", "x": 0.32, "z": 0.7},
+    {"rol": "DC", "x": 0.44, "z": -0.2},
+    {"rol": "DC", "x": 0.44, "z": 0.2}
+  ]
+}

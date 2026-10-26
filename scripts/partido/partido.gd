@@ -3,19 +3,23 @@ extends Node
 ## reloj, la pausa y el sonido. Cuando termina, va a la pantalla del resultado.
 ##
 ## El juego en sí (cancha, jugadores, pelota) es otra escena, `ESCENA_JUEGO`, que
-## hoy es el entrenamiento del área B. Lo que este script espera de esa escena:
+## es el partido 11 contra 11 del área C (`PartidoCompleto`). Lo que este script
+## espera de esa escena:
 ## - una señal `gol(equipo: String)` con "local" o "visitante";
 ## - una variable `pelota` (RigidBody3D), para los sonidos;
 ## - opcional: `jugadores` (lista de `Jugador`), para ponerles los colores y los
 ##   nombres del plantel elegido;
 ## - opcional: `reiniciar_jugada()`, para sacar del medio después del entretiempo.
+## - opcional: `arbitro` (`Arbitro`): si está, manda su reloj (con entretiempo y
+##   cambio de lado) en vez del de acá, y la escena ya viste a los jugadores.
+## - opcional: `cambiar_formacion(nombre)` y `aplicar_cambios()`, para la pausa.
 ## Si la escena no trae su propio `Interfaz/HudJugador`, el HUD muestra el nombre,
 ## la estamina y la potencia del jugador que manejás (`control.jugador`).
 
 const Hud := preload("res://scripts/ui/hud_partido.gd")
 const Pausa := preload("res://scripts/partido/pausa.gd")
 const Reloj := preload("res://scripts/partido/reloj_partido.gd")
-const ESCENA_JUEGO := "res://escenas/partido/entrenamiento.tscn"
+const ESCENA_JUEGO := "res://escenas/partido/partido_completo.tscn"
 
 const MITAD_DEL_LARGO := 52.5
 const MEDIO_ARCO := 3.66
@@ -53,6 +57,12 @@ func _ready() -> void:
 	reloj.termino_tiempo.connect(_al_terminar_tiempo)
 	reloj.termino_partido.connect(_al_terminar_partido)
 	add_child(reloj)
+	var arbitro := _arbitro()
+	if arbitro:
+		# El partido 11 contra 11 lleva su propio reloj: el de acá no corre.
+		reloj.process_mode = Node.PROCESS_MODE_DISABLED
+		arbitro.connect("entretiempo", _al_terminar_tiempo.bind(1))
+		arbitro.connect("partido_terminado", _al_terminar_partido_del_arbitro)
 
 	var capa := CanvasLayer.new()
 	capa.name = "Interfaz"
@@ -76,6 +86,10 @@ func _ready() -> void:
 	pausa.name = "Pausa"
 	pausa.salir_pedido.connect(_salir)
 	pausa.repeticion_pedida.connect(_ver_repeticion)
+	if juego.has_method("cambiar_formacion"):
+		pausa.formacion_cambiada.connect(Callable(juego, "cambiar_formacion"))
+	if juego.has_method("aplicar_cambios"):
+		pausa.reanudado.connect(Callable(juego, "aplicar_cambios"))
 	pausa.hay_repeticion = _cinematicas() != null
 	capa_pausa.add_child(pausa)
 
@@ -100,7 +114,11 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	hud.mostrar_reloj(reloj.texto(), reloj.texto_tiempo())
+	var arbitro := _arbitro()
+	if arbitro:
+		hud.mostrar_reloj(arbitro.call("texto_reloj"), arbitro.call("texto_tiempo"))
+	else:
+		hud.mostrar_reloj(reloj.texto(), reloj.texto_tiempo())
 	_mostrar_jugador_activo()
 
 	_espera_cantico -= delta
@@ -153,6 +171,9 @@ func _adaptar_juego() -> void:
 	var boton_repeticion := juego.get_node_or_null("Interfaz/BotonRepeticion") as CanvasItem
 	if boton_repeticion:
 		boton_repeticion.visible = false
+	if _arbitro():
+		# El partido 11 contra 11 ya arma los equipos con lo elegido en los menús.
+		return
 	var jugadores = juego.get("jugadores")
 	if not jugadores is Array:
 		return
@@ -261,6 +282,7 @@ func _al_terminar_partido() -> void:
 ## y le saca el final "a los 3 goles" del entrenamiento: acá manda el reloj.
 func _preparar_cinematicas() -> void:
 	juego.set("goles_para_terminar", 0)
+	juego.set("envuelto", true)
 	juego.set("nombre_local", ConfigPartido.nombre_de("local"))
 	juego.set("nombre_visitante", ConfigPartido.nombre_de("visitante"))
 	var estadio := Catalogo.estadio(ConfigPartido.estadio_id)
@@ -277,6 +299,17 @@ func _al_empezar_cinematica(_nombre: String, capa: CanvasLayer) -> void:
 func _al_terminar_cinematica(_nombre: String, _salteada: bool, capa: CanvasLayer) -> void:
 	reloj.corriendo = not reloj.terminado
 	capa.visible = true
+
+
+## Árbitro del partido 11 contra 11 (área C), si la escena de juego lo tiene.
+func _arbitro() -> Object:
+	var arbitro = juego.get("arbitro")
+	return arbitro if arbitro is Object and arbitro.has_method("texto_reloj") else null
+
+
+func _al_terminar_partido_del_arbitro(_goles_local: int, _goles_visitante: int) -> void:
+	reloj.terminado = true
+	_al_terminar_partido()
 
 
 ## Director de cinemáticas del área F, si la escena de juego lo tiene.

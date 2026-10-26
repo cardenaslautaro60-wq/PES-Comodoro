@@ -1,0 +1,18 @@
+{
+  "nombre": "4-3-3",
+  "descripcion": "Ofensiva: tres en el medio y tres arriba, con dos extremos.",
+  "nota": "x: de 0 (el arco propio) a 0,5 (la mitad de la cancha), en la salida del medio. z: de -1 a 1, el ancho de la cancha (-1 es la izquierda mirando al arco rival).",
+  "puestos": [
+    {"rol": "ARQ", "x": 0.01, "z": 0.0},
+    {"rol": "LAT", "x": 0.17, "z": -0.75},
+    {"rol": "DFC", "x": 0.15, "z": -0.25},
+    {"rol": "DFC", "x": 0.15, "z": 0.25},
+    {"rol": "LAT", "x": 0.17, "z": 0.75},
+    {"rol": "MC", "x": 0.29, "z": -0.4},
+    {"rol": "MC", "x": 0.26, "z": 0.0},
+    {"rol": "MC", "x": 0.29, "z": 0.4},
+    {"rol": "EXT", "x": 0.43, "z": -0.7},
+    {"rol": "DC", "x": 0.45, "z": 0.0},
+    {"rol": "EXT", "x": 0.43, "z": 0.7}
+  ]
+}
