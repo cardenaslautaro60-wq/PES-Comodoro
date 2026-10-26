@@ -16,3 +16,7 @@ export_credentials.cfg
 .DS_Store
 Thumbs.db
 *.tmp
+
+# Generados por Godot al importar (cada uno los crea en su compu)
+*.uid
+*.import
