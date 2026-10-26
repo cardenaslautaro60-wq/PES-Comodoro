@@ -1,0 +1,8 @@
+{
+  "formato_version": 1,
+  "id": "cancha_azul",
+  "nombre": "Cancha Azul",
+  "barrio": "Barrio de prueba",
+  "capacidad": 500,
+  "superficie": "natural"
+}

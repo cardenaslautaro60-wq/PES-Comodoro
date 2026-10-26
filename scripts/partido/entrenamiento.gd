@@ -40,6 +40,9 @@ const VISITANTES := [
 
 ## Las pruebas lo apagan antes de agregar la escena para arrancar directo a jugar.
 @export var con_cinematicas := true
+## Goles que terminan el entrenamiento con la cinemática del final (0 = nunca;
+## el partido completo lo pone en 0 porque ahí manda el reloj).
+@export var goles_para_terminar := GOLES_PARA_TERMINAR
 
 var goles_local := 0
 var goles_visitante := 0
@@ -183,7 +186,7 @@ func _al_gol(lado: int) -> void:
 		return
 	_esperando_reinicio = true
 	await cinematicas.festejar_gol(lado)
-	if maxi(goles_local, goles_visitante) >= GOLES_PARA_TERMINAR:
+	if goles_para_terminar > 0 and maxi(goles_local, goles_visitante) >= goles_para_terminar:
 		reiniciar_jugada()
 		await cinematicas.final_del_partido()
 		goles_local = 0
@@ -258,6 +261,7 @@ func _crear_interfaz() -> void:
 	capa.add_child(hud)
 
 	_marcador = Label.new()
+	_marcador.name = "Marcador"
 	_marcador.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
 	_marcador.offset_top = 12
 	_marcador.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -268,6 +272,7 @@ func _crear_interfaz() -> void:
 	_actualizar_marcador()
 
 	_contador_fps = Label.new()
+	_contador_fps.name = "ContadorFps"
 	_contador_fps.position = Vector2(12, 8)
 	_contador_fps.add_theme_font_size_override("font_size", 18)
 	capa.add_child(_contador_fps)

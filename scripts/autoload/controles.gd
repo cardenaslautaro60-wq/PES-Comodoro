@@ -20,6 +20,7 @@ const TECLAS := {
 	"sprint": [KEY_SHIFT],
 	"cambiar_jugador": [KEY_Q],
 	"repeticion": [KEY_R],
+	"pausa": [KEY_ESCAPE, KEY_P],
 }
 
 const BOTONES_JOYSTICK := {
@@ -30,6 +31,7 @@ const BOTONES_JOYSTICK := {
 	"sprint": JOY_BUTTON_RIGHT_SHOULDER,
 	"cambiar_jugador": JOY_BUTTON_LEFT_SHOULDER,
 	"repeticion": JOY_BUTTON_BACK,
+	"pausa": JOY_BUTTON_START,
 }
 
 const ZONA_MUERTA_JOYSTICK := 0.2

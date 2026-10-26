@@ -1,0 +1,73 @@
+{
+  "formato_version": 1,
+  "id": "celeste",
+  "nombre_oficial": "Club Celeste",
+  "nombre_corto": "Celeste",
+  "abreviatura": "CEL",
+  "apodos": [
+    "El Celeste"
+  ],
+  "colores": [
+    "#2458B0",
+    "#F5C400"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "mitades",
+      "color_base": "#2458B0",
+      "color_secundario": "#F5C400",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#F5C400",
+      "numero": "#FFFFFF",
+      "pantalon": "#2458B0",
+      "medias": "#2458B0",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "suplente": {
+      "patron": "mitades",
+      "color_base": "#F5C400",
+      "color_secundario": "#2458B0",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#2458B0",
+      "numero": "#FFFFFF",
+      "pantalon": "#F5C400",
+      "medias": "#F5C400",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "mitades",
+      "color_base": "#2E9E4F",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#2E9E4F",
+      "medias": "#2E9E4F",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": ""
+    }
+  },
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "parodia": {
+      "forma": "escudo partido en mitades",
+      "colores": [
+        "#2458B0",
+        "#F5C400",
+        "#FFFFFF"
+      ],
+      "texto": "CEL"
+    }
+  },
+  "estadio_id": "no_existe",
+  "nivel": 2
+}
