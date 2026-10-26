@@ -12,7 +12,7 @@ Juego de fútbol 3D inspirado en PES 2006, con los clubes de la Liga de Fútbol 
 1. Instalá [Godot 4.5](https://godotengine.org/download) o una versión 4.x más nueva (la estándar, no la de .NET).
 2. Cloná el repo: `git clone https://github.com/cardenaslautaro60-wq/pes-comodoro.git`
 3. Abrí Godot, tocá **Importar** y elegí el archivo `project.godot`.
-4. Apretá **F5** para jugar el entrenamiento: tu equipo (rojo) contra tres rivales y un arquero que todavía están quietos.
+4. Apretá **F5** para jugar el entrenamiento: tu equipo (rojo) contra tres rivales y un arquero que todavía están quietos. Arranca con la salida de los equipos a la cancha, cada gol tiene festejo y repetición, y a los 3 goles se ve el final. Las cinemáticas se saltean tocando la pantalla o con cualquier tecla.
 
 **Controles** (mantené el botón para cargar la potencia y soltalo para patear):
 
@@ -25,8 +25,9 @@ Juego de fútbol 3D inspirado en PES 2006, con los clubes de la Liga de Fútbol 
 | Pase largo o centro | L | X | LARGO |
 | Pase al hueco | I | Y | HUECO |
 | Cambiar de jugador (al defender) | Q | LB | CAMBIAR |
+| Repetición de la última jugada | R | Select | REPE |
 
-Cómo funciona por dentro y qué pueden usar las otras áreas: [docs/JUGABILIDAD.md](docs/JUGABILIDAD.md).
+Cómo funciona por dentro y qué pueden usar las otras áreas: [docs/JUGABILIDAD.md](docs/JUGABILIDAD.md) y [docs/CINEMATICAS.md](docs/CINEMATICAS.md).
 
 ## Probar en el celular (Android)
 
@@ -53,6 +54,7 @@ GitHub las corre solas en cada pull request, junto con la revisión de estilo (`
 |---|---|
 | `escenas/` | Escenas de Godot (`.tscn`) |
 | `scripts/partido/` | Jugabilidad: cancha, pelota, jugador, cámara y control |
+| `scripts/cinematicas/` | Cinemáticas, repeticiones y gestos de los jugadores |
 | `scripts/` | Código GDScript, con las mismas subcarpetas que `escenas/` |
 | `scripts/autoload/` | Sistemas globales, como los controles |
 | `datos/clubes/` | Un archivo por club: nombre, colores, camisetas, estadio y plantel |

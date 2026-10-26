@@ -9,6 +9,7 @@ var escena: Entrenamiento
 
 func antes_de_cada() -> void:
 	escena = ESCENA.instantiate() as Entrenamiento
+	escena.con_cinematicas = false
 	add_child(escena)
 	await esperar_fisica(2)
 

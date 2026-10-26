@@ -42,6 +42,7 @@ Los valores están como constantes o `@export` al principio de cada archivo.
 - Si un `Jugador` o la `Pelota` tienen un hijo llamado `Modelo`, no se crea el modelo provisorio. Ahí va el modelo 3D.
 - Para animar: `Jugador.velocity`, `estado` (normal, barrida, caído), y las señales `pateo(tipo, potencia)`, `barrida_empezada` y `derribado`.
 - La cámara de transmisión se puede apagar (`current = false`) para usar una de cinemática, y `cortar()` la vuelve a encuadrar sin suavizado.
+- Las cinemáticas ya están hechas: ver [CINEMATICAS.md](CINEMATICAS.md).
 
 ## Para el área G (menús e interfaz)
 

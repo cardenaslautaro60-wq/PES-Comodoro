@@ -9,6 +9,7 @@ const ARCHIVOS_DE_PRUEBA := [
 	"res://tests/test_pelota.gd",
 	"res://tests/test_jugador.gd",
 	"res://tests/test_entrenamiento.gd",
+	"res://tests/test_cinematicas.gd",
 ]
 const CARPETAS_CON_SCRIPTS := ["res://scripts"]
 
