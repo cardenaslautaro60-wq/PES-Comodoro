@@ -136,3 +136,12 @@ func test_salir_del_partido_pide_confirmacion() -> void:
 	afirmar(Navegacion.ultimo_destino == "", "salió sin confirmar")
 	salir.pressed.emit()
 	afirmar(Navegacion.ultimo_destino == Navegacion.MENU_PRINCIPAL, "no salió al menú")
+
+
+func test_partido_viste_a_los_jugadores_con_el_club_elegido() -> void:
+	await abrir(Navegacion.PARTIDO)
+	var juego: Node = pantalla.get("juego")
+	var primero: Node = juego.get("jugadores")[0]
+	afirmar(primero.get("nombre_jugador") == "Jugador 10", "el 10 debería llamarse como en el plantel")
+	var color: Color = primero.get("color_equipo")
+	afirmar(color.is_equal_approx(ConfigPartido.color_camiseta("local")), "el local no tiene el color de su camiseta")

@@ -38,17 +38,19 @@ Todo está pensado primero para el celular: botones de 84 px de alto como mínim
 | `scripts/ui/escudo.gd`, `vista_camiseta.gd` | Dibujan el escudo y la camiseta a partir de los datos del club. |
 | `scripts/ui/tema.gd` | Colores y tamaños de la interfaz. |
 
-Las pantallas se arman por código (como la escena de prueba), así las escenas `.tscn` son mínimas y no hay conflictos al mezclar ramas.
+Las pantallas se arman por código (como el entrenamiento), así las escenas `.tscn` son mínimas y no hay conflictos al mezclar ramas.
 
 ## Para el área B (jugabilidad) y la C (partido completo)
 
-`partido.gd` carga la escena de `ESCENA_JUEGO` (hoy `escenas/prueba/prueba.tscn`). Para cambiarla por la definitiva alcanza con cambiar esa constante. Lo que espera de esa escena:
+`partido.gd` carga la escena de `ESCENA_JUEGO` (hoy `escenas/partido/entrenamiento.tscn`, del área B). Para cambiarla por el partido 11 contra 11 alcanza con cambiar esa constante. Lo que espera de esa escena:
 
 - La señal `gol(equipo: String)`, con `"local"` o `"visitante"`. El partido cuenta los goles en `ConfigPartido.goles`.
 - Una variable `pelota` (`RigidBody3D`): el partido escucha sus cambios de velocidad para hacer sonar patadas, pases y palos, y sube la hinchada cuando la pelota se acerca a un arco.
-- Opcional, en `jugador`: `estamina` y `carga_tiro`, de 0 a 1, para las barras del HUD.
+- Opcional: `jugadores` (lista de `Jugador`). A cada uno le pone el color de la camiseta elegida según su `equipo`, y el nombre del titular del plantel que tiene su mismo `dorsal`.
 - Opcional: `reiniciar_jugada()`, que se llama en el entretiempo.
-- Opcional: un nodo `Interfaz/Marcador` se esconde (el que vale es el del HUD), `Interfaz/ContadorFps` se muestra según las opciones y `Interfaz/Botones` se agranda según el tamaño elegido.
+- Opcional: `Interfaz/Marcador` se esconde (el que vale es el del HUD) y `Interfaz/ContadorFps` se muestra según las opciones. Si hay `Interfaz/HudJugador` (el nombre y las barras arriba del jugador), el HUD no repite esos datos; si no, los lee de `control.jugador` (`nombre_jugador`, `dorsal`, `estamina_actual` y `potencia`).
+
+El tamaño de los botones táctiles y la vibración se eligen en Opciones y se pasan a `Controles.escala_botones` y `Controles.vibracion_activada`, que son los que leen los controles táctiles.
 
 Lo elegido en los menús está en `ConfigPartido`: `formacion["local"]`, `titulares["local"]` (ids del plantel), `dificultad` (0 a 2), `minutos_por_tiempo`, `estadio_id` y `color_camiseta(lado)`. La señal `formacion_cambiada` de la pausa avisa si el jugador cambia la formación en medio del partido.
 

@@ -26,7 +26,9 @@ var ruta := RUTA_POR_DEFECTO
 
 
 func _ready() -> void:
+	cambiaron.connect(_pasar_a_controles)
 	cargar()
+	_pasar_a_controles()
 
 
 func cargar() -> void:
@@ -99,5 +101,10 @@ func cambiar_mostrar_fps(mostrar: bool) -> void:
 
 ## Hace vibrar el celular si el jugador lo tiene activado. En la compu no hace nada.
 func vibrar(milisegundos: int) -> void:
-	if vibracion:
-		Input.vibrate_handheld(milisegundos)
+	Controles.vibrar(milisegundos)
+
+
+## Los controles táctiles (área B) leen el tamaño de los botones y la vibración de `Controles`.
+func _pasar_a_controles() -> void:
+	Controles.escala_botones = escala_botones
+	Controles.vibracion_activada = vibracion

@@ -106,8 +106,8 @@ func jugador(lado: String, id: String) -> Dictionary:
 	return {}
 
 
-## El jugador de ese lado que juega más adelante (para mostrar su nombre en el
-## partido de prueba, donde hay un solo jugador). Prefiere al 9.
+## El jugador de ese lado que juega más adelante (para mostrar su nombre si la
+## escena de juego no dice a quién manejás). Prefiere al 9.
 func jugador_destacado(lado: String) -> Dictionary:
 	var elegido := {}
 	for id: String in titulares[lado]:

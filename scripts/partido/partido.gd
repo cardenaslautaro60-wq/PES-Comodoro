@@ -3,16 +3,19 @@ extends Node
 ## reloj, la pausa y el sonido. Cuando termina, va a la pantalla del resultado.
 ##
 ## El juego en sí (cancha, jugadores, pelota) es otra escena, `ESCENA_JUEGO`, que
-## hoy es la de prueba del área A. Lo que este script espera de esa escena:
+## hoy es el entrenamiento del área B. Lo que este script espera de esa escena:
 ## - una señal `gol(equipo: String)` con "local" o "visitante";
 ## - una variable `pelota` (RigidBody3D), para los sonidos;
-## - opcional: `jugador` con `estamina` (0 a 1) y `carga_tiro` (0 a 1) para el HUD;
+## - opcional: `jugadores` (lista de `Jugador`), para ponerles los colores y los
+##   nombres del plantel elegido;
 ## - opcional: `reiniciar_jugada()`, para sacar del medio después del entretiempo.
+## Si la escena no trae su propio `Interfaz/HudJugador`, el HUD muestra el nombre,
+## la estamina y la potencia del jugador que manejás (`control.jugador`).
 
 const Hud := preload("res://scripts/ui/hud_partido.gd")
 const Pausa := preload("res://scripts/partido/pausa.gd")
 const Reloj := preload("res://scripts/partido/reloj_partido.gd")
-const ESCENA_JUEGO := "res://escenas/prueba/prueba.tscn"
+const ESCENA_JUEGO := "res://escenas/partido/entrenamiento.tscn"
 
 const MITAD_DEL_LARGO := 52.5
 const MEDIO_ARCO := 3.66
@@ -91,16 +94,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	hud.mostrar_reloj(reloj.texto(), reloj.texto_tiempo())
-	var jugador = juego.get("jugador")
-	var estamina := 1.0
-	var carga := 0.0
-	if jugador is Object:
-		var valor_estamina = jugador.get("estamina")
-		var valor_carga = jugador.get("carga_tiro")
-		estamina = float(valor_estamina) if valor_estamina != null else 1.0
-		carga = float(valor_carga) if valor_carga != null else 0.0
-	hud.mostrar_jugador(_nombre_jugador, estamina)
-	hud.mostrar_potencia(carga)
+	_mostrar_jugador_activo()
 
 	_espera_cantico -= delta
 	if _espera_cantico <= 0.0:
@@ -137,31 +131,70 @@ func _notification(que: int) -> void:
 		abrir_pausa()
 
 
-## Ajusta la escena de prueba: esconde su marcador (el del HUD es el que vale),
-## pinta al jugador con la camiseta del local y agranda los botones táctiles.
+## Ajusta la escena de juego: esconde su marcador (el del HUD es el que vale) y
+## viste a los jugadores con la camiseta y los nombres de los clubes elegidos.
 func _adaptar_juego() -> void:
 	var marcador_viejo := juego.get_node_or_null("Interfaz/Marcador") as CanvasItem
 	if marcador_viejo:
 		marcador_viejo.visible = false
-	var jugador = juego.get("jugador")
-	if jugador is Node:
-		for hijo in (jugador as Node).get_children():
-			if hijo is MeshInstance3D and (hijo as MeshInstance3D).mesh is CapsuleMesh:
-				var material := StandardMaterial3D.new()
-				material.albedo_color = ConfigPartido.color_camiseta("local")
-				material.roughness = 0.9
-				(hijo as MeshInstance3D).material_override = material
+	var jugadores = juego.get("jugadores")
+	if not jugadores is Array:
+		return
+	for jugador: Node in jugadores:
+		var lado := "local" if int(jugador.get("equipo")) == 0 else "visitante"
+		_pintar(jugador, ConfigPartido.color_camiseta(lado))
+		var datos := _titular_con_dorsal(lado, int(jugador.get("dorsal")))
+		if not datos.is_empty():
+			jugador.set("nombre_jugador", str(datos.get("nombre", "")))
+
+
+## Cambia el color del equipo en los materiales que ya tiene el jugador.
+func _pintar(jugador: Node, color: Color) -> void:
+	var anterior = jugador.get("color_equipo")
+	if not anterior is Color:
+		return
+	for nodo in jugador.find_children("*", "MeshInstance3D", true, false):
+		var malla := (nodo as MeshInstance3D).mesh
+		var material := malla.surface_get_material(0) as StandardMaterial3D if malla else null
+		if material and material.albedo_color.is_equal_approx(anterior):
+			var nuevo := material.duplicate() as StandardMaterial3D
+			nuevo.albedo_color = color
+			(nodo as MeshInstance3D).material_override = nuevo
+	jugador.set("color_equipo", color)
+
+
+func _titular_con_dorsal(lado: String, dorsal: int) -> Dictionary:
+	for id: String in ConfigPartido.titulares[lado]:
+		var datos := ConfigPartido.jugador(lado, id)
+		if int(datos.get("dorsal", -1)) == dorsal:
+			return datos
+	return {}
+
+
+func _mostrar_jugador_activo() -> void:
+	# El entrenamiento ya dibuja nombre, estamina y potencia arriba del jugador.
+	if juego.has_node("Interfaz/HudJugador"):
+		hud.mostrar_jugador("", 1.0)
+		hud.mostrar_potencia(0.0)
+		return
+	var control = juego.get("control")
+	var jugador = control.get("jugador") if control is Object else juego.get("jugador")
+	if not jugador is Object:
+		hud.mostrar_jugador(_nombre_jugador, 1.0)
+		hud.mostrar_potencia(0.0)
+		return
+	var nombre = jugador.get("nombre_jugador")
+	var texto := "%d · %s" % [int(jugador.get("dorsal")), nombre] if nombre != null else _nombre_jugador
+	var estamina = jugador.get("estamina_actual")
+	var potencia = jugador.get("potencia")
+	hud.mostrar_jugador(texto, float(estamina) if estamina != null else 1.0)
+	hud.mostrar_potencia(float(potencia) if potencia != null else 0.0)
 
 
 func _aplicar_opciones() -> void:
 	var fps := juego.get_node_or_null("Interfaz/ContadorFps") as CanvasItem
 	if fps:
 		fps.visible = Opciones.mostrar_fps
-	var botones := juego.get_node_or_null("Interfaz/Botones") as Control
-	if botones:
-		# Crece desde la esquina de abajo a la derecha, así no se sale de la pantalla.
-		botones.pivot_offset = botones.size
-		botones.scale = Vector2.ONE * Opciones.escala_botones
 
 
 func _al_gol(equipo: String) -> void:
@@ -172,7 +205,6 @@ func _al_gol(equipo: String) -> void:
 	hud.mostrar_cartel("¡GOOOL!", "de " + ConfigPartido.nombre_de(equipo), 2.2)
 	Sonido.reproducir("grito_gol")
 	Sonido.reproducir("silbato_corto", -4.0)
-	Opciones.vibrar(250 if equipo == "local" else 80)
 
 
 func _al_terminar_tiempo(numero: int) -> void:

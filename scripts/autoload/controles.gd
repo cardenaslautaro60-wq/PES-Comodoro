@@ -4,6 +4,9 @@ extends Node
 ## Registra las acciones de teclado y joystick al arrancar, así no dependen
 ## del editor. El joystick táctil escribe en `vector_tactil` y el resto del
 ## juego lee el movimiento con `vector_movimiento()`, sin importar de dónde venga.
+##
+## Los botones dependen del momento (ver `Jugador`): con la pelota, "pase" y "tiro"
+## pasan y patean; defendiendo, "pase" presiona y "tiro" barre.
 
 const TECLAS := {
 	"mover_izquierda": [KEY_A, KEY_LEFT],
@@ -12,14 +15,20 @@ const TECLAS := {
 	"mover_abajo": [KEY_S, KEY_DOWN],
 	"pase": [KEY_J, KEY_SPACE],
 	"tiro": [KEY_K],
+	"pase_largo": [KEY_L],
+	"pase_hueco": [KEY_I],
 	"sprint": [KEY_SHIFT],
+	"cambiar_jugador": [KEY_Q],
 	"pausa": [KEY_ESCAPE, KEY_P],
 }
 
 const BOTONES_JOYSTICK := {
 	"pase": JOY_BUTTON_A,
 	"tiro": JOY_BUTTON_B,
+	"pase_largo": JOY_BUTTON_X,
+	"pase_hueco": JOY_BUTTON_Y,
 	"sprint": JOY_BUTTON_RIGHT_SHOULDER,
+	"cambiar_jugador": JOY_BUTTON_LEFT_SHOULDER,
 	"pausa": JOY_BUTTON_START,
 }
 
@@ -27,6 +36,9 @@ const ZONA_MUERTA_JOYSTICK := 0.2
 
 ## Movimiento que manda el joystick táctil, de -1 a 1 en cada eje.
 var vector_tactil := Vector2.ZERO
+## Tamaño de los botones táctiles (1 = normal). Lo cambia el menú de opciones.
+var escala_botones := 1.0
+var vibracion_activada := true
 
 
 func _ready() -> void:
@@ -62,6 +74,12 @@ func vector_movimiento() -> Vector2:
 	if vector_tactil.length() > fisico.length():
 		return vector_tactil
 	return fisico
+
+
+## Vibra el celular unos milisegundos (no hace nada en la compu o si está desactivado).
+func vibrar(milisegundos: int) -> void:
+	if vibracion_activada and OS.has_feature("mobile"):
+		Input.vibrate_handheld(milisegundos)
 
 
 func _reiniciar_accion(accion: String) -> void:
