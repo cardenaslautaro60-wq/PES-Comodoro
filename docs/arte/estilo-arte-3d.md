@@ -116,14 +116,7 @@ Hasta tener el modelo de Blender, `scripts/jugadores/modelo_jugador.gd` (clase `
 - Mira hacia **-Z**, como `Basis.looking_at`. Si el padre es un `CharacterBody3D`, toma su velocidad solo. Si además tiene la señal `pateo` y la variable `estado` (como `Jugador`), patea, barre y se cae solo.
 - **Escena de muestra:** `escenas/arte/vestuario.tscn`, con dos clubes trotando, para medir los FPS en el celular.
 
-Para usarlo en `Jugador`, en lugar de la cápsula:
-
-```gdscript
-var modelo := ModeloJugador.new()
-modelo.name = "Modelo"
-add_child(modelo)
-modelo.vestir(material_del_equipo, dorsal, datos_del_plantel.get("apariencia", {}))
-```
+Ya está enchufado en el juego: `Jugador` crea un `ModeloJugador` en lugar de la cápsula y tiene `vestir(material)`. En el partido completo, cada `EquipoPartido` arma un material para los de campo y otro para el arquero con `preparar_camisetas`. Usa la camiseta del club que tiene el color que quedó después de resolver los choques (titular o suplente), o una lisa de ese color si el partido tuvo que inventar uno. Sin datos del club, como en el entrenamiento, el jugador sale con una camiseta lisa de `color_equipo`.
 
 Ojo con los parámetros por instancia: los dos shaders del jugador declaran los mismos (`numero`, `color_piel`, `color_pelo`, `color_botines`) en el mismo orden, porque Godot los guarda juntos por malla. Si se agrega uno nuevo, va en los dos.
 

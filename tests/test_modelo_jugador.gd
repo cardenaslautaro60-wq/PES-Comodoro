@@ -91,3 +91,31 @@ func test_barrida_y_caida_bajan_al_piso() -> void:
 func test_escena_de_muestra_carga() -> void:
 	var escena := load("res://escenas/arte/vestuario.tscn") as PackedScene
 	afirmar(escena != null and escena.can_instantiate(), "no carga la escena del vestuario")
+
+
+func test_el_jugador_usa_el_modelo_con_los_pies_en_el_piso() -> void:
+	var jugador := Jugador.new()
+	jugador.color_equipo = Color(0.1, 0.5, 0.2)
+	jugador.aplicar_datos({"dorsal": 7, "apariencia": {"piel": 2, "pelo": 3}})
+	add_child(jugador)
+	var modelo := jugador.get_node_or_null("Modelo") as ModeloJugador
+	afirmar(modelo != null, "el jugador no tiene el modelo 3D")
+	if modelo:
+		afirmar(is_equal_approx(modelo.position.y, -Jugador.ALTURA / 2), "el modelo no está con los pies en el piso")
+		afirmar(modelo.malla.get_instance_shader_parameter("numero") == 7, "no tiene su dorsal")
+		var liso := GeneradorCamiseta.material_liso(jugador.color_equipo)
+		afirmar(modelo.malla.get_surface_override_material(0) == liso, "sin club debería usar una camiseta lisa")
+		var material := GeneradorCamiseta.crear_material(KIT)
+		jugador.vestir(material)
+		afirmar(modelo.malla.get_surface_override_material(0) == material, "vestir no cambió la camiseta")
+	jugador.queue_free()
+
+
+func test_el_equipo_elige_la_camiseta_segun_el_color() -> void:
+	var equipo := EquipoPartido.new()
+	equipo.camisetas = {"titular": KIT, "suplente": {"patron": "liso", "color_base": "#FFFFFF"}}
+	afirmar(equipo.kit_para(Color.html("#1F4FA8"), ["titular", "suplente"]) == KIT, "no eligió la titular")
+	var suplente := equipo.kit_para(Color.WHITE, ["titular", "suplente"])
+	afirmar(suplente.get("color_base") == "#FFFFFF", "no eligió la suplente")
+	var lisa := equipo.kit_para(Color.YELLOW, ["titular", "suplente"])
+	afirmar(lisa.get("patron") == "liso", "con un color que no es del club debería ser lisa")

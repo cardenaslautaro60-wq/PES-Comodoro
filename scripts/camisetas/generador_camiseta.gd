@@ -39,6 +39,9 @@ const CANTIDAD_RAYAS := 7
 # Patrones en los que el color secundario queda detrás del sponsor.
 const PATRONES_DETRAS_DEL_SPONSOR := ["rayas_verticales", "mitades", "franja_vertical", "cuadros", "banda_diagonal"]
 
+# Materiales lisos por color, como WeakRef para que se liberen solos.
+static var _lisos := {}
+
 
 ## Devuelve la textura lista para usar, con mipmaps.
 static func generar(kit: Dictionary, escudo: Image = null, sponsor: Image = null) -> ImageTexture:
@@ -56,6 +59,38 @@ static func crear_material(kit: Dictionary, escudo: Image = null, sponsor: Image
 	material.set_shader_parameter("color_numero", color_numero(kit))
 	material.set_shader_parameter("color_borde_numero", color_borde_numero(kit))
 	return material
+
+
+## Camiseta lisa de un color, con short y medias iguales y número en contraste.
+## Sirve cuando no hay datos del club (entrenamiento, equipos genéricos) o
+## cuando el partido tiene que cambiar el color por un choque.
+static func kit_liso(color: Color) -> Dictionary:
+	var oscuro := color.get_luminance() < 0.5
+	var detalle := Color.WHITE if oscuro else Color(0.08, 0.08, 0.08)
+	return {
+		"patron": "liso", "color_base": "#" + color.to_html(false), "color_secundario": null,
+		"cuello": "#" + detalle.to_html(false), "numero": "#" + detalle.to_html(false),
+		"pantalon": "#" + color.to_html(false), "medias": "#" + color.to_html(false), "sponsor_parodia": "",
+	}
+
+
+## Material de una camiseta lisa, compartido por color.
+static func material_liso(color: Color) -> ShaderMaterial:
+	var clave := color.to_html()
+	var guardado: ShaderMaterial = _lisos[clave].get_ref() if _lisos.has(clave) else null
+	if guardado == null:
+		guardado = crear_material(kit_liso(color))
+		_lisos[clave] = weakref(guardado)
+	return guardado
+
+
+## Agrega el sponsor a un material ya creado, cuando se pueda dibujar el texto.
+## Se puede llamar sin `await`: los jugadores salen con la camiseta sin sponsor
+## y aparece un cuadro después.
+static func agregar_sponsor(material: ShaderMaterial, kit: Dictionary, arbol: SceneTree, escudo: Image = null) -> void:
+	var sponsor := await imagen_sponsor(arbol, kit)
+	if sponsor and is_instance_valid(material):
+		material.set_shader_parameter("textura_equipo", generar(kit, escudo, sponsor))
 
 
 static func color_numero(kit: Dictionary) -> Color:

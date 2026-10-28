@@ -45,6 +45,11 @@ var titulares: Array[Dictionary] = []
 ## 1 = ataca hacia x positivo, -1 = hacia x negativo.
 var sentido := 1
 var goles := 0
+## Camisetas del club (titular, suplente y arquero), como en `datos/clubes/`.
+var camisetas := {}
+## Materiales de los jugadores de campo y del arquero (ver `preparar_camisetas`).
+var material_campo: ShaderMaterial
+var material_arquero: ShaderMaterial
 
 
 ## Arma el equipo con un club del catálogo. `ids_titulares` (opcional) son los ids
@@ -61,7 +66,7 @@ func cargar_club(id: String, indice_equipo: int, formacion_elegida := "", ids_ti
 		return false
 	nombre = str(club.get("nombre_corto", id))
 	abreviatura = str(club.get("abreviatura", nombre.left(3))).to_upper()
-	var camisetas: Dictionary = club.get("camisetas", {})
+	camisetas = club.get("camisetas", {})
 	color = _color_de(camisetas.get("titular"), COLORES_GENERICOS[indice])
 	color_suplente = _color_de(camisetas.get("suplente"), Color.WHITE)
 	color_arquero = _color_de(camisetas.get("arquero"), COLOR_ARQUERO_GENERICO)
@@ -77,6 +82,26 @@ func cargar_club(id: String, indice_equipo: int, formacion_elegida := "", ids_ti
 		lista = elegidos
 	_aplicar_formacion_y_titulares(formacion_elegida, lista)
 	return true
+
+
+## Arma los materiales de camiseta según los colores que quedaron después de
+## resolver los choques: usa la camiseta del club que tiene ese color o, si el
+## partido tuvo que cambiarlo, una lisa. El sponsor llega un cuadro después.
+func preparar_camisetas(arbol: SceneTree) -> void:
+	var kit_campo := kit_para(color, ["titular", "suplente"])
+	material_campo = GeneradorCamiseta.crear_material(kit_campo)
+	if arbol:
+		GeneradorCamiseta.agregar_sponsor(material_campo, kit_campo, arbol)
+	material_arquero = GeneradorCamiseta.crear_material(kit_para(color_arquero, ["arquero"]))
+
+
+## La camiseta del club cuyo color base es `color_usado`, o una lisa de ese color.
+func kit_para(color_usado: Color, cuales: Array) -> Dictionary:
+	for cual: String in cuales:
+		var kit: Variant = camisetas.get(cual)
+		if kit is Dictionary and Catalogo.color(kit, "color_base", Color.TRANSPARENT).is_equal_approx(color_usado):
+			return kit
+	return GeneradorCamiseta.kit_liso(color_usado)
 
 
 ## Mete a un jugador del banco en lugar del que está en el puesto `i` (mismo nodo,
