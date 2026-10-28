@@ -1,0 +1,104 @@
+{
+  "formato_version": 1,
+  "id": "deportivo_sarmiento",
+  "nombre_oficial": "Club Deportivo Sarmiento",
+  "nombre_corto": "Dep. Sarmiento",
+  "abreviatura": "SAR",
+  "apodos": [
+    "El Depo"
+  ],
+  "fundacion": "1929-09-29",
+  "nota_fundacion": "Es de la ciudad de Sarmiento (Chubut), a unos 150 km de Comodoro, y juega en la Liga de Comodoro.",
+  "ciudad": "Sarmiento",
+  "barrio": "Ciudad de Sarmiento",
+  "sede": "Ing. Coronel y Roca, Sarmiento, Chubut",
+  "colores": [
+    "#C8102E",
+    "#FFFFFF"
+  ],
+  "nombres_colores": [
+    "rojo",
+    "blanco"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "banda_diagonal",
+      "color_base": "#C8102E",
+      "color_secundario": "#FFFFFF",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#FFFFFF",
+      "numero": "#FFFFFF",
+      "pantalon": "#FFFFFF",
+      "medias": "#C8102E",
+      "sponsor_parodia": "Lago Musters Turismo",
+      "confianza": "propuesta",
+      "nota": "Colores rojo y blanco confirmados; el diseño con banda es propuesta."
+    },
+    "suplente": {
+      "patron": "banda_diagonal",
+      "color_base": "#FFFFFF",
+      "color_secundario": "#C8102E",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#C8102E",
+      "numero": "#151515",
+      "pantalon": "#C8102E",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "Lago Musters Turismo",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#1F4FA8",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#1F4FA8",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo clásico",
+      "colores": [
+        "#C8102E",
+        "#FFFFFF"
+      ],
+      "simbolo": "Un árbol petrificado (por el Bosque Petrificado de Sarmiento)",
+      "texto": "CDS",
+      "archivo": null
+    }
+  },
+  "estadio_id": "pampa_zaldua",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 3,
+  "plantel": "res://datos/planteles/deportivo_sarmiento.json",
+  "contacto": {
+    "web": null,
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-deportivo-sarmiento/"
+  ],
+  "pendiente": [
+    "Diseño de camiseta",
+    "Redes oficiales",
+    "Descripción del escudo"
+  ]
+}

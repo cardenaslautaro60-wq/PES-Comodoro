@@ -9,6 +9,15 @@ const ARCHIVOS_DE_PRUEBA := [
 	"res://tests/test_pelota.gd",
 	"res://tests/test_jugador.gd",
 	"res://tests/test_entrenamiento.gd",
+	"res://tests/test_cinematicas.gd",
+	"res://tests/test_catalogo_y_partido.gd",
+	"res://tests/test_opciones_y_sonido.gd",
+	"res://tests/test_menus.gd",
+	"res://tests/test_partido_completo.gd",
+	"res://tests/test_arbitro.gd",
+	"res://tests/test_ia.gd",
+	"res://tests/test_camisetas.gd",
+	"res://tests/test_modelo_jugador.gd",
 ]
 const CARPETAS_CON_SCRIPTS := ["res://scripts"]
 

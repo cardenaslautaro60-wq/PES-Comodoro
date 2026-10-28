@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "cai",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "cai_01",
+      "nombre": "Benjamín Aguirre",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 35,
+      "altura_cm": 192,
+      "atributos": {
+        "velocidad": 57,
+        "pase": 76,
+        "tiro": 55,
+        "defensa": 86,
+        "estamina": 65,
+        "atajada": 87
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_02",
+      "nombre": "Bruno Soto",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 18,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 51,
+        "pase": 58,
+        "tiro": 40,
+        "defensa": 82,
+        "estamina": 64,
+        "atajada": 74
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_03",
+      "nombre": "Enzo Saldivia",
+      "apodo": "el Petiso",
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 23,
+      "altura_cm": 184,
+      "atributos": {
+        "velocidad": 75,
+        "pase": 66,
+        "tiro": 53,
+        "defensa": 83,
+        "estamina": 82
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "cai_04",
+      "nombre": "Santiago Uribe",
+      "apodo": "el Ventarrón",
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 29,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 71,
+        "tiro": 65,
+        "defensa": 82,
+        "estamina": 77
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_05",
+      "nombre": "Kevin Aballay",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 19,
+      "altura_cm": 188,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 64,
+        "tiro": 45,
+        "defensa": 85,
+        "estamina": 75
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 0,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_06",
+      "nombre": "Lisandro Vidal",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 26,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 55,
+        "pase": 66,
+        "tiro": 56,
+        "defensa": 75,
+        "estamina": 73
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_07",
+      "nombre": "Dante Ibáñez",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 23,
+      "altura_cm": 169,
+      "atributos": {
+        "velocidad": 81,
+        "pase": 76,
+        "tiro": 65,
+        "defensa": 87,
+        "estamina": 86
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 0,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_08",
+      "nombre": "Alan Catrilaf",
+      "apodo": null,
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 35,
+      "altura_cm": 169,
+      "atributos": {
+        "velocidad": 79,
+        "pase": 72,
+        "tiro": 69,
+        "defensa": 86,
+        "estamina": 89
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 0,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "cai_09",
+      "nombre": "Benjamín Vidal",
+      "apodo": null,
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 184,
+      "atributos": {
+        "velocidad": 71,
+        "pase": 65,
+        "tiro": 64,
+        "defensa": 71,
+        "estamina": 81
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "cai_10",
+      "nombre": "Lautaro Ibáñez",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 33,
+      "altura_cm": 176,
+      "atributos": {
+        "velocidad": 67,
+        "pase": 80,
+        "tiro": 67,
+        "defensa": 73,
+        "estamina": 79
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_11",
+      "nombre": "Pablo Arce",
+      "apodo": null,
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 19,
+      "altura_cm": 167,
+      "atributos": {
+        "velocidad": 67,
+        "pase": 79,
+        "tiro": 67,
+        "defensa": 76,
+        "estamina": 77
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "cai_12",
+      "nombre": "Pablo Paillacán",
+      "apodo": null,
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 81,
+        "tiro": 59,
+        "defensa": 71,
+        "estamina": 70
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "cai_13",
+      "nombre": "Dante Antilef",
+      "apodo": null,
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 29,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 66,
+        "pase": 77,
+        "tiro": 60,
+        "defensa": 65,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 4,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "cai_14",
+      "nombre": "Gastón Maldonado",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 24,
+      "altura_cm": 188,
+      "atributos": {
+        "velocidad": 83,
+        "pase": 81,
+        "tiro": 79,
+        "defensa": 71,
+        "estamina": 76
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "cai_15",
+      "nombre": "Kevin Catrilaf",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 20,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 76,
+        "pase": 74,
+        "tiro": 71,
+        "defensa": 65,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_16",
+      "nombre": "Matías Antilef",
+      "apodo": "el Turco",
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 26,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 86,
+        "pase": 75,
+        "tiro": 71,
+        "defensa": 72,
+        "estamina": 77
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "cai_17",
+      "nombre": "Cristian Escobar",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 22,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 72,
+        "pase": 65,
+        "tiro": 63,
+        "defensa": 52,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_18",
+      "nombre": "Tobías Delgado",
+      "apodo": null,
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 28,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 76,
+        "pase": 74,
+        "tiro": 84,
+        "defensa": 53,
+        "estamina": 75
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_19",
+      "nombre": "Nahuel Ojeda",
+      "apodo": "el Ruso",
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 25,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 84,
+        "pase": 77,
+        "tiro": 84,
+        "defensa": 58,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "cai_20",
+      "nombre": "Milton Arce",
+      "apodo": null,
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 36,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 72,
+        "pase": 65,
+        "tiro": 74,
+        "defensa": 50,
+        "estamina": 70
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": true
+      }
+    }
+  ]
+}

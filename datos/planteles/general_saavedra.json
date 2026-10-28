@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "general_saavedra",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "general_saavedra_01",
+      "nombre": "Cristian Gatica",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 34,
+      "altura_cm": 194,
+      "atributos": {
+        "velocidad": 52,
+        "pase": 59,
+        "tiro": 39,
+        "defensa": 81,
+        "estamina": 52,
+        "atajada": 69
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_02",
+      "nombre": "Ramiro Alvarado",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 49,
+        "pase": 56,
+        "tiro": 32,
+        "defensa": 69,
+        "estamina": 56,
+        "atajada": 60
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "general_saavedra_03",
+      "nombre": "Ezequiel Saldivia",
+      "apodo": null,
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 22,
+      "altura_cm": 185,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 62,
+        "tiro": 49,
+        "defensa": 77,
+        "estamina": 62
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_04",
+      "nombre": "Ignacio Cárcamo",
+      "apodo": null,
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 36,
+      "altura_cm": 169,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 52,
+        "tiro": 52,
+        "defensa": 70,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_05",
+      "nombre": "Rodrigo Zúñiga",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 31,
+      "altura_cm": 180,
+      "atributos": {
+        "velocidad": 48,
+        "pase": 54,
+        "tiro": 38,
+        "defensa": 66,
+        "estamina": 60
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_06",
+      "nombre": "Franco Soto",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 31,
+      "altura_cm": 176,
+      "atributos": {
+        "velocidad": 59,
+        "pase": 50,
+        "tiro": 43,
+        "defensa": 75,
+        "estamina": 60
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_07",
+      "nombre": "Benjamín Toledo",
+      "apodo": "el Flaco",
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 33,
+      "altura_cm": 169,
+      "atributos": {
+        "velocidad": 76,
+        "pase": 64,
+        "tiro": 58,
+        "defensa": 75,
+        "estamina": 77
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "general_saavedra_08",
+      "nombre": "Tomás Gallardo",
+      "apodo": null,
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 71,
+        "pase": 63,
+        "tiro": 52,
+        "defensa": 77,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 4,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "general_saavedra_09",
+      "nombre": "Bruno Coñuecar",
+      "apodo": "Chenque",
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 23,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 69,
+        "pase": 64,
+        "tiro": 49,
+        "defensa": 67,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_10",
+      "nombre": "Lisandro Cárcamo",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 28,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 60,
+        "pase": 67,
+        "tiro": 56,
+        "defensa": 73,
+        "estamina": 74
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_11",
+      "nombre": "Maximiliano Oyarzo",
+      "apodo": null,
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 31,
+      "altura_cm": 167,
+      "atributos": {
+        "velocidad": 70,
+        "pase": 78,
+        "tiro": 57,
+        "defensa": 74,
+        "estamina": 75
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_12",
+      "nombre": "Lucas Ibáñez",
+      "apodo": null,
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 60,
+        "pase": 61,
+        "tiro": 60,
+        "defensa": 56,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 3,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_13",
+      "nombre": "Federico Saldivia",
+      "apodo": null,
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 31,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 57,
+        "pase": 59,
+        "tiro": 49,
+        "defensa": 57,
+        "estamina": 62
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_14",
+      "nombre": "Franco Oyarzo",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 36,
+      "altura_cm": 169,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 78,
+        "tiro": 66,
+        "defensa": 52,
+        "estamina": 60
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_15",
+      "nombre": "Franco Ríos",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 52,
+        "pase": 71,
+        "tiro": 64,
+        "defensa": 54,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_16",
+      "nombre": "Facundo Gallardo",
+      "apodo": null,
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 22,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 77,
+        "pase": 63,
+        "tiro": 68,
+        "defensa": 63,
+        "estamina": 68
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_17",
+      "nombre": "Luciano Saldivia",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 30,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 66,
+        "pase": 60,
+        "tiro": 67,
+        "defensa": 51,
+        "estamina": 57
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "general_saavedra_18",
+      "nombre": "Matías Acuña",
+      "apodo": null,
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 23,
+      "altura_cm": 173,
+      "atributos": {
+        "velocidad": 73,
+        "pase": 55,
+        "tiro": 82,
+        "defensa": 55,
+        "estamina": 59
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "general_saavedra_19",
+      "nombre": "Leandro Delgado",
+      "apodo": null,
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 185,
+      "atributos": {
+        "velocidad": 72,
+        "pase": 60,
+        "tiro": 71,
+        "defensa": 53,
+        "estamina": 58
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 1,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "general_saavedra_20",
+      "nombre": "Ramiro Coñuecar",
+      "apodo": null,
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 35,
+      "altura_cm": 179,
+      "atributos": {
+        "velocidad": 68,
+        "pase": 60,
+        "tiro": 75,
+        "defensa": 36,
+        "estamina": 63
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 0,
+        "barba": false
+      }
+    }
+  ]
+}

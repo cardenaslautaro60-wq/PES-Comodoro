@@ -1,0 +1,108 @@
+{
+  "formato_version": 1,
+  "id": "argentinos_diadema",
+  "nombre_oficial": "Club Atlético Argentinos Diadema",
+  "nombre_corto": "Arg. Diadema",
+  "abreviatura": "DIA",
+  "apodos": [
+    "Diadema",
+    "El del Km 27"
+  ],
+  "fundacion": "1933-09-05",
+  "nota_fundacion": "",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Barrio Diadema Argentina, Km 27",
+  "sede": "Río Gallegos s/n, Barrio Diadema Argentina, Km 27",
+  "colores": [
+    "#FFFFFF",
+    "#1F4FA8",
+    "#C8102E"
+  ],
+  "nombres_colores": [
+    "blanco",
+    "azul",
+    "rojo"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "v_frontal",
+      "color_base": "#FFFFFF",
+      "color_secundario": "#1F4FA8",
+      "color_terciario": "#C8102E",
+      "hombreras": null,
+      "cuello": "#1F4FA8",
+      "numero": "#151515",
+      "pantalon": "#1F4FA8",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "Yacimiento 27",
+      "confianza": "confirmado",
+      "nota": "Blanca con una V azul, blanca y roja (Once Patagónico). Pantalón y medias propuestos."
+    },
+    "suplente": {
+      "patron": "v_frontal",
+      "color_base": "#1F4FA8",
+      "color_secundario": "#FFFFFF",
+      "color_terciario": "#C8102E",
+      "hombreras": null,
+      "cuello": "#FFFFFF",
+      "numero": "#FFFFFF",
+      "pantalon": "#1F4FA8",
+      "medias": "#1F4FA8",
+      "sponsor_parodia": "Yacimiento 27",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#1B7A3A",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#1B7A3A",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo clásico",
+      "colores": [
+        "#FFFFFF",
+        "#1F4FA8",
+        "#C8102E"
+      ],
+      "simbolo": "Una diadema (corona) sobre la V del pecho",
+      "texto": "CAAD",
+      "archivo": null
+    }
+  },
+  "estadio_id": "diadema",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 2,
+  "plantel": "res://datos/planteles/argentinos_diadema.json",
+  "contacto": {
+    "web": null,
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-atletico-argentino-diadema/"
+  ],
+  "pendiente": [
+    "Redes oficiales",
+    "Descripción del escudo",
+    "Camiseta suplente"
+  ]
+}

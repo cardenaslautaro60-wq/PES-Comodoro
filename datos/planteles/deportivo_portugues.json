@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "deportivo_portugues",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "deportivo_portugues_01",
+      "nombre": "Ignacio Peralta",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 28,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 57,
+        "pase": 63,
+        "tiro": 38,
+        "defensa": 75,
+        "estamina": 66,
+        "atajada": 67
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "deportivo_portugues_02",
+      "nombre": "Maximiliano Cárcamo",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 22,
+      "altura_cm": 193,
+      "atributos": {
+        "velocidad": 52,
+        "pase": 51,
+        "tiro": 36,
+        "defensa": 69,
+        "estamina": 45,
+        "atajada": 63
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "deportivo_portugues_03",
+      "nombre": "Gastón Tapia",
+      "apodo": null,
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 29,
+      "altura_cm": 166,
+      "atributos": {
+        "velocidad": 66,
+        "pase": 52,
+        "tiro": 53,
+        "defensa": 71,
+        "estamina": 63
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "deportivo_portugues_04",
+      "nombre": "Damián Vargas",
+      "apodo": null,
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 59,
+        "pase": 59,
+        "tiro": 45,
+        "defensa": 78,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "deportivo_portugues_05",
+      "nombre": "Emanuel Vargas",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 19,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 46,
+        "pase": 57,
+        "tiro": 43,
+        "defensa": 67,
+        "estamina": 64
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "deportivo_portugues_06",
+      "nombre": "Cristian Antilef",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 22,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 52,
+        "pase": 54,
+        "tiro": 37,
+        "defensa": 76,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "deportivo_portugues_07",
+      "nombre": "Thiago Jaramillo",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 23,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 73,
+        "pase": 62,
+        "tiro": 53,
+        "defensa": 69,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "deportivo_portugues_08",
+      "nombre": "Leandro Escobar",
+      "apodo": "el Mono",
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 24,
+      "altura_cm": 165,
+      "atributos": {
+        "velocidad": 66,
+        "pase": 68,
+        "tiro": 56,
+        "defensa": 65,
+        "estamina": 68
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "deportivo_portugues_09",
+      "nombre": "Iván Alvarado",
+      "apodo": null,
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 26,
+      "altura_cm": 165,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 51,
+        "tiro": 51,
+        "defensa": 56,
+        "estamina": 60
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "deportivo_portugues_10",
+      "nombre": "Bruno Uribe",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 68,
+        "tiro": 55,
+        "defensa": 73,
+        "estamina": 78
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "deportivo_portugues_11",
+      "nombre": "Maximiliano Bahamonde",
+      "apodo": "el Tano",
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 176,
+      "atributos": {
+        "velocidad": 61,
+        "pase": 77,
+        "tiro": 64,
+        "defensa": 71,
+        "estamina": 79
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "deportivo_portugues_12",
+      "nombre": "Marcos Maldonado",
+      "apodo": null,
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 23,
+      "altura_cm": 167,
+      "atributos": {
+        "velocidad": 57,
+        "pase": 59,
+        "tiro": 51,
+        "defensa": 57,
+        "estamina": 68
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "deportivo_portugues_13",
+      "nombre": "Julián Ojeda",
+      "apodo": null,
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 35,
+      "altura_cm": 185,
+      "atributos": {
+        "velocidad": 58,
+        "pase": 58,
+        "tiro": 52,
+        "defensa": 67,
+        "estamina": 69
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 0,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "deportivo_portugues_14",
+      "nombre": "Marcos Arce",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 27,
+      "altura_cm": 170,
+      "atributos": {
+        "velocidad": 67,
+        "pase": 73,
+        "tiro": 63,
+        "defensa": 56,
+        "estamina": 67
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "deportivo_portugues_15",
+      "nombre": "Valentín Alvarado",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 29,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 60,
+        "tiro": 68,
+        "defensa": 55,
+        "estamina": 60
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "deportivo_portugues_16",
+      "nombre": "Elías Quintana",
+      "apodo": null,
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 19,
+      "altura_cm": 170,
+      "atributos": {
+        "velocidad": 76,
+        "pase": 69,
+        "tiro": 63,
+        "defensa": 49,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "deportivo_portugues_17",
+      "nombre": "Sergio Cárcamo",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 174,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 60,
+        "tiro": 64,
+        "defensa": 49,
+        "estamina": 66
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "deportivo_portugues_18",
+      "nombre": "Bruno Vargas",
+      "apodo": null,
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 19,
+      "altura_cm": 166,
+      "atributos": {
+        "velocidad": 69,
+        "pase": 55,
+        "tiro": 80,
+        "defensa": 54,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "deportivo_portugues_19",
+      "nombre": "Yamil Saldivia",
+      "apodo": null,
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 24,
+      "altura_cm": 178,
+      "atributos": {
+        "velocidad": 69,
+        "pase": 55,
+        "tiro": 72,
+        "defensa": 47,
+        "estamina": 62
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "deportivo_portugues_20",
+      "nombre": "Franco Delgado",
+      "apodo": null,
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "ambos",
+      "edad": 36,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 55,
+        "pase": 58,
+        "tiro": 73,
+        "defensa": 39,
+        "estamina": 52
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 5,
+        "color_pelo": 2,
+        "barba": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "laprida",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "laprida_01",
+      "nombre": "Thiago Zúñiga",
+      "apodo": "el Pingüino",
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 58,
+        "pase": 66,
+        "tiro": 37,
+        "defensa": 69,
+        "estamina": 54,
+        "atajada": 69
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_02",
+      "nombre": "Alan Aguirre",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 47,
+        "pase": 48,
+        "tiro": 31,
+        "defensa": 68,
+        "estamina": 47,
+        "atajada": 66
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_03",
+      "nombre": "Elías Ríos",
+      "apodo": null,
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 22,
+      "altura_cm": 178,
+      "atributos": {
+        "velocidad": 55,
+        "pase": 56,
+        "tiro": 42,
+        "defensa": 82,
+        "estamina": 63
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 2,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_04",
+      "nombre": "Tomás Tapia",
+      "apodo": null,
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 52,
+        "tiro": 52,
+        "defensa": 83,
+        "estamina": 61
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_05",
+      "nombre": "Lucas Tapia",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "ambos",
+      "edad": 21,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 55,
+        "pase": 52,
+        "tiro": 38,
+        "defensa": 65,
+        "estamina": 59
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_06",
+      "nombre": "Joaquín Bahamonde",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 180,
+      "atributos": {
+        "velocidad": 53,
+        "pase": 45,
+        "tiro": 47,
+        "defensa": 64,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_07",
+      "nombre": "Sergio Soto",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 34,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 75,
+        "pase": 64,
+        "tiro": 50,
+        "defensa": 75,
+        "estamina": 77
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 5,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_08",
+      "nombre": "Federico Delgado",
+      "apodo": "el Petiso",
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 66,
+        "pase": 69,
+        "tiro": 53,
+        "defensa": 67,
+        "estamina": 74
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "laprida_09",
+      "nombre": "Alan Maldonado",
+      "apodo": null,
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 179,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 54,
+        "tiro": 47,
+        "defensa": 60,
+        "estamina": 63
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_10",
+      "nombre": "Bruno Llancaqueo",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 19,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 74,
+        "tiro": 60,
+        "defensa": 65,
+        "estamina": 77
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_11",
+      "nombre": "Maximiliano Ríos",
+      "apodo": "Chenque",
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 18,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 57,
+        "pase": 69,
+        "tiro": 65,
+        "defensa": 71,
+        "estamina": 75
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_12",
+      "nombre": "Yamil Millapi",
+      "apodo": null,
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 22,
+      "altura_cm": 174,
+      "atributos": {
+        "velocidad": 58,
+        "pase": 64,
+        "tiro": 59,
+        "defensa": 59,
+        "estamina": 70
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_13",
+      "nombre": "Milton Llancaqueo",
+      "apodo": "el Flaco",
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 21,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 54,
+        "pase": 63,
+        "tiro": 58,
+        "defensa": 55,
+        "estamina": 64
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_14",
+      "nombre": "Iván Alvarado",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 26,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 72,
+        "pase": 76,
+        "tiro": 69,
+        "defensa": 61,
+        "estamina": 64
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_15",
+      "nombre": "Facundo Bahamonde",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 26,
+      "altura_cm": 170,
+      "atributos": {
+        "velocidad": 59,
+        "pase": 73,
+        "tiro": 66,
+        "defensa": 48,
+        "estamina": 62
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_16",
+      "nombre": "Gonzalo Aguirre",
+      "apodo": null,
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 180,
+      "atributos": {
+        "velocidad": 76,
+        "pase": 74,
+        "tiro": 62,
+        "defensa": 55,
+        "estamina": 66
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 2,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_17",
+      "nombre": "Julián Toledo",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 30,
+      "altura_cm": 178,
+      "atributos": {
+        "velocidad": 74,
+        "pase": 65,
+        "tiro": 64,
+        "defensa": 43,
+        "estamina": 63
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "laprida_18",
+      "nombre": "Tobías Maldonado",
+      "apodo": null,
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 188,
+      "atributos": {
+        "velocidad": 76,
+        "pase": 58,
+        "tiro": 79,
+        "defensa": 50,
+        "estamina": 61
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "laprida_19",
+      "nombre": "Damián Tapia",
+      "apodo": null,
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 36,
+      "altura_cm": 180,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 59,
+        "tiro": 74,
+        "defensa": 48,
+        "estamina": 58
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "laprida_20",
+      "nombre": "Nicolás Aballay",
+      "apodo": null,
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 30,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 61,
+        "pase": 60,
+        "tiro": 65,
+        "defensa": 44,
+        "estamina": 52
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": true
+      }
+    }
+  ]
+}

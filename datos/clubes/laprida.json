@@ -1,0 +1,106 @@
+{
+  "formato_version": 1,
+  "id": "laprida",
+  "nombre_oficial": "Club Social y Deportivo Laprida",
+  "nombre_corto": "Laprida",
+  "abreviatura": "LAP",
+  "apodos": [
+    "El Verde",
+    "Los del Far West"
+  ],
+  "fundacion": "1979-03-17",
+  "nota_fundacion": "",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Barrio Laprida (zona oeste)",
+  "sede": "Paraguay s/n, Barrio Laprida",
+  "colores": [
+    "#1B7A3A",
+    "#FFFFFF"
+  ],
+  "nombres_colores": [
+    "verde",
+    "blanco"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "rayas_verticales",
+      "color_base": "#1B7A3A",
+      "color_secundario": "#FFFFFF",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#FFFFFF",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#1B7A3A",
+      "sponsor_parodia": "Asado del Oeste",
+      "confianza": "confirmado",
+      "nota": "Rayas verticales verdes y blancas (Once Patagónico). Pantalón y medias propuestos."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#151515",
+      "color_secundario": "#1B7A3A",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#1B7A3A",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#151515",
+      "sponsor_parodia": "Asado del Oeste",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#F07F1A",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#F07F1A",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo tipo insignia de sheriff (por el Far West)",
+      "colores": [
+        "#1B7A3A",
+        "#FFFFFF"
+      ],
+      "simbolo": "Estrella de sheriff con las iniciales",
+      "texto": "CSDL",
+      "archivo": null
+    }
+  },
+  "estadio_id": "domingo_perea",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 3,
+  "plantel": "res://datos/planteles/laprida.json",
+  "contacto": {
+    "web": null,
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-social-y-deportivo-laprida/",
+    "https://diariojornada.com.ar/279839/politica/comodoro_luque_visito_la_nueva_cancha_de_sintetico_del_club_laprida"
+  ],
+  "pendiente": [
+    "Redes oficiales",
+    "Descripción del escudo",
+    "Camiseta suplente"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "formato_version": 1,
+  "id": "azul_fc",
+  "nombre_oficial": "Club Azul FC",
+  "nombre_corto": "Azul FC",
+  "abreviatura": "AZU",
+  "apodos": [
+    "El Azul FC"
+  ],
+  "colores": [
+    "#1F4FA8",
+    "#FFFFFF"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "liso",
+      "color_base": "#1F4FA8",
+      "color_secundario": "#FFFFFF",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#FFFFFF",
+      "numero": "#FFFFFF",
+      "pantalon": "#1F4FA8",
+      "medias": "#1F4FA8",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#FFFFFF",
+      "color_secundario": "#1F4FA8",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#1F4FA8",
+      "numero": "#FFFFFF",
+      "pantalon": "#FFFFFF",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#2E9E4F",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#2E9E4F",
+      "medias": "#2E9E4F",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": ""
+    }
+  },
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "parodia": {
+      "forma": "escudo clásico",
+      "colores": [
+        "#1F4FA8",
+        "#FFFFFF",
+        "#FFFFFF"
+      ],
+      "texto": "AZU"
+    }
+  },
+  "estadio_id": "cancha_azul",
+  "nivel": 3
+}
