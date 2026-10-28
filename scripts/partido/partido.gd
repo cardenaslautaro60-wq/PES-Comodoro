@@ -177,27 +177,26 @@ func _adaptar_juego() -> void:
 	var jugadores = juego.get("jugadores")
 	if not jugadores is Array:
 		return
+	var materiales := {}
 	for jugador: Node in jugadores:
 		var lado := "local" if int(jugador.get("equipo")) == 0 else "visitante"
-		_pintar(jugador, ConfigPartido.color_camiseta(lado))
 		var datos := _titular_con_dorsal(lado, int(jugador.get("dorsal")))
 		if not datos.is_empty():
 			jugador.set("nombre_jugador", str(datos.get("nombre", "")))
+			if datos.get("apariencia") is Dictionary:
+				jugador.set("apariencia", datos["apariencia"])
+		if not materiales.has(lado):
+			var kit := ConfigPartido.datos_camiseta(lado)
+			materiales[lado] = GeneradorCamiseta.crear_material(kit)
+			GeneradorCamiseta.agregar_sponsor(materiales[lado], kit, get_tree())
+		_pintar(jugador, ConfigPartido.color_camiseta(lado), materiales[lado])
 
 
-## Cambia el color del equipo en los materiales que ya tiene el jugador.
-func _pintar(jugador: Node, color: Color) -> void:
-	var anterior = jugador.get("color_equipo")
-	if not anterior is Color:
-		return
-	for nodo in jugador.find_children("*", "MeshInstance3D", true, false):
-		var malla := (nodo as MeshInstance3D).mesh
-		var material := malla.surface_get_material(0) as StandardMaterial3D if malla else null
-		if material and material.albedo_color.is_equal_approx(anterior):
-			var nuevo := material.duplicate() as StandardMaterial3D
-			nuevo.albedo_color = color
-			(nodo as MeshInstance3D).material_override = nuevo
+## Viste al jugador con la camiseta del club elegido en el menú.
+func _pintar(jugador: Node, color: Color, material: Material) -> void:
 	jugador.set("color_equipo", color)
+	if jugador.has_method("vestir"):
+		jugador.call("vestir", material)
 
 
 func _titular_con_dorsal(lado: String, dorsal: int) -> Dictionary:

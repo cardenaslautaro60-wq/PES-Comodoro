@@ -54,8 +54,6 @@ const BOTONES := {
 	"pase_hueco": Patada.PASE_HUECO,
 }
 
-static var _materiales := {}
-
 ## 0 = local (ataca hacia x positivo), 1 = visitante (ataca hacia x negativo).
 @export var equipo := 0
 @export var dorsal := 10
@@ -89,6 +87,8 @@ var sentido := 0
 ## Quieto en su lugar (por ejemplo, mientras espera para sacar un lateral). Puede
 ## girar para apuntar, pero no se mueve.
 var inmovil := false
+## Piel, pelo y barba para el modelo 3D (campo `apariencia` de los planteles).
+var apariencia := {}
 
 var _tiempo_estado := 0.0
 var _sin_control := 0.0
@@ -102,6 +102,7 @@ var _espera_pendiente := 0.0
 var _fase_toque := 0.0
 var _destino := Vector3.ZERO
 var _yendo_a_destino := false
+var _material_camiseta: Material
 
 
 func _init() -> void:
@@ -140,6 +141,10 @@ func aplicar_datos(datos: Dictionary) -> void:
 	defensa = clampi(int(atributos.get("defensa", defensa)), 1, 99)
 	estamina = clampi(int(atributos.get("estamina", estamina)), 1, 99)
 	atajada = clampi(int(atributos.get("atajada", atajada)), 1, 99)
+	var datos_apariencia: Variant = datos.get("apariencia")
+	if datos_apariencia is Dictionary:
+		apariencia = datos_apariencia
+	_actualizar_modelo()
 
 
 func _physics_process(delta: float) -> void:
@@ -592,34 +597,24 @@ func _gravedad() -> float:
 
 
 func _crear_modelo_provisorio() -> void:
-	var modelo := Node3D.new()
+	# El modelo tiene los pies en su origen; el jugador, el centro de la cápsula.
+	var modelo := ModeloJugador.new()
 	modelo.name = "Modelo"
+	modelo.position.y = -ALTURA / 2
 	add_child(modelo)
-	var cuerpo := CapsuleMesh.new()
-	cuerpo.radius = RADIO
-	cuerpo.height = ALTURA
-	cuerpo.radial_segments = 12
-	cuerpo.rings = 4
-	cuerpo.material = _material(color_equipo)
-	var vista := MeshInstance3D.new()
-	vista.mesh = cuerpo
-	modelo.add_child(vista)
-	# Marca blanca en el pecho para ver hacia dónde mira.
-	var marca := BoxMesh.new()
-	marca.size = Vector3(0.25, 0.2, 0.1)
-	marca.material = _material(Color(0.95, 0.95, 0.95))
-	var vista_marca := MeshInstance3D.new()
-	vista_marca.mesh = marca
-	vista_marca.position = Vector3(0, 0.35, -RADIO)
-	modelo.add_child(vista_marca)
+	_actualizar_modelo()
 
 
-## Un material por color para todos los jugadores (menos llamadas de dibujo).
-static func _material(color: Color) -> StandardMaterial3D:
-	var clave := color.to_html()
-	if not _materiales.has(clave):
-		var material := StandardMaterial3D.new()
-		material.albedo_color = color
-		material.roughness = 0.8
-		_materiales[clave] = material
-	return _materiales[clave]
+## Pone la camiseta de su equipo (un material de `GeneradorCamiseta`, el mismo
+## para los 11). Sin camiseta, usa una lisa de `color_equipo`.
+func vestir(material: Material) -> void:
+	_material_camiseta = material
+	_actualizar_modelo()
+
+
+func _actualizar_modelo() -> void:
+	var modelo := get_node_or_null("Modelo") as ModeloJugador
+	if modelo == null:
+		return
+	var material := _material_camiseta if _material_camiseta else GeneradorCamiseta.material_liso(color_equipo)
+	modelo.vestir(material, dorsal, apariencia)

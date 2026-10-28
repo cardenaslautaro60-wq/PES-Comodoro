@@ -105,7 +105,22 @@ Todo se mide en el celular de prueba desde la primera semana. Estos números son
 
 ## 4. Jugadores
 
-### Modelo base
+### Modelo provisorio (ya en el repo)
+
+Hasta tener el modelo de Blender, `scripts/jugadores/modelo_jugador.gd` (clase `ModeloJugador`) arma un jugador low poly por código:
+
+- **1.156 triángulos y 2 materiales:** el del equipo (`GeneradorCamiseta.crear_material`) y el del cuerpo (`arte/modelos/jugador/cuerpo.gdshader`, que pinta piel, pelo y botines con colores de vértice).
+- **Esqueleto de 11 huesos** (cadera, torso, cabeza, brazos, antebrazos, muslos y piernas) con animaciones hechas por código: parado, trote y carrera según la velocidad, patada, barrida y caída.
+- **Respeta la distribución de la camiseta** de la sección 5, así que la textura de cada club se ve igual que en el modelo final.
+- Toma la `apariencia` del plantel. Los jugadores con el mismo pelo comparten la malla, y los colores van por instancia, sin materiales nuevos.
+- Mira hacia **-Z**, como `Basis.looking_at`. Si el padre es un `CharacterBody3D`, toma su velocidad solo. Si además tiene la señal `pateo` y la variable `estado` (como `Jugador`), patea, barre y se cae solo.
+- **Escena de muestra:** `escenas/arte/vestuario.tscn`, con dos clubes trotando, para medir los FPS en el celular.
+
+Ya está enchufado en el juego: `Jugador` crea un `ModeloJugador` en lugar de la cápsula y tiene `vestir(material)`. En el partido completo, cada `EquipoPartido` arma un material para los de campo y otro para el arquero con `preparar_camisetas`. Usa la camiseta del club que tiene el color que quedó después de resolver los choques (titular o suplente), o una lisa de ese color si el partido tuvo que inventar uno. Sin datos del club, como en el entrenamiento, el jugador sale con una camiseta lisa de `color_equipo`.
+
+Ojo con los parámetros por instancia: los dos shaders del jugador declaran los mismos (`numero`, `color_piel`, `color_pelo`, `color_botines`) en el mismo orden, porque Godot los guarda juntos por malla. Si se agrega uno nuevo, va en los dos.
+
+### Modelo base (Blender)
 
 - **Uno solo** para todos los jugadores de campo, con altura 1,80 m. Las variaciones de altura se hacen escalando entre 0,94 y 1,06.
 - **Contextura:** una *blend shape* "robusto" (de 0 a 1) para tener jugadores más anchos sin otro modelo.
@@ -278,7 +293,7 @@ No se modela la ciudad. Se pinta **un panorama en capas** (cielo, Cerro Chenque,
 
 ### De Blender a Godot
 
-1. Modelar con 1 unidad = 1 metro. El jugador mira hacia **+Z** y está parado en el origen.
+1. Modelar con 1 unidad = 1 metro, parado en el origen. En Godot el jugador tiene que mirar hacia **-Z**; si el `.glb` llega mirando a +Z, se gira 180° en la importación.
 2. Aplicar escala y rotación (*Apply All Transforms*) antes de exportar.
 3. Exportar en **glTF binario (`.glb`)**, con las animaciones si las tiene.
 4. Guardar el `.blend` original en `arte/fuentes/` y el `.glb` en la carpeta del asset.

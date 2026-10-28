@@ -223,6 +223,8 @@ func _armar_equipos() -> void:
 		visitante.color_arquero = Color(0.95, 0.85, 0.15)
 	nombre_local = local.nombre
 	nombre_visitante = visitante.nombre
+	for equipo in equipos:
+		equipo.preparar_camisetas(get_tree() if is_inside_tree() else null)
 
 	for equipo in equipos:
 		var extra := 0
@@ -252,6 +254,7 @@ func _crear_jugador(equipo: EquipoPartido, i: int, extra: int) -> Jugador:
 	# Nace en su lugar (moverlo después de entrar al árbol se ve como un salto).
 	jugador.position = Vector3(lugar.x, Jugador.ALTURA / 2, lugar.z)
 	add_child(jugador)
+	jugador.vestir(equipo.material_arquero if equipo.puestos[i] == "ARQ" else equipo.material_campo)
 	jugadores.append(jugador)
 	return jugador
 
