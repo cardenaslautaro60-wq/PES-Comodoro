@@ -38,6 +38,15 @@ Cómo funciona por dentro y qué pueden usar las otras áreas: [docs/JUGABILIDAD
 3. Instalá Android Studio o solo el SDK, y Java 17. En Godot, cargá sus rutas en Editor → Configuración del editor → Exportar → Android.
 4. Conectá el celular por USB y tocá el ícono de Android arriba a la derecha.
 
+## Jugar en el navegador (celu o PC)
+
+Cada vez que algo entra a `main`, GitHub exporta la versión web y la publica en
+**https://cardenaslautaro60-wq.github.io/PES-Comodoro/** (flujo `.github/workflows/web.yml`).
+En el celu conviene ponerlo horizontal; desde el menú del navegador se puede "Agregar a la pantalla de inicio" y queda como una app.
+
+Para que funcione, GitHub Pages tiene que estar activado una vez: Settings → Pages → Source: **GitHub Actions**.
+Si no está activado, el flujo exporta igual y deja un aviso en vez de fallar.
+
 ## Pruebas automáticas
 
 ```bash

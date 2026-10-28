@@ -1,0 +1,95 @@
+name: Publicar en la web
+
+# Cada vez que algo entra a main, exporta la versión web (HTML5) y la sube a
+# GitHub Pages. El link queda en https://<usuario>.github.io/<repo>/
+# Si Pages no está activado en el repo, exporta igual y avisa, sin fallar.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Una sola publicación a la vez; la más nueva gana.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  GODOT_VERSION: "4.5.1"
+
+jobs:
+  exportar:
+    name: Exportar la versión web
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      pages_activado: ${{ steps.pages.outputs.activado }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar Godot
+        run: |
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip" -O godot.zip
+          unzip -q godot.zip
+          sudo mv "Godot_v${GODOT_VERSION}-stable_linux.x86_64" /usr/local/bin/godot
+
+      # Misma clave que en ci.yml, así se comparte la caché.
+      - name: Recuperar plantillas de exportación
+        id: cache-plantillas
+        uses: actions/cache@v4
+        with:
+          path: ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
+          key: plantillas-godot-${{ env.GODOT_VERSION }}
+
+      - name: Descargar plantillas de exportación
+        if: steps.cache-plantillas.outputs.cache-hit != 'true'
+        run: |
+          wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz" -O plantillas.tpz
+          unzip -q plantillas.tpz
+          mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+          mv templates/* ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
+
+      - name: Importar el proyecto
+        run: godot --headless --path . --import
+
+      - name: Exportar
+        run: |
+          mkdir -p build/web
+          touch build/.gdignore
+          godot --headless --path . --export-release "Web" build/web/index.html
+          test -f build/web/index.html
+          test -f build/web/index.wasm
+          ls -la build/web
+
+      - name: Ver si GitHub Pages está activado
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${{ github.repository }}/pages" --silent 2>/dev/null; then
+            echo "activado=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "activado=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::GitHub Pages no está activado. Settings → Pages → Source: GitHub Actions, y volvé a correr este flujo."
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+  publicar:
+    name: Publicar en GitHub Pages
+    needs: exportar
+    if: needs.exportar.outputs.pages_activado == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
