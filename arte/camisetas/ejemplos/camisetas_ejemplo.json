@@ -1,0 +1,23 @@
+{
+  "_nota": "Equipos inventados para probar el generador, con el formato de camisetas de docs/datos-clubes.md. No representan a ningún club.",
+  "rayas_hombreras": {
+    "patron": "rayas_verticales", "color_base": "#1F4FA3", "color_secundario": "#FFFFFF", "color_terciario": null,
+    "hombreras": "#151515", "cuello": "#FFFFFF", "numero": "#151515", "pantalon": "#151515", "medias": "#1F4FA3",
+    "sponsor_parodia": "Viento Sur"
+  },
+  "v_tricolor": {
+    "patron": "v_frontal", "color_base": "#F5F5F5", "color_secundario": "#1F4FA8", "color_terciario": "#C8102E",
+    "hombreras": null, "cuello": "#1F4FA8", "numero": "#151515", "pantalon": "#1F4FA8", "medias": "#F5F5F5",
+    "sponsor_parodia": "Panadería del Cerro"
+  },
+  "mitades": {
+    "patron": "mitades", "color_base": "#FFD400", "color_secundario": "#0A7D3B", "color_terciario": null,
+    "hombreras": null, "cuello": "#0A7D3B", "numero": "#FFFFFF", "pantalon": "#0A7D3B", "medias": "#FFD400",
+    "sponsor_parodia": ""
+  },
+  "banda_pecho": {
+    "patron": "banda_pecho", "color_base": "#6B0F1A", "color_secundario": "#89C4F4", "color_terciario": "#FFFFFF",
+    "hombreras": null, "cuello": "#FFFFFF", "numero": "#FFFFFF", "pantalon": "#FFFFFF", "medias": "#6B0F1A",
+    "sponsor_parodia": "Remises Km 3"
+  }
+}
