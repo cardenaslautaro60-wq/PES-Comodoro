@@ -68,6 +68,8 @@ static var _materiales := {}
 @export_range(1, 99) var tiro := 70
 @export_range(1, 99) var defensa := 70
 @export_range(1, 99) var estamina := 70
+## Solo cuenta para los arqueros.
+@export_range(1, 99) var atajada := 50
 
 var pelota: Pelota
 var entrada := EntradaJugador.new()
@@ -81,6 +83,12 @@ var potencia := -1.0
 var patada_cargando := Patada.PASE
 var presionando := false
 var rng := RandomNumberGenerator.new()
+## Hacia dónde ataca: 1 = x positivo, -1 = x negativo, 0 = según el equipo (el local
+## hacia x positivo). El partido lo da vuelta en el entretiempo.
+var sentido := 0
+## Quieto en su lugar (por ejemplo, mientras espera para sacar un lateral). Puede
+## girar para apuntar, pero no se mueve.
+var inmovil := false
 
 var _tiempo_estado := 0.0
 var _sin_control := 0.0
@@ -131,6 +139,7 @@ func aplicar_datos(datos: Dictionary) -> void:
 	tiro = clampi(int(atributos.get("tiro", tiro)), 1, 99)
 	defensa = clampi(int(atributos.get("defensa", defensa)), 1, 99)
 	estamina = clampi(int(atributos.get("estamina", estamina)), 1, 99)
+	atajada = clampi(int(atributos.get("atajada", atajada)), 1, 99)
 
 
 func _physics_process(delta: float) -> void:
@@ -190,6 +199,8 @@ func control_de_pelota() -> int:
 
 ## Hacia qué lado ataca: 1 = x positivo, -1 = x negativo.
 func sentido_de_ataque() -> int:
+	if sentido != 0:
+		return sentido
 	return 1 if equipo == 0 else -1
 
 
@@ -295,6 +306,11 @@ func derribar() -> void:
 ## Durante `segundos` no puede tomar la pelota (después de patear, de perderla, etc.).
 func bloquear_control(segundos: float) -> void:
 	_sin_control = maxf(_sin_control, segundos)
+
+
+## Durante `segundos` no le pueden robar la pelota (por ejemplo, mientras saca).
+func proteger(segundos: float) -> void:
+	_protegido = maxf(_protegido, segundos)
 
 
 ## Lo llamá la pelota cuando este jugador la toma.
@@ -406,6 +422,11 @@ func _mover(delta: float) -> void:
 			deseo = _hacia(_destino) * clampf(_distancia_en_el_piso(_destino) / 2.0, 0.3, 1.0)
 	deseo = deseo.limit_length(1.0)
 
+	if inmovil:
+		if deseo.length() > 0.1:
+			direccion_mirada = _girar_hacia(direccion_mirada, deseo.normalized(), GIRO_CON_PELOTA * delta)
+		_frenar_en_seco(delta)
+		return
 	var con_sprint := entrada.sprint and estamina_actual > 0.05 and deseo.length() > 0.1
 	var rapidez := velocidad_maxima(con_sprint) * deseo.length()
 

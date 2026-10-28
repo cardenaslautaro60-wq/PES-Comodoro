@@ -1,0 +1,18 @@
+{
+  "nombre": "3-5-2",
+  "descripcion": "Tres centrales, carrileros por afuera y un enganche detrás de los dos delanteros.",
+  "nota": "x: de 0 (el arco propio) a 0,5 (la mitad de la cancha), en la salida del medio. z: de -1 a 1, el ancho de la cancha (-1 es la izquierda mirando al arco rival).",
+  "puestos": [
+    {"rol": "ARQ", "x": 0.01, "z": 0.0},
+    {"rol": "DFC", "x": 0.15, "z": -0.45},
+    {"rol": "DFC", "x": 0.14, "z": 0.0},
+    {"rol": "DFC", "x": 0.15, "z": 0.45},
+    {"rol": "LAT", "x": 0.29, "z": -0.8},
+    {"rol": "MC", "x": 0.27, "z": -0.28},
+    {"rol": "MC", "x": 0.27, "z": 0.28},
+    {"rol": "LAT", "x": 0.29, "z": 0.8},
+    {"rol": "MP", "x": 0.35, "z": 0.0},
+    {"rol": "DC", "x": 0.44, "z": -0.2},
+    {"rol": "DC", "x": 0.44, "z": 0.2}
+  ]
+}
