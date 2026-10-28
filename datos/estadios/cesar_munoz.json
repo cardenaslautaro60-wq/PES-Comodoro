@@ -1,0 +1,50 @@
+{
+  "formato_version": 1,
+  "id": "cesar_munoz",
+  "nombre": "Estadio César Augusto Muñoz",
+  "apodo": null,
+  "clubes": [
+    "huracan"
+  ],
+  "direccion": "Juan de Dios Trevisan 3555",
+  "barrio": "Barrio Industrial",
+  "inaugurado": "1990-09-23",
+  "capacidad": 4500,
+  "superficie": "a_confirmar",
+  "dimensiones_m": {
+    "largo": 105,
+    "ancho": 68,
+    "confianza": "propuesta"
+  },
+  "tribunas": [
+    {
+      "lado": "lateral",
+      "tipo": "platea",
+      "capacidad_aprox": null
+    },
+    {
+      "lado": "cabecera",
+      "tipo": "popular",
+      "capacidad_aprox": null
+    }
+  ],
+  "pista_atletismo": false,
+  "iluminacion": null,
+  "entorno": {
+    "fondo": [
+      "meseta"
+    ],
+    "viento": "fuerte",
+    "nota": "Viento patagónico: el juego puede usarlo como efecto en la pelota."
+  },
+  "confianza": "probable",
+  "notas": "Reinaugurado el 12/12/2009 después de que lo arreglaran hinchas y socios. Capacidad 4.500 (Estadios de Argentina) o 6.500 (Once Patagónico).",
+  "fuentes": [
+    "https://www.estadiosdeargentina.com.ar/cancha-de-huracan-de-comodoro-rivadavia/"
+  ],
+  "pendiente": [
+    "Superficie",
+    "Iluminación",
+    "Fotos de tribunas"
+  ]
+}

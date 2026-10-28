@@ -1,0 +1,108 @@
+{
+  "formato_version": 1,
+  "id": "florentino_ameghino",
+  "nombre_oficial": "Club Atlético Florentino Ameghino",
+  "nombre_corto": "F. Ameghino",
+  "abreviatura": "CAF",
+  "apodos": [
+    "CAFA",
+    "El Tricolor"
+  ],
+  "fundacion": "1919-02-01",
+  "nota_fundacion": "",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Barrio Ameghino Nuevo, Km 3",
+  "sede": "Miguel D. Jones, Km 3, Comodoro Rivadavia",
+  "colores": [
+    "#C8102E",
+    "#FFFFFF",
+    "#151515"
+  ],
+  "nombres_colores": [
+    "rojo",
+    "blanco",
+    "negro"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "rayas_verticales",
+      "color_base": "#C8102E",
+      "color_secundario": "#FFFFFF",
+      "color_terciario": null,
+      "hombreras": "#151515",
+      "cuello": "#FFFFFF",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#151515",
+      "sponsor_parodia": "Fósiles Ameghino",
+      "confianza": "confirmado",
+      "nota": "Rayas verticales rojas y blancas con hombreras negras (Once Patagónico)."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#151515",
+      "color_secundario": "#C8102E",
+      "color_terciario": "#FFFFFF",
+      "hombreras": null,
+      "cuello": "#C8102E",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#151515",
+      "sponsor_parodia": "Fósiles Ameghino",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#1B7A3A",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#1B7A3A",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo clásico",
+      "colores": [
+        "#C8102E",
+        "#FFFFFF",
+        "#151515"
+      ],
+      "simbolo": "Un fósil de amonite (por Florentino Ameghino)",
+      "texto": "CAFA",
+      "archivo": null
+    }
+  },
+  "estadio_id": "ameghino",
+  "divisiones": [
+    "apertura_2025"
+  ],
+  "nivel": 2,
+  "plantel": "res://datos/planteles/florentino_ameghino.json",
+  "contacto": {
+    "web": null,
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-atletico-florentino-ameghino/"
+  ],
+  "pendiente": [
+    "Redes oficiales",
+    "Descripción del escudo",
+    "Camiseta suplente"
+  ]
+}

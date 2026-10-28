@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "tiro_federal",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "tiro_federal_01",
+      "nombre": "Gonzalo Gatica",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 20,
+      "altura_cm": 192,
+      "atributos": {
+        "velocidad": 52,
+        "pase": 58,
+        "tiro": 30,
+        "defensa": 76,
+        "estamina": 52,
+        "atajada": 61
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_02",
+      "nombre": "Franco Vidal",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "ambos",
+      "edad": 22,
+      "altura_cm": 188,
+      "atributos": {
+        "velocidad": 38,
+        "pase": 50,
+        "tiro": 30,
+        "defensa": 60,
+        "estamina": 49,
+        "atajada": 58
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_03",
+      "nombre": "Ramiro Montiel",
+      "apodo": null,
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 165,
+      "atributos": {
+        "velocidad": 47,
+        "pase": 47,
+        "tiro": 48,
+        "defensa": 73,
+        "estamina": 61
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "tiro_federal_04",
+      "nombre": "Benjamín Aballay",
+      "apodo": null,
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 176,
+      "atributos": {
+        "velocidad": 59,
+        "pase": 56,
+        "tiro": 37,
+        "defensa": 76,
+        "estamina": 57
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_05",
+      "nombre": "Franco Aballay",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 42,
+        "pase": 41,
+        "tiro": 34,
+        "defensa": 59,
+        "estamina": 52
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_06",
+      "nombre": "Julián Vargas",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 24,
+      "altura_cm": 180,
+      "atributos": {
+        "velocidad": 46,
+        "pase": 48,
+        "tiro": 34,
+        "defensa": 67,
+        "estamina": 61
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_07",
+      "nombre": "Rodrigo Jaramillo",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 65,
+        "tiro": 54,
+        "defensa": 69,
+        "estamina": 62
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "tiro_federal_08",
+      "nombre": "Lautaro Tapia",
+      "apodo": null,
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 35,
+      "altura_cm": 178,
+      "atributos": {
+        "velocidad": 70,
+        "pase": 62,
+        "tiro": 43,
+        "defensa": 68,
+        "estamina": 67
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_09",
+      "nombre": "Rodrigo Navarro",
+      "apodo": null,
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 52,
+        "pase": 52,
+        "tiro": 35,
+        "defensa": 58,
+        "estamina": 59
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "tiro_federal_10",
+      "nombre": "Federico Barría",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 28,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 59,
+        "pase": 65,
+        "tiro": 50,
+        "defensa": 58,
+        "estamina": 70
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 4,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_11",
+      "nombre": "Ignacio Ojeda",
+      "apodo": null,
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 56,
+        "pase": 60,
+        "tiro": 55,
+        "defensa": 65,
+        "estamina": 67
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "tiro_federal_12",
+      "nombre": "Luciano Cayún",
+      "apodo": null,
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 50,
+        "pase": 53,
+        "tiro": 44,
+        "defensa": 51,
+        "estamina": 53
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 2,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "tiro_federal_13",
+      "nombre": "Federico Saldivia",
+      "apodo": null,
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 21,
+      "altura_cm": 184,
+      "atributos": {
+        "velocidad": 49,
+        "pase": 61,
+        "tiro": 53,
+        "defensa": 60,
+        "estamina": 58
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 3,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_14",
+      "nombre": "Emanuel Uribe",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 66,
+        "pase": 70,
+        "tiro": 68,
+        "defensa": 51,
+        "estamina": 68
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_15",
+      "nombre": "Ezequiel Huenchul",
+      "apodo": "el Ventarrón",
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 47,
+        "pase": 67,
+        "tiro": 58,
+        "defensa": 51,
+        "estamina": 54
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 0,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_16",
+      "nombre": "Dante Uribe",
+      "apodo": null,
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 27,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 57,
+        "tiro": 64,
+        "defensa": 52,
+        "estamina": 69
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "tiro_federal_17",
+      "nombre": "Emanuel Antilef",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 22,
+      "altura_cm": 174,
+      "atributos": {
+        "velocidad": 69,
+        "pase": 48,
+        "tiro": 58,
+        "defensa": 42,
+        "estamina": 55
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_18",
+      "nombre": "Santiago Millapi",
+      "apodo": null,
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 49,
+        "tiro": 65,
+        "defensa": 42,
+        "estamina": 54
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "tiro_federal_19",
+      "nombre": "Emanuel Ibáñez",
+      "apodo": null,
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 23,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 62,
+        "tiro": 69,
+        "defensa": 46,
+        "estamina": 53
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "tiro_federal_20",
+      "nombre": "Joaquín Oyarzo",
+      "apodo": null,
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 60,
+        "pase": 56,
+        "tiro": 57,
+        "defensa": 35,
+        "estamina": 47
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 1,
+        "barba": false
+      }
+    }
+  ]
+}

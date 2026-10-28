@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "huracan",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "huracan_01",
+      "nombre": "Tomás Ojeda",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 36,
+      "altura_cm": 191,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 64,
+        "tiro": 47,
+        "defensa": 84,
+        "estamina": 67,
+        "atajada": 87
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 0,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_02",
+      "nombre": "Brian Uribe",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 20,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 54,
+        "pase": 58,
+        "tiro": 35,
+        "defensa": 78,
+        "estamina": 62,
+        "atajada": 80
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 2,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_03",
+      "nombre": "Iván Peralta",
+      "apodo": "el Chino",
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 31,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 72,
+        "pase": 76,
+        "tiro": 58,
+        "defensa": 81,
+        "estamina": 78
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 1,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "huracan_04",
+      "nombre": "Cristian Acuña",
+      "apodo": "el Gringo",
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 74,
+        "pase": 73,
+        "tiro": 58,
+        "defensa": 87,
+        "estamina": 78
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_05",
+      "nombre": "Marcos Uribe",
+      "apodo": "Chenque",
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 28,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 56,
+        "pase": 69,
+        "tiro": 52,
+        "defensa": 73,
+        "estamina": 69
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 5,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_06",
+      "nombre": "Facundo Millapi",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 29,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 64,
+        "tiro": 59,
+        "defensa": 85,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 2,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_07",
+      "nombre": "Tobías Uribe",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 23,
+      "altura_cm": 180,
+      "atributos": {
+        "velocidad": 83,
+        "pase": 72,
+        "tiro": 60,
+        "defensa": 84,
+        "estamina": 83
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_08",
+      "nombre": "Brian Aballay",
+      "apodo": null,
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 22,
+      "altura_cm": 166,
+      "atributos": {
+        "velocidad": 85,
+        "pase": 70,
+        "tiro": 70,
+        "defensa": 85,
+        "estamina": 78
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_09",
+      "nombre": "Cristian Huenchul",
+      "apodo": null,
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 25,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 78,
+        "pase": 71,
+        "tiro": 53,
+        "defensa": 80,
+        "estamina": 81
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_10",
+      "nombre": "Milton Ibáñez",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 165,
+      "atributos": {
+        "velocidad": 73,
+        "pase": 84,
+        "tiro": 77,
+        "defensa": 74,
+        "estamina": 80
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_11",
+      "nombre": "Federico Montiel",
+      "apodo": null,
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 36,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 74,
+        "pase": 89,
+        "tiro": 71,
+        "defensa": 81,
+        "estamina": 79
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_12",
+      "nombre": "Joaquín Ibáñez",
+      "apodo": null,
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 25,
+      "altura_cm": 179,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 76,
+        "tiro": 63,
+        "defensa": 75,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 0,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "huracan_13",
+      "nombre": "Iván Nahuelquir",
+      "apodo": null,
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 34,
+      "altura_cm": 185,
+      "atributos": {
+        "velocidad": 69,
+        "pase": 76,
+        "tiro": 71,
+        "defensa": 75,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_14",
+      "nombre": "Matías Quintana",
+      "apodo": "el Mono",
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 19,
+      "altura_cm": 165,
+      "atributos": {
+        "velocidad": 69,
+        "pase": 83,
+        "tiro": 87,
+        "defensa": 59,
+        "estamina": 75
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 4,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "huracan_15",
+      "nombre": "Federico Oyarzo",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 78,
+        "tiro": 79,
+        "defensa": 56,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "huracan_16",
+      "nombre": "Tobías Bahamonde",
+      "apodo": null,
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 30,
+      "altura_cm": 173,
+      "atributos": {
+        "velocidad": 80,
+        "pase": 78,
+        "tiro": 81,
+        "defensa": 59,
+        "estamina": 83
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "huracan_17",
+      "nombre": "Rodrigo Tapia",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 36,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 72,
+        "pase": 75,
+        "tiro": 70,
+        "defensa": 58,
+        "estamina": 78
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "huracan_18",
+      "nombre": "Julián Nahuelquir",
+      "apodo": "el Flaco",
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 18,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 80,
+        "pase": 77,
+        "tiro": 89,
+        "defensa": 52,
+        "estamina": 67
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 3,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "huracan_19",
+      "nombre": "Julián Maldonado",
+      "apodo": "el Colo",
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 77,
+        "pase": 69,
+        "tiro": 87,
+        "defensa": 54,
+        "estamina": 77
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "huracan_20",
+      "nombre": "Damián Villarroel",
+      "apodo": null,
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 179,
+      "atributos": {
+        "velocidad": 76,
+        "pase": 68,
+        "tiro": 79,
+        "defensa": 48,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 3,
+        "barba": false
+      }
+    }
+  ]
+}

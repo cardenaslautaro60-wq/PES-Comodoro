@@ -1,0 +1,105 @@
+{
+  "formato_version": 1,
+  "id": "prospero_palazzo",
+  "nombre_oficial": "Club Deportivo Próspero Palazzo",
+  "nombre_corto": "Próspero Palazzo",
+  "abreviatura": "PAL",
+  "apodos": [
+    "El Aguilucho"
+  ],
+  "fundacion": "1964-07-15",
+  "nota_fundacion": "",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Barrio Próspero Palazzo (zona norte)",
+  "sede": "Barrio Próspero Palazzo, Comodoro Rivadavia",
+  "colores": [
+    "#C8102E",
+    "#151515"
+  ],
+  "nombres_colores": [
+    "rojo",
+    "negro"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "mitades",
+      "color_base": "#C8102E",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#151515",
+      "sponsor_parodia": "Gomería Palazzo",
+      "confianza": "confirmado",
+      "nota": "Mitad roja y mitad negra (Once Patagónico). Pantalón y medias propuestos."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#FFFFFF",
+      "color_secundario": "#C8102E",
+      "color_terciario": "#151515",
+      "hombreras": null,
+      "cuello": "#C8102E",
+      "numero": "#151515",
+      "pantalon": "#FFFFFF",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "Gomería Palazzo",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#2E9E4F",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#2E9E4F",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo partido en mitades",
+      "colores": [
+        "#C8102E",
+        "#151515"
+      ],
+      "simbolo": "Un aguilucho con las alas abiertas",
+      "texto": "CDPP",
+      "archivo": null
+    }
+  },
+  "estadio_id": "palazzo",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 2,
+  "plantel": "res://datos/planteles/prospero_palazzo.json",
+  "contacto": {
+    "web": null,
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-deportivo-prospero-palazzo/"
+  ],
+  "pendiente": [
+    "Redes oficiales",
+    "Descripción del escudo",
+    "Camiseta suplente",
+    "Dirección de la cancha"
+  ]
+}
