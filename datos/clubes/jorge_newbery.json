@@ -1,0 +1,107 @@
+{
+  "formato_version": 1,
+  "id": "jorge_newbery",
+  "nombre_oficial": "Club Atlético Jorge Newbery",
+  "nombre_corto": "Jorge Newbery",
+  "abreviatura": "JNE",
+  "apodos": [
+    "El Lobo",
+    "El Aeronauta"
+  ],
+  "fundacion": "1924-04-19",
+  "nota_fundacion": "",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Zona de calle Jorge Newbery y Pastor Schmeider",
+  "sede": "Jorge Newbery y Pastor Schmeider, Comodoro Rivadavia",
+  "colores": [
+    "#1F4FA8",
+    "#FFFFFF"
+  ],
+  "nombres_colores": [
+    "azul",
+    "blanco"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "liso",
+      "color_base": "#1F4FA8",
+      "color_secundario": "#FFFFFF",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#FFFFFF",
+      "numero": "#FFFFFF",
+      "pantalon": "#FFFFFF",
+      "medias": "#1F4FA8",
+      "sponsor_parodia": "Vientos del Golfo",
+      "confianza": "probable",
+      "nota": "Colores azul y blanco confirmados (Once Patagónico). El diseño exacto no se encontró."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#FFFFFF",
+      "color_secundario": "#1F4FA8",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#1F4FA8",
+      "numero": "#151515",
+      "pantalon": "#1F4FA8",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "Vientos del Golfo",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#F5C400",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#151515",
+      "pantalon": "#151515",
+      "medias": "#F5C400",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo clásico (forma de blasón)",
+      "colores": [
+        "#1F4FA8",
+        "#FFFFFF"
+      ],
+      "simbolo": "Un lobo de perfil con antiparras de aviador",
+      "texto": "CAJN",
+      "archivo": null
+    }
+  },
+  "estadio_id": "la_madriguera",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 5,
+  "plantel": "res://datos/planteles/jorge_newbery.json",
+  "contacto": {
+    "web": "http://www.newberycomodoro.com.ar/ (puede no estar activa)",
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-atletico-jorge-newbery-de-comodoro-rivadavia/",
+    "https://es.wikipedia.org/wiki/Club_Atlético_Jorge_Newbery_(Comodoro_Rivadavia)",
+    "https://www.estadiosdeargentina.com.ar/cancha-de-jorge-newbery-de-comodoro-rivadavia/"
+  ],
+  "pendiente": [
+    "Diseño exacto de titular y suplente",
+    "Descripción del escudo",
+    "Redes oficiales"
+  ]
+}

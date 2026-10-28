@@ -1,0 +1,37 @@
+{
+  "formato_version": 1,
+  "id": "barrio_generico",
+  "nombre": "Cancha de barrio",
+  "apodo": null,
+  "clubes": [],
+  "direccion": "",
+  "barrio": "",
+  "inaugurado": null,
+  "capacidad": 300,
+  "superficie": "tierra",
+  "dimensiones_m": {
+    "largo": 105,
+    "ancho": 68,
+    "confianza": "propuesta"
+  },
+  "tribunas": [
+    {
+      "lado": "lateral",
+      "tipo": "tablones",
+      "capacidad_aprox": null
+    }
+  ],
+  "pista_atletismo": false,
+  "iluminacion": null,
+  "entorno": {
+    "fondo": [
+      "meseta"
+    ],
+    "viento": "fuerte",
+    "nota": "Viento patagónico: el juego puede usarlo como efecto en la pelota."
+  },
+  "confianza": "propuesta",
+  "notas": "Cancha genérica del juego (plan: área E). Se usa si un club no tiene estadio modelado.",
+  "fuentes": [],
+  "pendiente": []
+}

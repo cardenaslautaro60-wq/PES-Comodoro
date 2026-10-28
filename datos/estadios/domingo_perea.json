@@ -1,0 +1,46 @@
+{
+  "formato_version": 1,
+  "id": "domingo_perea",
+  "nombre": "Estadio Domingo Perea",
+  "apodo": "Far West",
+  "clubes": [
+    "laprida"
+  ],
+  "direccion": "Paraguay s/n",
+  "barrio": "Barrio Laprida (zona oeste)",
+  "inaugurado": null,
+  "capacidad": null,
+  "superficie": "sintetico",
+  "dimensiones_m": {
+    "largo": 105,
+    "ancho": 68,
+    "confianza": "propuesta"
+  },
+  "tribunas": [
+    {
+      "lado": "lateral",
+      "tipo": "tribuna chica",
+      "capacidad_aprox": null
+    }
+  ],
+  "pista_atletismo": false,
+  "iluminacion": null,
+  "entorno": {
+    "fondo": [
+      "meseta"
+    ],
+    "viento": "fuerte",
+    "nota": "Viento patagónico: el juego puede usarlo como efecto en la pelota."
+  },
+  "confianza": "probable",
+  "notas": "Césped sintético colocado en 2020. 'Far West' es como le dicen a la zona del club.",
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-social-y-deportivo-laprida/",
+    "https://diariojornada.com.ar/279839/politica/comodoro_luque_visito_la_nueva_cancha_de_sintetico_del_club_laprida"
+  ],
+  "pendiente": [
+    "Capacidad",
+    "Iluminación",
+    "Fotos"
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "petroquimica",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "petroquimica_01",
+      "nombre": "Brian Escobar",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 60,
+        "pase": 62,
+        "tiro": 48,
+        "defensa": 79,
+        "estamina": 69,
+        "atajada": 76
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_02",
+      "nombre": "Facundo Bahamonde",
+      "apodo": "el Turco",
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 23,
+      "altura_cm": 194,
+      "atributos": {
+        "velocidad": 54,
+        "pase": 60,
+        "tiro": 41,
+        "defensa": 76,
+        "estamina": 54,
+        "atajada": 74
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 0,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_03",
+      "nombre": "Marcos Cárcamo",
+      "apodo": null,
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 190,
+      "atributos": {
+        "velocidad": 60,
+        "pase": 64,
+        "tiro": 48,
+        "defensa": 74,
+        "estamina": 70
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_04",
+      "nombre": "Joaquín Aguirre",
+      "apodo": null,
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 174,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 69,
+        "tiro": 56,
+        "defensa": 83,
+        "estamina": 74
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_05",
+      "nombre": "Lautaro Correa",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 31,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 56,
+        "pase": 56,
+        "tiro": 41,
+        "defensa": 73,
+        "estamina": 59
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_06",
+      "nombre": "Walter Antilef",
+      "apodo": "el Gringo",
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 56,
+        "tiro": 42,
+        "defensa": 74,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_07",
+      "nombre": "Bruno Huenchul",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 76,
+        "pase": 62,
+        "tiro": 54,
+        "defensa": 71,
+        "estamina": 76
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 5,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_08",
+      "nombre": "Valentín Tapia",
+      "apodo": null,
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 18,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 71,
+        "pase": 76,
+        "tiro": 56,
+        "defensa": 69,
+        "estamina": 76
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_09",
+      "nombre": "Cristian Vidal",
+      "apodo": "el Gringo",
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 70,
+        "pase": 59,
+        "tiro": 49,
+        "defensa": 70,
+        "estamina": 73
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_10",
+      "nombre": "Julián Ojeda",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 24,
+      "altura_cm": 179,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 83,
+        "tiro": 61,
+        "defensa": 70,
+        "estamina": 73
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "petroquimica_11",
+      "nombre": "Alan Soto",
+      "apodo": null,
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 23,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 67,
+        "pase": 72,
+        "tiro": 73,
+        "defensa": 72,
+        "estamina": 82
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_12",
+      "nombre": "Alan Vidal",
+      "apodo": "el Turco",
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 31,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 70,
+        "tiro": 60,
+        "defensa": 64,
+        "estamina": 67
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_13",
+      "nombre": "Brian Uribe",
+      "apodo": null,
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 33,
+      "altura_cm": 185,
+      "atributos": {
+        "velocidad": 69,
+        "pase": 73,
+        "tiro": 67,
+        "defensa": 63,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_14",
+      "nombre": "Walter Soto",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 36,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 65,
+        "pase": 77,
+        "tiro": 72,
+        "defensa": 54,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "petroquimica_15",
+      "nombre": "Rodrigo Paillacán",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 31,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 70,
+        "pase": 72,
+        "tiro": 63,
+        "defensa": 48,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_16",
+      "nombre": "Gonzalo Aballay",
+      "apodo": null,
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 21,
+      "altura_cm": 189,
+      "atributos": {
+        "velocidad": 79,
+        "pase": 65,
+        "tiro": 65,
+        "defensa": 62,
+        "estamina": 69
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 5,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_17",
+      "nombre": "Elías Arce",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "ambos",
+      "edad": 21,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 74,
+        "pase": 65,
+        "tiro": 71,
+        "defensa": 50,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "petroquimica_18",
+      "nombre": "Gonzalo Bahamonde",
+      "apodo": null,
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 72,
+        "pase": 70,
+        "tiro": 75,
+        "defensa": 61,
+        "estamina": 67
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 0,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_19",
+      "nombre": "Enzo Cayún",
+      "apodo": null,
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 22,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 79,
+        "pase": 73,
+        "tiro": 82,
+        "defensa": 58,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "petroquimica_20",
+      "nombre": "Thiago Vidal",
+      "apodo": "el Pingüino",
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 18,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 64,
+        "tiro": 74,
+        "defensa": 49,
+        "estamina": 60
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    }
+  ]
+}
