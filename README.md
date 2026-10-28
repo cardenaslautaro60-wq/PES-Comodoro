@@ -12,9 +12,21 @@ Juego de fútbol 3D inspirado en PES 2006, con los clubes de la Liga de Fútbol 
 1. Instalá [Godot 4.5](https://godotengine.org/download) o una versión 4.x más nueva (la estándar, no la de .NET).
 2. Cloná el repo: `git clone https://github.com/cardenaslautaro60-wq/pes-comodoro.git`
 3. Abrí Godot, tocá **Importar** y elegí el archivo `project.godot`.
-4. Apretá **F5** para jugar la escena de prueba.
+4. Apretá **F5** para jugar el entrenamiento: tu equipo (rojo) contra tres rivales y un arquero que todavía están quietos.
 
-**Controles en la compu:** WASD o flechas para moverse, J o Espacio para pasar, K para patear y Shift para correr. En el celular aparecen un joystick (tocá la mitad izquierda) y botones.
+**Controles** (mantené el botón para cargar la potencia y soltalo para patear):
+
+| Acción | Teclado | Joystick | Celular |
+|---|---|---|---|
+| Moverse | WASD o flechas | Palanca izquierda | Tocar y arrastrar en la mitad izquierda |
+| Sprint | Shift | RB | SPRINT |
+| Pase / **presión** al defender | J o Espacio | A | PASE / PRESIÓN |
+| Tiro / **barrida** al defender | K | B | TIRO / BARRIDA |
+| Pase largo o centro | L | X | LARGO |
+| Pase al hueco | I | Y | HUECO |
+| Cambiar de jugador (al defender) | Q | LB | CAMBIAR |
+
+Cómo funciona por dentro y qué pueden usar las otras áreas: [docs/JUGABILIDAD.md](docs/JUGABILIDAD.md).
 
 ## Probar en el celular (Android)
 
@@ -40,6 +52,7 @@ GitHub las corre solas en cada pull request, junto con la revisión de estilo (`
 | Carpeta | Qué va ahí |
 |---|---|
 | `escenas/` | Escenas de Godot (`.tscn`) |
+| `scripts/partido/` | Jugabilidad: cancha, pelota, jugador, cámara y control |
 | `scripts/` | Código GDScript, con las mismas subcarpetas que `escenas/` |
 | `scripts/autoload/` | Sistemas globales, como los controles |
 | `datos/clubes/` | Un archivo por club: nombre, colores, camisetas, estadio y plantel |

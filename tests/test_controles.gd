@@ -1,6 +1,17 @@
 extends "res://tests/prueba.gd"
 
-const ACCIONES := ["mover_izquierda", "mover_derecha", "mover_arriba", "mover_abajo", "pase", "tiro", "sprint"]
+const ACCIONES := [
+	"mover_izquierda",
+	"mover_derecha",
+	"mover_arriba",
+	"mover_abajo",
+	"pase",
+	"tiro",
+	"pase_largo",
+	"pase_hueco",
+	"sprint",
+	"cambiar_jugador",
+]
 
 
 func despues_de_cada() -> void:
