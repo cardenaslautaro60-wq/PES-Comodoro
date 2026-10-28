@@ -24,8 +24,14 @@ uniform bool numero_en_frente = true;
 
 uniform float rugosidad : hint_range(0.0, 1.0) = 0.85;
 
-// 1 a 99. 0 o menos = sin número (por ejemplo, el árbitro).
+// numero: 1 a 99. 0 o menos = sin número (por ejemplo, el árbitro).
+// Los dos materiales del jugador (camiseta.gdshader y cuerpo.gdshader)
+// declaran los mismos parámetros por instancia, en el mismo orden: Godot los
+// guarda en un solo lugar por malla y, si difieren, se pisan entre sí.
 instance uniform int numero = 0;
+instance uniform vec4 color_piel : source_color = vec4(0.85, 0.64, 0.48, 1.0);
+instance uniform vec4 color_pelo : source_color = vec4(0.1, 0.08, 0.07, 1.0);
+instance uniform vec4 color_botines : source_color = vec4(0.07, 0.07, 0.07, 1.0);
 
 // Devuelve cuánto número (x) y cuánto borde (y) hay en este punto, de 0 a 1.
 vec2 numero_en_rect(vec2 uv, vec4 rect) {

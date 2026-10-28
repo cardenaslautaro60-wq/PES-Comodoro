@@ -12,6 +12,8 @@
 class_name GeneradorCamiseta
 extends RefCounted
 
+const SHADER := preload("res://arte/camisetas/camiseta.gdshader")
+const ATLAS_NUMEROS := preload("res://arte/camisetas/atlas_numeros.png")
 const TAMANIO := 512
 
 # Zonas de la textura en píxeles. El modelo del jugador tiene que respetar
@@ -41,6 +43,19 @@ const PATRONES_DETRAS_DEL_SPONSOR := ["rayas_verticales", "mitades", "franja_ver
 ## Devuelve la textura lista para usar, con mipmaps.
 static func generar(kit: Dictionary, escudo: Image = null, sponsor: Image = null) -> ImageTexture:
 	return ImageTexture.create_from_image(generar_imagen(kit, escudo, sponsor))
+
+
+## Material listo para los jugadores de un equipo (uno solo para los 11). El
+## número de cada jugador se pone después con
+## `malla.set_instance_shader_parameter("numero", dorsal)`.
+static func crear_material(kit: Dictionary, escudo: Image = null, sponsor: Image = null) -> ShaderMaterial:
+	var material := ShaderMaterial.new()
+	material.shader = SHADER
+	material.set_shader_parameter("textura_equipo", generar(kit, escudo, sponsor))
+	material.set_shader_parameter("atlas_numeros", ATLAS_NUMEROS)
+	material.set_shader_parameter("color_numero", color_numero(kit))
+	material.set_shader_parameter("color_borde_numero", color_borde_numero(kit))
+	return material
 
 
 static func color_numero(kit: Dictionary) -> Color:
@@ -124,7 +139,8 @@ static func imagen_sponsor(arbol: SceneTree, kit: Dictionary, fuente: Font = nul
 	if fuente:
 		etiqueta.add_theme_font_override("font", fuente)
 	vista.add_child(etiqueta)
-	arbol.root.add_child(vista)
+	# Diferido: puede llamarse desde un _ready, con la raíz ocupada armando la escena.
+	arbol.root.add_child.call_deferred(vista)
 	await RenderingServer.frame_post_draw
 	var img := vista.get_texture().get_image()
 	vista.queue_free()
