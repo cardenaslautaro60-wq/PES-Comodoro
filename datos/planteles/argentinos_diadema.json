@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "argentinos_diadema",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "argentinos_diadema_01",
+      "nombre": "Valentín Catrilaf",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 25,
+      "altura_cm": 188,
+      "atributos": {
+        "velocidad": 54,
+        "pase": 61,
+        "tiro": 33,
+        "defensa": 65,
+        "estamina": 58,
+        "atajada": 71
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "argentinos_diadema_02",
+      "nombre": "Walter Cárcamo",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 28,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 44,
+        "pase": 49,
+        "tiro": 30,
+        "defensa": 56,
+        "estamina": 49,
+        "atajada": 59
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 0,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "argentinos_diadema_03",
+      "nombre": "Bruno Cayún",
+      "apodo": null,
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 52,
+        "pase": 59,
+        "tiro": 46,
+        "defensa": 75,
+        "estamina": 55
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "argentinos_diadema_04",
+      "nombre": "Bruno Bahamonde",
+      "apodo": null,
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 19,
+      "altura_cm": 181,
+      "atributos": {
+        "velocidad": 58,
+        "pase": 55,
+        "tiro": 50,
+        "defensa": 65,
+        "estamina": 58
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "argentinos_diadema_05",
+      "nombre": "Nicolás Toledo",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 28,
+      "altura_cm": 170,
+      "atributos": {
+        "velocidad": 49,
+        "pase": 50,
+        "tiro": 32,
+        "defensa": 61,
+        "estamina": 50
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 3,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "argentinos_diadema_06",
+      "nombre": "Facundo Benítez",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "izquierdo",
+      "edad": 34,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 53,
+        "pase": 41,
+        "tiro": 43,
+        "defensa": 57,
+        "estamina": 55
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 1,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "argentinos_diadema_07",
+      "nombre": "Elías Peralta",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 28,
+      "altura_cm": 169,
+      "atributos": {
+        "velocidad": 68,
+        "pase": 60,
+        "tiro": 44,
+        "defensa": 65,
+        "estamina": 73
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "argentinos_diadema_08",
+      "nombre": "Benjamín Mansilla",
+      "apodo": null,
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 18,
+      "altura_cm": 176,
+      "atributos": {
+        "velocidad": 59,
+        "pase": 65,
+        "tiro": 44,
+        "defensa": 58,
+        "estamina": 72
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 2,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "argentinos_diadema_09",
+      "nombre": "Ezequiel Jaramillo",
+      "apodo": null,
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 18,
+      "altura_cm": 179,
+      "atributos": {
+        "velocidad": 61,
+        "pase": 58,
+        "tiro": 37,
+        "defensa": 65,
+        "estamina": 53
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "argentinos_diadema_10",
+      "nombre": "Ezequiel Maldonado",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 26,
+      "altura_cm": 181,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 69,
+        "tiro": 60,
+        "defensa": 65,
+        "estamina": 74
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "argentinos_diadema_11",
+      "nombre": "Brian Barría",
+      "apodo": null,
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 36,
+      "altura_cm": 175,
+      "atributos": {
+        "velocidad": 57,
+        "pase": 64,
+        "tiro": 53,
+        "defensa": 68,
+        "estamina": 71
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "argentinos_diadema_12",
+      "nombre": "Rodrigo Ríos",
+      "apodo": null,
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 34,
+      "altura_cm": 179,
+      "atributos": {
+        "velocidad": 51,
+        "pase": 54,
+        "tiro": 52,
+        "defensa": 59,
+        "estamina": 59
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "argentinos_diadema_13",
+      "nombre": "Lautaro Coñuecar",
+      "apodo": null,
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 27,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 55,
+        "pase": 59,
+        "tiro": 57,
+        "defensa": 60,
+        "estamina": 53
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "argentinos_diadema_14",
+      "nombre": "Pablo Aballay",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "ambos",
+      "edad": 30,
+      "altura_cm": 183,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 70,
+        "tiro": 65,
+        "defensa": 54,
+        "estamina": 68
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": true
+      }
+    },
+    {
+      "id": "argentinos_diadema_15",
+      "nombre": "Brian Ojeda",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 25,
+      "altura_cm": 169,
+      "atributos": {
+        "velocidad": 57,
+        "pase": 58,
+        "tiro": 57,
+        "defensa": 46,
+        "estamina": 54
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "argentinos_diadema_16",
+      "nombre": "Ezequiel Villarroel",
+      "apodo": null,
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 177,
+      "atributos": {
+        "velocidad": 70,
+        "pase": 61,
+        "tiro": 57,
+        "defensa": 52,
+        "estamina": 64
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 3,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "argentinos_diadema_17",
+      "nombre": "Benjamín Correa",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 31,
+      "altura_cm": 170,
+      "atributos": {
+        "velocidad": 66,
+        "pase": 51,
+        "tiro": 52,
+        "defensa": 38,
+        "estamina": 59
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 5,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "argentinos_diadema_18",
+      "nombre": "Valentín Vargas",
+      "apodo": null,
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 27,
+      "altura_cm": 170,
+      "atributos": {
+        "velocidad": 58,
+        "pase": 51,
+        "tiro": 65,
+        "defensa": 43,
+        "estamina": 52
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "argentinos_diadema_19",
+      "nombre": "Lisandro Acuña",
+      "apodo": null,
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 18,
+      "altura_cm": 171,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 63,
+        "tiro": 74,
+        "defensa": 47,
+        "estamina": 55
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "argentinos_diadema_20",
+      "nombre": "Enzo Antilef",
+      "apodo": null,
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 182,
+      "atributos": {
+        "velocidad": 52,
+        "pase": 56,
+        "tiro": 68,
+        "defensa": 40,
+        "estamina": 53
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "formato_version": 1,
+  "id": "la_madriguera",
+  "nombre": "Estadio Jorge Newbery",
+  "apodo": "La Madriguera",
+  "clubes": [
+    "jorge_newbery"
+  ],
+  "direccion": "Jorge Newbery y Pastor Schmeider",
+  "barrio": "",
+  "inaugurado": "1934",
+  "capacidad": 5000,
+  "superficie": "natural",
+  "dimensiones_m": {
+    "largo": 105,
+    "ancho": 68,
+    "confianza": "propuesta"
+  },
+  "tribunas": [
+    {
+      "lado": "local",
+      "tipo": "popular",
+      "capacidad_aprox": 2500
+    },
+    {
+      "lado": "visitante",
+      "tipo": "popular",
+      "capacidad_aprox": null
+    },
+    {
+      "lado": "lateral",
+      "tipo": "plateas",
+      "capacidad_aprox": null
+    }
+  ],
+  "pista_atletismo": false,
+  "iluminacion": true,
+  "entorno": {
+    "fondo": [
+      "meseta"
+    ],
+    "viento": "fuerte",
+    "nota": "Viento patagónico: el juego puede usarlo como efecto en la pelota."
+  },
+  "confianza": "probable",
+  "notas": "Reformado en 2004. La ficha dice 5.000, otras fuentes hablan de 4.700 y de una tribuna local de no más de 2.500. Tiene torres de luz (un hincha se subió a una luminaria en un clásico).",
+  "fuentes": [
+    "https://www.estadiosdeargentina.com.ar/cancha-de-jorge-newbery-de-comodoro-rivadavia/",
+    "https://www.pastadecampeon.com/a-dos-toques/la-vida-por-los-colores--un-hincha-de-newbery-se-subio-a-la-luminaria-de-la-madriguera-y-se-llevo-todas-las-miradas_a6726d22e2d0f928b02d1e8c3"
+  ],
+  "pendiente": [
+    "Superficie",
+    "Fotos de tribunas"
+  ]
+}

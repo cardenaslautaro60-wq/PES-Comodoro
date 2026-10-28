@@ -1,0 +1,109 @@
+{
+  "formato_version": 1,
+  "id": "cai",
+  "nombre_oficial": "Comisión de Actividades Infantiles",
+  "nombre_corto": "CAI",
+  "abreviatura": "CAI",
+  "apodos": [
+    "La CAI",
+    "Azzurro",
+    "Semillero Patagónico"
+  ],
+  "fundacion": "1984",
+  "nota_fundacion": "Wikipedia dice 1984; Once Patagónico dice 13/11/1993. A confirmar con el club.",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Km 3 (juega en el Municipal)",
+  "sede": "Hipólito Hirigoyen 21, Comodoro Rivadavia",
+  "colores": [
+    "#1F4FA8",
+    "#F07F1A"
+  ],
+  "nombres_colores": [
+    "azul",
+    "naranja"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "liso",
+      "color_base": "#1F4FA8",
+      "color_secundario": "#F07F1A",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#F07F1A",
+      "numero": "#FFFFFF",
+      "pantalon": "#1F4FA8",
+      "medias": "#1F4FA8",
+      "sponsor_parodia": "Pingüino Gas",
+      "confianza": "confirmado",
+      "nota": "Camiseta, pantalón y medias azules (Wikipedia). Detalles naranjas propuestos."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#F07F1A",
+      "color_secundario": "#1F4FA8",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#1F4FA8",
+      "numero": "#FFFFFF",
+      "pantalon": "#FFFFFF",
+      "medias": "#FFFFFF",
+      "sponsor_parodia": "Pingüino Gas",
+      "confianza": "confirmado",
+      "nota": "Camiseta naranja, pantalón y medias blancas (Wikipedia)."
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#2E9E4F",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#2E9E4F",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "círculo",
+      "colores": [
+        "#1F4FA8",
+        "#F07F1A",
+        "#FFFFFF"
+      ],
+      "simbolo": "Una pelota con una semilla que brota (por 'Semillero')",
+      "texto": "CAI",
+      "archivo": null
+    }
+  },
+  "estadio_id": "municipal",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 5,
+  "plantel": "res://datos/planteles/cai.json",
+  "contacto": {
+    "web": "https://caicr.com.ar (archivada, puede no estar activa)",
+    "facebook": "https://www.facebook.com/CAI.ComodoroRivadavia",
+    "x": "https://x.com/CAIsemillero",
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://es.wikipedia.org/wiki/Comisión_de_Actividades_Infantiles",
+    "https://oncepatagonico.com.ar/comision-de-actividades-infantiles-de-comodoro-rivadavia/"
+  ],
+  "pendiente": [
+    "Fecha de fundación",
+    "Descripción del escudo",
+    "Diseño exacto de la camiseta actual",
+    "Instagram oficial"
+  ]
+}

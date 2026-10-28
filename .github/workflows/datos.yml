@@ -1,0 +1,19 @@
+name: Datos
+
+on:
+  push:
+    branches: [main]
+    paths: ["datos/**", "herramientas/**"]
+  pull_request:
+    paths: ["datos/**", "herramientas/**"]
+  workflow_dispatch:
+
+jobs:
+  validar:
+    name: Validar datos de clubes, estadios y planteles
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validar
+        run: python3 herramientas/validar_datos.py

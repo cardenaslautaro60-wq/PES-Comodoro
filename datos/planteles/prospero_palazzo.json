@@ -1,0 +1,490 @@
+{
+  "formato_version": 1,
+  "club_id": "prospero_palazzo",
+  "aviso": "Nombres inventados. Cualquier parecido con jugadores reales es casualidad.",
+  "formacion": "4-4-2",
+  "jugadores": [
+    {
+      "id": "prospero_palazzo_01",
+      "nombre": "Milton Jaramillo",
+      "apodo": null,
+      "dorsal": 1,
+      "posicion": "ARQ",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 187,
+      "atributos": {
+        "velocidad": 56,
+        "pase": 60,
+        "tiro": 30,
+        "defensa": 63,
+        "estamina": 61,
+        "atajada": 71
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 5,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "prospero_palazzo_02",
+      "nombre": "Emanuel Acuña",
+      "apodo": null,
+      "dorsal": 12,
+      "posicion": "ARQ",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 19,
+      "altura_cm": 186,
+      "atributos": {
+        "velocidad": 46,
+        "pase": 43,
+        "tiro": 30,
+        "defensa": 59,
+        "estamina": 41,
+        "atajada": 54
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "prospero_palazzo_03",
+      "nombre": "Lisandro Catrilaf",
+      "apodo": null,
+      "dorsal": 2,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "ambos",
+      "edad": 28,
+      "altura_cm": 173,
+      "atributos": {
+        "velocidad": 60,
+        "pase": 58,
+        "tiro": 49,
+        "defensa": 76,
+        "estamina": 68
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "prospero_palazzo_04",
+      "nombre": "Federico Gatica",
+      "apodo": null,
+      "dorsal": 6,
+      "posicion": "DFC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 27,
+      "altura_cm": 185,
+      "atributos": {
+        "velocidad": 55,
+        "pase": 50,
+        "tiro": 40,
+        "defensa": 77,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 5,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "prospero_palazzo_05",
+      "nombre": "Maximiliano Barría",
+      "apodo": null,
+      "dorsal": 13,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 174,
+      "atributos": {
+        "velocidad": 44,
+        "pase": 51,
+        "tiro": 34,
+        "defensa": 67,
+        "estamina": 53
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 3,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "prospero_palazzo_06",
+      "nombre": "Walter Peralta",
+      "apodo": null,
+      "dorsal": 14,
+      "posicion": "DFC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 173,
+      "atributos": {
+        "velocidad": 41,
+        "pase": 51,
+        "tiro": 41,
+        "defensa": 69,
+        "estamina": 53
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 4,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "prospero_palazzo_07",
+      "nombre": "Alan Paillacán",
+      "apodo": null,
+      "dorsal": 3,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 21,
+      "altura_cm": 169,
+      "atributos": {
+        "velocidad": 66,
+        "pase": 52,
+        "tiro": 54,
+        "defensa": 59,
+        "estamina": 62
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 2,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "prospero_palazzo_08",
+      "nombre": "Gonzalo Gallardo",
+      "apodo": null,
+      "dorsal": 4,
+      "posicion": "LAT",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 25,
+      "altura_cm": 177,
+      "atributos": {
+        "velocidad": 71,
+        "pase": 62,
+        "tiro": 50,
+        "defensa": 67,
+        "estamina": 60
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "prospero_palazzo_09",
+      "nombre": "Enzo Gatica",
+      "apodo": null,
+      "dorsal": 15,
+      "posicion": "LAT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 32,
+      "altura_cm": 180,
+      "atributos": {
+        "velocidad": 58,
+        "pase": 49,
+        "tiro": 39,
+        "defensa": 51,
+        "estamina": 59
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "prospero_palazzo_10",
+      "nombre": "Santiago Quintana",
+      "apodo": null,
+      "dorsal": 5,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "ambos",
+      "edad": 34,
+      "altura_cm": 173,
+      "atributos": {
+        "velocidad": 61,
+        "pase": 72,
+        "tiro": 51,
+        "defensa": 65,
+        "estamina": 70
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "prospero_palazzo_11",
+      "nombre": "Elías Villarroel",
+      "apodo": "el Turco",
+      "dorsal": 8,
+      "posicion": "MC",
+      "titular": true,
+      "pie": "izquierdo",
+      "edad": 26,
+      "altura_cm": 181,
+      "atributos": {
+        "velocidad": 63,
+        "pase": 63,
+        "tiro": 56,
+        "defensa": 60,
+        "estamina": 73
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 5,
+        "color_pelo": 0,
+        "barba": false
+      }
+    },
+    {
+      "id": "prospero_palazzo_12",
+      "nombre": "Kevin Jaramillo",
+      "apodo": null,
+      "dorsal": 16,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 20,
+      "altura_cm": 173,
+      "atributos": {
+        "velocidad": 49,
+        "pase": 67,
+        "tiro": 46,
+        "defensa": 56,
+        "estamina": 63
+      },
+      "apariencia": {
+        "piel": 0,
+        "pelo": 3,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "prospero_palazzo_13",
+      "nombre": "Axel Ríos",
+      "apodo": null,
+      "dorsal": 18,
+      "posicion": "MC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 184,
+      "atributos": {
+        "velocidad": 55,
+        "pase": 61,
+        "tiro": 48,
+        "defensa": 52,
+        "estamina": 64
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 2,
+        "barba": true
+      }
+    },
+    {
+      "id": "prospero_palazzo_14",
+      "nombre": "Bruno Quintana",
+      "apodo": null,
+      "dorsal": 10,
+      "posicion": "MP",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 25,
+      "altura_cm": 177,
+      "atributos": {
+        "velocidad": 64,
+        "pase": 69,
+        "tiro": 72,
+        "defensa": 53,
+        "estamina": 55
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 1,
+        "color_pelo": 3,
+        "barba": true
+      }
+    },
+    {
+      "id": "prospero_palazzo_15",
+      "nombre": "Gastón Antilef",
+      "apodo": null,
+      "dorsal": 20,
+      "posicion": "MP",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 23,
+      "altura_cm": 176,
+      "atributos": {
+        "velocidad": 47,
+        "pase": 58,
+        "tiro": 51,
+        "defensa": 37,
+        "estamina": 50
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 3,
+        "color_pelo": 3,
+        "barba": false
+      }
+    },
+    {
+      "id": "prospero_palazzo_16",
+      "nombre": "Bruno Alvarado",
+      "apodo": null,
+      "dorsal": 7,
+      "posicion": "EXT",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 35,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 73,
+        "pase": 62,
+        "tiro": 60,
+        "defensa": 54,
+        "estamina": 62
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 4,
+        "color_pelo": 0,
+        "barba": true
+      }
+    },
+    {
+      "id": "prospero_palazzo_17",
+      "nombre": "Tobías Oyarzo",
+      "apodo": null,
+      "dorsal": 11,
+      "posicion": "EXT",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 31,
+      "altura_cm": 168,
+      "atributos": {
+        "velocidad": 69,
+        "pase": 53,
+        "tiro": 49,
+        "defensa": 45,
+        "estamina": 50
+      },
+      "apariencia": {
+        "piel": 3,
+        "pelo": 1,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "prospero_palazzo_18",
+      "nombre": "Thiago Vargas",
+      "apodo": "el Petiso",
+      "dorsal": 9,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "derecho",
+      "edad": 29,
+      "altura_cm": 177,
+      "atributos": {
+        "velocidad": 62,
+        "pase": 56,
+        "tiro": 70,
+        "defensa": 40,
+        "estamina": 65
+      },
+      "apariencia": {
+        "piel": 2,
+        "pelo": 4,
+        "color_pelo": 2,
+        "barba": false
+      }
+    },
+    {
+      "id": "prospero_palazzo_19",
+      "nombre": "Alan Peralta",
+      "apodo": null,
+      "dorsal": 19,
+      "posicion": "DC",
+      "titular": true,
+      "pie": "ambos",
+      "edad": 36,
+      "altura_cm": 173,
+      "atributos": {
+        "velocidad": 70,
+        "pase": 55,
+        "tiro": 70,
+        "defensa": 43,
+        "estamina": 63
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 0,
+        "color_pelo": 1,
+        "barba": false
+      }
+    },
+    {
+      "id": "prospero_palazzo_20",
+      "nombre": "Leandro Correa",
+      "apodo": null,
+      "dorsal": 17,
+      "posicion": "DC",
+      "titular": false,
+      "pie": "derecho",
+      "edad": 25,
+      "altura_cm": 172,
+      "atributos": {
+        "velocidad": 50,
+        "pase": 56,
+        "tiro": 68,
+        "defensa": 35,
+        "estamina": 59
+      },
+      "apariencia": {
+        "piel": 1,
+        "pelo": 3,
+        "color_pelo": 1,
+        "barba": false
+      }
+    }
+  ]
+}

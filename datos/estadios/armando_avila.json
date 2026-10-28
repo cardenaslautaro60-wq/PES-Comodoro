@@ -1,0 +1,44 @@
+{
+  "formato_version": 1,
+  "id": "armando_avila",
+  "nombre": "Estadio Don Armando Ávila",
+  "apodo": null,
+  "clubes": [
+    "usma"
+  ],
+  "direccion": "Álvarez Jonte 151",
+  "barrio": "Barrio Azcuénaga, Km 5",
+  "inaugurado": null,
+  "capacidad": 1000,
+  "superficie": "sintetico",
+  "dimensiones_m": {
+    "largo": 105,
+    "ancho": 68,
+    "confianza": "propuesta"
+  },
+  "tribunas": [
+    {
+      "lado": "lateral",
+      "tipo": "tribuna chica",
+      "capacidad_aprox": null
+    }
+  ],
+  "pista_atletismo": false,
+  "iluminacion": null,
+  "entorno": {
+    "fondo": [
+      "meseta"
+    ],
+    "viento": "fuerte",
+    "nota": "Viento patagónico: el juego puede usarlo como efecto en la pelota."
+  },
+  "confianza": "probable",
+  "notas": "Césped sintético desde el 24/07/2015.",
+  "fuentes": [
+    "https://www.estadiosdeargentina.com.ar/cancha-de-usma-comodoro-rivadavia/"
+  ],
+  "pendiente": [
+    "Iluminación",
+    "Fotos"
+  ]
+}

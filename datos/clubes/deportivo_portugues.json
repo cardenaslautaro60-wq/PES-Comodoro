@@ -1,0 +1,107 @@
+{
+  "formato_version": 1,
+  "id": "deportivo_portugues",
+  "nombre_oficial": "Club Deportivo Portugués",
+  "nombre_corto": "Dep. Portugués",
+  "abreviatura": "POR",
+  "apodos": [
+    "Lusitano"
+  ],
+  "fundacion": "1962-07-27",
+  "nota_fundacion": "",
+  "ciudad": "Comodoro Rivadavia",
+  "barrio": "Zona de calle Belgrano",
+  "sede": "Belgrano 541, Comodoro Rivadavia",
+  "colores": [
+    "#C8102E",
+    "#1B7A3A",
+    "#F5C400"
+  ],
+  "nombres_colores": [
+    "rojo",
+    "verde",
+    "amarillo"
+  ],
+  "camisetas": {
+    "titular": {
+      "patron": "liso",
+      "color_base": "#C8102E",
+      "color_secundario": "#1B7A3A",
+      "color_terciario": "#F5C400",
+      "hombreras": null,
+      "cuello": "#1B7A3A",
+      "numero": "#FFFFFF",
+      "pantalon": "#1B7A3A",
+      "medias": "#C8102E",
+      "sponsor_parodia": "Bacalao del Golfo",
+      "confianza": "propuesta",
+      "nota": "Colores rojo, verde y amarillo confirmados; diseño propuesto."
+    },
+    "suplente": {
+      "patron": "liso",
+      "color_base": "#1B7A3A",
+      "color_secundario": "#C8102E",
+      "color_terciario": "#F5C400",
+      "hombreras": null,
+      "cuello": "#C8102E",
+      "numero": "#FFFFFF",
+      "pantalon": "#1B7A3A",
+      "medias": "#1B7A3A",
+      "sponsor_parodia": "Bacalao del Golfo",
+      "confianza": "propuesta",
+      "nota": ""
+    },
+    "arquero": {
+      "patron": "liso",
+      "color_base": "#151515",
+      "color_secundario": "#151515",
+      "color_terciario": null,
+      "hombreras": null,
+      "cuello": "#151515",
+      "numero": "#FFFFFF",
+      "pantalon": "#151515",
+      "medias": "#151515",
+      "sponsor_parodia": "",
+      "confianza": "propuesta",
+      "nota": "Buzo de arquero genérico del juego, elegido para no chocar con los colores del club."
+    }
+  },
+  "uso_camiseta_oficial": "parodia_hasta_permiso",
+  "escudo": {
+    "permiso": "sin_pedir",
+    "archivo_oficial": null,
+    "descripcion_oficial": "A completar mirando el escudo oficial (las fuentes consultadas sólo tienen la imagen).",
+    "parodia": {
+      "forma": "escudo clásico partido en dos",
+      "colores": [
+        "#1B7A3A",
+        "#C8102E",
+        "#F5C400"
+      ],
+      "simbolo": "Una carabela pequeña sobre el mar",
+      "texto": "CDP",
+      "archivo": null
+    }
+  },
+  "estadio_id": "inmigrantes_portugueses",
+  "divisiones": [
+    "primera_a_clausura_2026"
+  ],
+  "nivel": 3,
+  "plantel": "res://datos/planteles/deportivo_portugues.json",
+  "contacto": {
+    "web": null,
+    "facebook": null,
+    "x": null,
+    "instagram": null,
+    "email": null
+  },
+  "fuentes": [
+    "https://oncepatagonico.com.ar/club-deportivo-portugues/"
+  ],
+  "pendiente": [
+    "Diseño de camiseta",
+    "Redes oficiales",
+    "Descripción del escudo"
+  ]
+}
