@@ -214,6 +214,7 @@ func _crear_interfaz() -> void:
 	capa.add_child(hud)
 
 	_marcador = Label.new()
+	_marcador.name = "Marcador"
 	_marcador.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
 	_marcador.offset_top = 12
 	_marcador.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -224,6 +225,7 @@ func _crear_interfaz() -> void:
 	_actualizar_marcador()
 
 	_contador_fps = Label.new()
+	_contador_fps.name = "ContadorFps"
 	_contador_fps.position = Vector2(12, 8)
 	_contador_fps.add_theme_font_size_override("font_size", 18)
 	capa.add_child(_contador_fps)

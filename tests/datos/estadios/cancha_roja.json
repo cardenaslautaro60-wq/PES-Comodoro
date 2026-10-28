@@ -1,0 +1,8 @@
+{
+  "formato_version": 1,
+  "id": "cancha_roja",
+  "nombre": "Cancha Roja",
+  "barrio": "Barrio de prueba",
+  "capacidad": 500,
+  "superficie": "natural"
+}

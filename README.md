@@ -6,13 +6,14 @@ Juego de fútbol 3D inspirado en PES 2006, con los clubes de la Liga de Fútbol 
 
 - **Plan completo:** [docs/PLAN.md](docs/PLAN.md)
 - **Cómo trabajamos:** [docs/CONVENCIONES.md](docs/CONVENCIONES.md)
+- **Menús, interfaz y sonido:** [docs/interfaz-y-sonido.md](docs/interfaz-y-sonido.md)
 
 ## Abrir el proyecto
 
 1. Instalá [Godot 4.5](https://godotengine.org/download) o una versión 4.x más nueva (la estándar, no la de .NET).
 2. Cloná el repo: `git clone https://github.com/cardenaslautaro60-wq/pes-comodoro.git`
 3. Abrí Godot, tocá **Importar** y elegí el archivo `project.godot`.
-4. Apretá **F5** para jugar el entrenamiento: tu equipo (rojo) contra tres rivales y un arquero que todavía están quietos.
+4. Apretá **F5**: arranca el menú principal. Desde ahí, **Amistoso** lleva a elegir los equipos y a jugar. Para abrir sólo el entrenamiento, abrí `escenas/partido/entrenamiento.tscn` y apretá **F6**.
 
 **Controles** (mantené el botón para cargar la potencia y soltalo para patear):
 
@@ -25,6 +26,7 @@ Juego de fútbol 3D inspirado en PES 2006, con los clubes de la Liga de Fútbol 
 | Pase largo o centro | L | X | LARGO |
 | Pase al hueco | I | Y | HUECO |
 | Cambiar de jugador (al defender) | Q | LB | CAMBIAR |
+| Pausa | Escape o P | Start | Botón II arriba a la derecha |
 
 Cómo funciona por dentro y qué pueden usar las otras áreas: [docs/JUGABILIDAD.md](docs/JUGABILIDAD.md).
 
@@ -57,6 +59,7 @@ GitHub las corre solas en cada pull request, junto con la revisión de estilo (`
 | `scripts/autoload/` | Sistemas globales, como los controles |
 | `datos/clubes/` | Un archivo por club: nombre, colores, camisetas, estadio y plantel |
 | `arte/` | Modelos 3D, texturas y animaciones |
-| `audio/` | Sonidos y música |
+| `audio/` | Sonidos y música (se generan con `herramientas/generar_sonidos.py`; los cánticos grabados van en `audio/canticos/`) |
+| `herramientas/` | Scripts de Python para generar sonidos y revisar datos |
 | `tests/` | Pruebas automáticas |
 | `docs/` | Plan y convenciones |

@@ -19,6 +19,7 @@ const TECLAS := {
 	"pase_hueco": [KEY_I],
 	"sprint": [KEY_SHIFT],
 	"cambiar_jugador": [KEY_Q],
+	"pausa": [KEY_ESCAPE, KEY_P],
 }
 
 const BOTONES_JOYSTICK := {
@@ -28,6 +29,7 @@ const BOTONES_JOYSTICK := {
 	"pase_hueco": JOY_BUTTON_Y,
 	"sprint": JOY_BUTTON_RIGHT_SHOULDER,
 	"cambiar_jugador": JOY_BUTTON_LEFT_SHOULDER,
+	"pausa": JOY_BUTTON_START,
 }
 
 const ZONA_MUERTA_JOYSTICK := 0.2
