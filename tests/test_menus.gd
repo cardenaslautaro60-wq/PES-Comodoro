@@ -159,9 +159,15 @@ func test_salir_del_partido_pide_confirmacion() -> void:
 func test_partido_viste_a_los_jugadores_con_el_club_elegido() -> void:
 	await abrir(Navegacion.PARTIDO)
 	var juego: Node = pantalla.get("juego")
-	var primero: Node = juego.get("jugadores")[0]
-	afirmar(primero.get("nombre_jugador") == "Jugador 10", "el 10 debería llamarse como en el plantel")
-	var color: Color = primero.get("color_equipo")
+	var diez: Node = null
+	for jugador: Node in juego.get("jugadores"):
+		if int(jugador.get("equipo")) == 0 and int(jugador.get("dorsal")) == 10:
+			diez = jugador
+	afirmar(diez != null, "el 10 del local no está en la cancha")
+	if diez == null:
+		return
+	afirmar(diez.get("nombre_jugador") == "Jugador 10", "el 10 debería llamarse como en el plantel")
+	var color: Color = diez.get("color_equipo")
 	afirmar(color.is_equal_approx(ConfigPartido.color_camiseta("local")), "el local no tiene el color de su camiseta")
 
 
