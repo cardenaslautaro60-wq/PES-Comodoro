@@ -43,6 +43,7 @@ func _ready() -> void:
 	ConfigPartido.reiniciar_resultado()
 	juego = (load(ESCENA_JUEGO) as PackedScene).instantiate()
 	juego.name = "Juego"
+	_preparar_cinematicas()
 	add_child(juego)
 	_adaptar_juego()
 
@@ -80,6 +81,10 @@ func _ready() -> void:
 
 	if juego.has_signal("gol"):
 		juego.connect("gol", _al_gol)
+	var director := _cinematicas()
+	if director:
+		director.connect("cinematica_empezada", _al_empezar_cinematica.bind(capa))
+		director.connect("cinematica_terminada", _al_terminar_cinematica.bind(capa))
 	var destacado := ConfigPartido.jugador_destacado("local")
 	if not destacado.is_empty():
 		_nombre_jugador = "%d · %s" % [int(destacado.get("dorsal", 0)), destacado.get("nombre", "")]
@@ -123,6 +128,11 @@ func volver() -> void:
 
 
 func abrir_pausa() -> void:
+	var director := _cinematicas()
+	if director and director.get("activa"):
+		# Durante una cinemática, "atrás" o pausa la saltean.
+		director.call("saltear")
+		return
 	if not reloj.terminado:
 		pausa.abrir()
 
@@ -139,6 +149,10 @@ func _adaptar_juego() -> void:
 	var marcador_viejo := juego.get_node_or_null("Interfaz/Marcador") as CanvasItem
 	if marcador_viejo:
 		marcador_viejo.visible = false
+	# La repetición se pide desde la pausa: el botón REPE del entrenamiento sobra.
+	var boton_repeticion := juego.get_node_or_null("Interfaz/BotonRepeticion") as CanvasItem
+	if boton_repeticion:
+		boton_repeticion.visible = false
 	var jugadores = juego.get("jugadores")
 	if not jugadores is Array:
 		return
@@ -217,6 +231,11 @@ func _al_terminar_tiempo(numero: int) -> void:
 		ConfigPartido.abreviatura_de("local"), ConfigPartido.goles["local"],
 		ConfigPartido.goles["visitante"], ConfigPartido.abreviatura_de("visitante"),
 	], 2.5, Color.WHITE)
+	var director := _cinematicas()
+	if director:
+		while director.get("activa"):
+			await get_tree().process_frame
+		await director.call("entretiempo")
 	if juego.has_method("reiniciar_jugada"):
 		juego.call("reiniciar_jugada")
 
@@ -225,10 +244,39 @@ func _al_terminar_partido() -> void:
 	ConfigPartido.terminado = true
 	Sonido.reproducir("silbato_final")
 	Sonido.intensidad(1.0)
-	hud.mostrar_cartel("¡Final!", "", ESPERA_ANTES_DEL_RESULTADO, Color.WHITE)
-	await get_tree().create_timer(ESPERA_ANTES_DEL_RESULTADO).timeout
+	var director := _cinematicas()
+	if director:
+		# Si un gol está en pleno festejo, primero termina ese.
+		while director.get("activa"):
+			await get_tree().process_frame
+		await director.call("final_del_partido")
+	else:
+		hud.mostrar_cartel("¡Final!", "", ESPERA_ANTES_DEL_RESULTADO, Color.WHITE)
+		await get_tree().create_timer(ESPERA_ANTES_DEL_RESULTADO).timeout
 	if is_inside_tree():
 		Navegacion.ir_a(Navegacion.RESULTADO)
+
+
+## Le pasa a la escena de juego los nombres para los títulos de las cinemáticas
+## y le saca el final "a los 3 goles" del entrenamiento: acá manda el reloj.
+func _preparar_cinematicas() -> void:
+	juego.set("goles_para_terminar", 0)
+	juego.set("nombre_local", ConfigPartido.nombre_de("local"))
+	juego.set("nombre_visitante", ConfigPartido.nombre_de("visitante"))
+	var estadio := Catalogo.estadio(ConfigPartido.estadio_id)
+	if not estadio.is_empty():
+		juego.set("nombre_estadio", str(estadio.get("nombre", "")))
+
+
+## Durante una cinemática el reloj se frena y el marcador se esconde.
+func _al_empezar_cinematica(_nombre: String, capa: CanvasLayer) -> void:
+	reloj.corriendo = false
+	capa.visible = false
+
+
+func _al_terminar_cinematica(_nombre: String, _salteada: bool, capa: CanvasLayer) -> void:
+	reloj.corriendo = not reloj.terminado
+	capa.visible = true
 
 
 ## Director de cinemáticas del área F, si la escena de juego lo tiene.

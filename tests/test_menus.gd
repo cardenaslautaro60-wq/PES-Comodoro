@@ -16,6 +16,7 @@ func antes_de_cada() -> void:
 
 func despues_de_cada() -> void:
 	get_tree().paused = false
+	await saltear_cinematicas()
 	if is_instance_valid(pantalla):
 		pantalla.queue_free()
 	await get_tree().process_frame
@@ -30,7 +31,24 @@ func abrir(ruta: String) -> Node:
 	add_child(pantalla)
 	await get_tree().process_frame
 	await get_tree().process_frame
+	await saltear_cinematicas()
 	return pantalla
+
+
+## Saltea la presentación (y cualquier otra cinemática) del partido.
+func saltear_cinematicas() -> void:
+	if not is_instance_valid(pantalla):
+		return
+	var juego = pantalla.get("juego")
+	var director = juego.get("cinematicas") if juego is Object else null
+	if not director is Object:
+		return
+	for i in 120:
+		if not director.get("activa"):
+			break
+		director.call("saltear")
+		await get_tree().process_frame
+	await get_tree().process_frame
 
 
 func test_menu_principal_lleva_al_amistoso() -> void:

@@ -7,15 +7,23 @@ extends Node3D
 ## (eso es del área C), pero si pasás muy cerca te pueden sacar la pelota.
 ##
 ## Cuenta los goles y vuelve a poner la pelota en el medio cuando sale o entra.
+##
+## Con `con_cinematicas`, arranca con la presentación y la salida de los equipos,
+## cada gol tiene su festejo y su repetición, y a los `GOLES_PARA_TERMINAR` goles
+## pasa la cinemática del final y el marcador vuelve a cero. La "R" (o "REPE" en
+## el celular) muestra la repetición de la última jugada.
 
 signal gol(equipo: String)
 
 const ControlesTactiles := preload("res://scripts/ui/controles_tactiles.gd")
 const HudJugador := preload("res://scripts/ui/hud_jugador.gd")
+const BotonAccion := preload("res://scripts/ui/boton_accion.gd")
 
 const COLOR_LOCAL := Color(0.80, 0.12, 0.15)
 const COLOR_VISITANTE := Color(0.15, 0.30, 0.80)
 const POSICION_SAQUE := Vector3(0, Pelota.RADIO + 0.02, 0)
+## Goles de un equipo que terminan el entrenamiento (con la cinemática del final).
+const GOLES_PARA_TERMINAR := 3
 ## Nombre, dorsal y posición de cada jugador del entrenamiento (nombres inventados).
 const LOCALES := [
 	["Vos", 10, Vector2(-0.7, 0)],
@@ -30,14 +38,24 @@ const VISITANTES := [
 	["Arquero", 1, Vector2(51, 0)],
 ]
 
+## Las pruebas lo apagan antes de agregar la escena para arrancar directo a jugar.
+@export var con_cinematicas := true
+## Goles que terminan el entrenamiento con la cinemática del final (0 = nunca;
+## el partido completo lo pone en 0 porque ahí manda el reloj).
+@export var goles_para_terminar := GOLES_PARA_TERMINAR
+
 var goles_local := 0
 var goles_visitante := 0
+var nombre_local := "Local"
+var nombre_visitante := "Visitante"
+var nombre_estadio := "Cancha de entrenamiento"
 
 var cancha: Cancha
 var pelota: Pelota
 var camara: CamaraTransmision
 var control: ControlHumano
 var jugadores: Array[Jugador] = []
+var cinematicas: DirectorCinematicas
 
 var _esperando_reinicio := false
 var _temporizador_reinicio: Timer
@@ -85,13 +103,23 @@ func _ready() -> void:
 
 	_crear_interfaz()
 
+	if con_cinematicas:
+		var fondo := FondoComodoroProvisorio.new()
+		fondo.name = "FondoComodoro"
+		add_child(fondo)
+		cinematicas = DirectorCinematicas.new()
+		cinematicas.name = "Cinematicas"
+		cinematicas.partido = self
+		add_child(cinematicas)
+		_presentar.call_deferred()
+
 
 func _process(_delta: float) -> void:
 	_contador_fps.text = "%d FPS" % Engine.get_frames_per_second()
 
 
 func _physics_process(_delta: float) -> void:
-	if _esperando_reinicio:
+	if _esperando_reinicio or (cinematicas and cinematicas.activa):
 		return
 	var p := pelota.global_position
 	var muy_lejos := absf(p.x) > Cancha.LARGO / 2 + Cancha.FONDO_ARCO + 1.0 or p.y < -1.0
@@ -153,11 +181,30 @@ func _al_gol(lado: int) -> void:
 	_actualizar_marcador()
 	gol.emit(equipo)
 	Controles.vibrar(200)
-	_programar_reinicio(2.0)
+	if cinematicas == null:
+		_programar_reinicio(2.0)
+		return
+	_esperando_reinicio = true
+	await cinematicas.festejar_gol(lado)
+	if goles_para_terminar > 0 and maxi(goles_local, goles_visitante) >= goles_para_terminar:
+		reiniciar_jugada()
+		await cinematicas.final_del_partido()
+		goles_local = 0
+		goles_visitante = 0
+		_actualizar_marcador()
+	reiniciar_jugada()
+	_esperando_reinicio = false
+
+
+func _presentar() -> void:
+	await cinematicas.presentar_partido()
+	reiniciar_jugada()
 
 
 func _actualizar_marcador() -> void:
-	_marcador.text = "LOCAL  %d - %d  VISITANTE" % [goles_local, goles_visitante]
+	_marcador.text = "%s  %d - %d  %s" % [
+		nombre_local.to_upper(), goles_local, goles_visitante, nombre_visitante.to_upper()
+	]
 
 
 func _crear_ambiente() -> void:
@@ -235,12 +282,14 @@ func _crear_interfaz() -> void:
 		tactiles.name = "ControlesTactiles"
 		tactiles.set("control_humano", control)
 		capa.add_child(tactiles)
+		if con_cinematicas:
+			capa.add_child(_boton_repeticion())
 	else:
 		var ayuda := Label.new()
 		ayuda.name = "Ayuda"
 		ayuda.text = (
 			"Mover: WASD   Sprint: Shift   Pase / presión: J   Tiro / barrida: K   "
-			+ "Pase largo: L   Pase al hueco: I   Cambiar jugador: Q\n"
+			+ "Pase largo: L   Pase al hueco: I   Cambiar jugador: Q   Repetición: R\n"
 			+ "Mantené el botón para cargar la potencia y soltalo para patear."
 		)
 		ayuda.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
@@ -250,6 +299,28 @@ func _crear_interfaz() -> void:
 		ayuda.add_theme_color_override("font_outline_color", Color.BLACK)
 		ayuda.add_theme_constant_override("outline_size", 4)
 		capa.add_child(ayuda)
+
+
+## Botón chico arriba a la derecha para ver la repetición en el celular.
+func _boton_repeticion() -> Button:
+	var boton: Button = BotonAccion.new()
+	boton.name = "BotonRepeticion"
+	boton.set("accion", "repeticion")
+	boton.text = "REPE"
+	boton.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	boton.offset_left = -130
+	boton.offset_top = 12
+	boton.offset_right = -16
+	boton.offset_bottom = 68
+	boton.add_theme_font_size_override("font_size", 22)
+	var estilo := StyleBoxFlat.new()
+	estilo.bg_color = Color(0, 0, 0, 0.35)
+	estilo.set_corner_radius_all(28)
+	estilo.border_color = Color(1, 1, 1, 0.5)
+	estilo.set_border_width_all(2)
+	for estado: String in ["normal", "hover", "pressed"]:
+		boton.add_theme_stylebox_override(estado, estilo)
+	return boton
 
 
 func es_tactil() -> bool:
