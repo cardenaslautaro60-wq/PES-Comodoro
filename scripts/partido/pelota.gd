@@ -26,10 +26,15 @@ const ALCANCE_CONTROL := 0.9
 const VELOCIDAD_MAX_CONTROL := 24.0
 ## Distancia a la que un rival puede disputar la pelota que alguien conduce.
 const ALCANCE_ROBO := 0.8
-## Altura hasta la que un cuerpo desvía la pelota.
-const ALTURA_CUERPO := 1.9
+## Altura hasta la que llega cualquier cuerpo, aun saltando (ver `_altura_de_alcance`).
+const ALTURA_CUERPO := 2.8
+## Hasta esta velocidad (respecto del que la recibe) cualquiera la para. Más rápido,
+## el primer toque puede fallar según el control del jugador: el pase "pesa".
+const VELOCIDAD_CONTROL_FACIL := 15.0
 ## Qué tan fuerte sigue la pelota el pie del que la conduce.
 const RIGIDEZ_CONDUCCION := 14.0
+## Al robar desde atrás, chances de que el árbitro lo cobre como falta.
+const PROBABILIDAD_FALTA_DE_ATRAS := 0.5
 ## Paso de las simulaciones que calculan pases y tiros.
 const PASO_SIMULACION := 1.0 / 60.0
 
@@ -43,6 +48,8 @@ const PASO_SIMULACION := 1.0 / 60.0
 @export var roce_pasto_lineal := 0.2
 ## Cuánto se pierde el efecto por segundo en el aire.
 @export var freno_efecto := 0.4
+## Lo que conserva la velocidad vertical en cada pique.
+@export var rebote := 0.55
 
 var poseedor: Jugador = null
 var ultimo_en_tocar: Jugador = null
@@ -67,7 +74,7 @@ func _init() -> void:
 	angular_damp_mode = RigidBody3D.DAMP_MODE_REPLACE
 	angular_damp = 0.0
 	var material := PhysicsMaterial.new()
-	material.bounce = 0.6
+	material.bounce = rebote
 	# Sin roce físico: el roce con el pasto y el giro los maneja `_integrate_forces`.
 	material.friction = 0.0
 	physics_material_override = material
@@ -231,6 +238,66 @@ func angulo_para_altura(rapidez: float, distancia: float, altura: float) -> floa
 	return (minimo + maximo) / 2
 
 
+## Recorrido de una pelota pateada desde `desde` con esa velocidad y ese giro, un
+## punto por paso de `PASO_SIMULACION`. Sirve para apuntar pases y tiros con efecto
+## y para ver si un tiro libre pasa la barrera.
+func trayectoria(desde: Vector3, velocidad: Vector3, giro: Vector3, segundos := 3.0) -> PackedVector3Array:
+	var puntos := PackedVector3Array()
+	var p := desde
+	var v := velocidad
+	var w := giro
+	var g := _gravedad()
+	for i in int(segundos / PASO_SIMULACION):
+		var en_piso := p.y <= RADIO + 0.01 and absf(v.y) < 1.5
+		if not en_piso:
+			v.y -= g * PASO_SIMULACION
+		v = _frenar(v, en_piso, PASO_SIMULACION, w)
+		w *= exp(-(freno_efecto if not en_piso else 4.0) * PASO_SIMULACION)
+		p += v * PASO_SIMULACION
+		if p.y < RADIO:
+			p.y = RADIO
+			v.y = -v.y * rebote if v.y < -1.5 else 0.0
+		puntos.append(p)
+	return puntos
+
+
+## Dónde cruza la pelota el plano vertical x = `plano_x` (por ejemplo, la línea del
+## arco). Devuelve Vector3.INF si no llega.
+static func cruce_con_plano_x(puntos: PackedVector3Array, desde: Vector3, plano_x: float) -> Vector3:
+	var anterior := desde
+	for p in puntos:
+		if signf(p.x - plano_x) != signf(anterior.x - plano_x):
+			var t := (plano_x - anterior.x) / (p.x - anterior.x)
+			return anterior.lerp(p, t)
+		anterior = p
+	return Vector3.INF
+
+
+## Altura de la pelota cuando se alejó `distancia` metros (en el piso) de `desde`.
+## -1 si no llega.
+static func altura_a_distancia_simulada(puntos: PackedVector3Array, desde: Vector3, distancia: float) -> float:
+	var anterior := desde
+	for p in puntos:
+		var d := Vector2(p.x - desde.x, p.z - desde.z).length()
+		if d >= distancia:
+			var d0 := Vector2(anterior.x - desde.x, anterior.z - desde.z).length()
+			var t := (distancia - d0) / maxf(d - d0, 0.0001)
+			return lerpf(anterior.y, p.y, t)
+		anterior = p
+	return -1.0
+
+
+## Primer pique de la pelota (o donde quedó si nunca subió). Vector3.INF si no hay datos.
+static func primer_pique(puntos: PackedVector3Array) -> Vector3:
+	var subio := false
+	for p in puntos:
+		if p.y > RADIO + 0.05:
+			subio = true
+		elif subio:
+			return p
+	return puntos[puntos.size() - 1] if puntos.size() > 0 else Vector3.INF
+
+
 func _distancia_rodando(velocidad_inicial: float, velocidad_final: float) -> float:
 	var v := Vector3(velocidad_inicial, 0, 0)
 	var recorrido := 0.0
@@ -329,10 +396,37 @@ func _buscar_quien_la_controla() -> void:
 		var relativa := linear_velocity - jugador.velocity
 		if relativa.length() > VELOCIDAD_MAX_CONTROL:
 			continue
+		if _se_le_escapa(jugador, relativa.length()):
+			_mal_control(jugador)
+			return
 		mejor = jugador
 		mejor_distancia = distancia
 	if mejor:
 		dar_a(mejor)
+
+
+## Un pase fuerte cuesta más pararlo: cuanto más rápido llega y peor es el control
+## del que la recibe, más chances de que se le vaya un poco larga.
+func _se_le_escapa(jugador: Jugador, rapidez: float) -> bool:
+	if rapidez <= VELOCIDAD_CONTROL_FACIL or jugador == ultimo_en_tocar:
+		return false
+	var exceso := (rapidez - VELOCIDAD_CONTROL_FACIL) / (VELOCIDAD_MAX_CONTROL - VELOCIDAD_CONTROL_FACIL)
+	var torpeza := clampf(1.15 - jugador.control_de_pelota() / 99.0, 0.1, 1.0)
+	return rng.randf() < clampf(exceso, 0.0, 1.0) * torpeza
+
+
+## El primer toque le sale largo: la pelota rebota adelante, más lenta, y el
+## jugador tarda un instante en volver a buscarla.
+func _mal_control(jugador: Jugador) -> void:
+	var v := linear_velocity
+	var hacia := Vector3(v.x, 0, v.z).normalized()
+	var costado := hacia.cross(Vector3.UP) * rng.randf_range(-0.5, 0.5)
+	linear_velocity = (hacia * 0.25 + jugador.direccion_mirada * 0.6 + costado).normalized() * rng.randf_range(3.0, 5.0)
+	linear_velocity.y = rng.randf_range(0.5, 1.8)
+	efecto = Vector3.ZERO
+	ultimo_en_tocar = jugador
+	destinatario = null
+	jugador.bloquear_control(0.3)
 
 
 ## Una pelota que va demasiado rápido para controlarla rebota en el cuerpo
@@ -342,7 +436,9 @@ func _desviar_en_cuerpos(desde: Vector3, hasta: Vector3) -> bool:
 		return false
 	for nodo in _jugadores():
 		var jugador := nodo as Jugador
-		if jugador == null or jugador == ultimo_en_tocar or not jugador.puede_tomar_pelota():
+		if jugador == null or jugador == ultimo_en_tocar or not _puede_desviar(jugador):
+			continue
+		if minf(desde.y, hasta.y) > _altura_de_alcance(jugador):
 			continue
 		var centro := jugador.global_position
 		centro.y = hasta.y
@@ -376,9 +472,31 @@ func _resolver_disputa(delta: float) -> void:
 			var ventaja := 2.0 * rival.defensa / float(rival.defensa + poseedor.control_de_pelota())
 			var por_segundo := (2.4 if rival.presionando else 0.5) * ventaja
 			if rng.randf() < por_segundo * delta:
+				if rival.presionando and _llega_de_atras(rival) and rng.randf() < PROBABILIDAD_FALTA_DE_ATRAS:
+					# Quiso sacarla desde atrás y se llevó puesto al rival.
+					rival.cometer_falta(poseedor, 0.45)
+					return
 				poseedor.bloquear_control(0.6)
 				dar_a(rival)
 				return
+
+
+## Si una pelota fuerte que pasa cerca le pega en el cuerpo. La barrera siempre está
+## atenta, aunque el árbitro recién haya habilitado el juego.
+static func _puede_desviar(jugador: Jugador) -> bool:
+	return jugador.puede_tomar_pelota() or (jugador.en_barrera and jugador.estado == Jugador.Estado.NORMAL)
+
+
+## Hasta qué altura llega con la cabeza (más alto si está saltando).
+static func _altura_de_alcance(jugador: Jugador) -> float:
+	return jugador.global_position.y + Jugador.ALTURA / 2 + 0.15
+
+
+## True si el rival viene por la espalda del que conduce.
+func _llega_de_atras(rival: Jugador) -> bool:
+	var desde := rival.global_position - poseedor.global_position
+	desde.y = 0.0
+	return desde.length() > 0.01 and poseedor.direccion_mirada.angle_to(desde) > deg_to_rad(120)
 
 
 func _distancia_en_el_piso(a: Vector3, b: Vector3) -> float:

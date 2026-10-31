@@ -13,6 +13,8 @@ var _tiempo := 0.0
 var _estado_desde := 0.0
 var _mas_tiempo_parado := 0.0
 var _pase_de: Jugador = null
+var _tiro_libre_desde := -100.0
+var _pateador_tiro_libre: Jugador = null
 
 
 func _ready() -> void:
@@ -35,6 +37,9 @@ func _ready() -> void:
 	arbitro.saque_preparado.connect(func(t: int, _e: int, _j: Jugador) -> void: _sumar(Arbitro.NOMBRES_SAQUE[t]))
 	arbitro.falta_sancionada.connect(func(_i: Jugador, _v: Jugador, _p: bool) -> void: _sumar("faltas"))
 	arbitro.offside_sancionado.connect(func(_j: Jugador) -> void: _sumar("offside"))
+	arbitro.tarjeta_mostrada.connect(func(_j: Jugador, roja: bool) -> void: _sumar("rojas" if roja else "amarillas"))
+	arbitro.saque_preparado.connect(_al_preparar_saque)
+	arbitro.gol_convertido.connect(_al_gol)
 	arbitro.estado_cambiado.connect(func(_e: int) -> void: _estado_desde = _tiempo)
 	arbitro.partido_terminado.connect(_al_terminar)
 	for ia in partido.ias:
@@ -63,6 +68,19 @@ func _al_cambiar_poseedor(nuevo: Jugador) -> void:
 
 func _al_patear(tipo: Jugador.Patada, _fuerza: float, jugador: Jugador) -> void:
 	_sumar("%s_%d" % [Jugador.Patada.keys()[tipo].to_lower(), jugador.equipo])
+
+
+func _al_preparar_saque(_tipo: int, _equipo: int, ejecutor: Jugador) -> void:
+	if ejecutor.tiro_libre_directo:
+		_sumar("tiros_libres_directos")
+		_tiro_libre_desde = _tiempo
+		_pateador_tiro_libre = ejecutor
+
+
+func _al_gol(_equipo: int, autor: Jugador, _en_contra: bool) -> void:
+	# Gol del que pateó, hasta 6 segundos después de preparar el tiro libre (la espera más el vuelo).
+	if autor == _pateador_tiro_libre and _tiempo - _tiro_libre_desde < 6.0:
+		_sumar("goles_de_tiro_libre")
 
 
 func _sumar(clave: String, cuanto := 1.0) -> void:

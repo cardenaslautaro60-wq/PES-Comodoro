@@ -17,7 +17,10 @@ Partido 11 contra 11 contra la máquina: formaciones, IA de compañeros y rivale
 ## Reglas
 
 - **Lateral, córner y saque de arco** según quién la tocó último.
-- **Faltas**: barrida que no toca la pelota. Dentro del área del que la cometió es penal, afuera tiro libre con la barrera a 9,15 m.
+- **Faltas**: barrida que no toca la pelota, o presionar desde atrás llevándose puesto al rival. Dentro del área del que la cometió es penal, afuera tiro libre.
+- **Tiro libre directo**: a menos de 35 m del arco, con barrera de 2 a 5 jugadores a 9,15 m tapando el palo cercano (`TiroLibre.jugadores_en_barrera`). La barrera salta cuando patean. El que patea apunta y le da comba y picada (ver [JUGABILIDAD.md](JUGABILIDAD.md#tiros-libres)). El tiro libre por offside no es directo: no hay barrera.
+- **Tarjetas** (`Arbitro._sancionar`): según la gravedad de la falta (de atrás, tarde, lanzado). Amarilla si es fea, roja directa si es muy fea o si cortó una ocasión clara de gol (tenía la pelota cerca del arco y no quedaba nadie más que el arquero), roja por doble amarilla. El expulsado sale en la pelota parada siguiente y el equipo sigue con 10 (no se puede cambiar la formación con uno menos). El arquero no se expulsa: no hay quién vaya al arco.
+- **Ley de ventaja**: falta en campo rival con un compañero cerca de la pelota: aviso "Ventaja" y se sigue. Si a los 1,6 s el equipo no tiene la pelota (o la pierde antes), se cobra el tiro libre donde fue la falta. Las tarjetas se muestran igual.
 - **Offside**: opcional (`configuracion.offside`). Se marca quién está adelantado en cada pase y se cobra si recibe él.
 - **Saques**: el árbitro elige quién saca y lo deja quieto con la pelota (`Jugador.inmovil`) hasta que patea.
 - **Reloj**: 2 tiempos de 3 a 10 minutos reales que muestran 0' a 90'. Corre en juego y en saques (no en penales ni festejos).
@@ -28,6 +31,7 @@ Partido 11 contra 11 contra la máquina: formaciones, IA de compañeros y rivale
 - **Sin pelota, atacando**: busca espacio adelante respetando el offside y ofrece una opción de pase.
 - **Sin pelota, defendiendo**: el más cercano presiona, otro cubre y el resto marca en zona. No barre de atrás ni al arquero.
 - **Con pelota**: tira si está cerca, centra desde la banda, busca el mejor pase o gambetea esquivando.
+- **Tiro libre directo**: hasta 27 m busca un tiro por arriba de la barrera a un ángulo (`TiroLibre.planear` prueba potencia, comba y picada con la misma física de la pelota); más lejos casi siempre la toca.
 - **Arquero**: se ubica entre la pelota y el arco, sale a buscar pelotas sueltas y decide una vez por tiro si ataja (agarra o da rebote al costado).
 - **Cambio automático**: la persona pasa al compañero mejor ubicado cuando la pelota la tiene el rival (nunca deja al arquero).
 
@@ -45,7 +49,7 @@ Partido 11 contra 11 contra la máquina: formaciones, IA de compañeros y rivale
 
 ## Para las otras áreas
 
-- **Señales del árbitro**: `saque_preparado`, `gol_convertido`, `falta_sancionada`, `offside_sancionado`, `entretiempo`, `partido_terminado`, `aviso`.
+- **Señales del árbitro**: `saque_preparado`, `gol_convertido`, `falta_sancionada`, `offside_sancionado`, `tarjeta_mostrada`, `jugador_expulsado`, `entretiempo`, `partido_terminado`, `aviso`. `arbitro.tarjetas` tiene la lista de tarjetas y `arbitro.barrera` los de la barrera.
 - **Cinemáticas (F)**: `PartidoCompleto` expone `pelota`, `jugadores`, `camara`, `control`, `nombre_*`, `goles_*` e `Interfaz`, y llama a `festejar_gol`, `entretiempo` y `final_del_partido`. Durante una cinemática se pausan árbitro e IA.
 - **Menús (G)**: `partido.gd` ahora envuelve `partido_completo.tscn`. El reloj de G queda apagado y usa el del árbitro. Cambio de formación y sustituciones desde la pausa llaman a `cambiar_formacion` y `aplicar_cambios`.
 - **Cambios en archivos de otras áreas**: `jugador.gd` (atajada, sentido, inmovil, proteger), `partido.gd` y `tests/test_menus.gd` (busca al 10 por dorsal).
@@ -59,5 +63,7 @@ godot --headless --fixed-fps 60 --path . res://tests/simular_partido.tscn -- 10 
 ```
 
 Argumentos: minutos por tiempo, dificultad, `offside` o `no`, club local, club visitante.
-Partidos de 10 minutos dan entre 4 y 9 goles, de 1 a 8 faltas y ningún momento trabado.
-El acierto de pases ronda el 60 % y se puede mejorar más adelante.
+Medido el 31/10/2026 (4 partidos de 10 minutos por tiempo, en normal): de 10 a 16 goles por
+partido (en `main` antes de los cambios de sensación daba de 4 a 19), de 1 a 9 faltas, alguna
+amarilla y de vez en cuando una roja, y ningún momento trabado. El acierto de pases ronda el 57 %.
+También muestra las tarjetas, los tiros libres directos y los goles de tiro libre.

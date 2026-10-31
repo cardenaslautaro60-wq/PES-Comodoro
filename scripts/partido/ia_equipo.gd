@@ -486,10 +486,23 @@ func _intentar_atajar(jugador: Jugador, mente: Mente) -> bool:
 		return false
 	var z_linea := p.z + v.z * t_linea
 	var y_linea := p.y + v.y * t_linea - 4.9 * t_linea * t_linea
+	var z_arquero := p.z + v.z * t
+	var y_arquero := p.y + v.y * t - 4.9 * t * t
+	if pelota.efecto.length() > 1.0:
+		# Con efecto la pelota dobla: el arquero lee la curva (con la física de la pelota).
+		var puntos := pelota.trayectoria(p, v, pelota.efecto, clampf(t_linea + 0.1, 0.1, 2.0))
+		var en_linea := Pelota.cruce_con_plano_x(puntos, p, equipo.arco_propio().x)
+		var en_arquero := Pelota.cruce_con_plano_x(puntos, p, k.x)
+		if en_linea != Vector3.INF:
+			z_linea = en_linea.z
+			y_linea = en_linea.y
+		if en_arquero != Vector3.INF:
+			z_arquero = en_arquero.z
+			y_arquero = en_arquero.y
 	if absf(z_linea) > Cancha.ANCHO_ARCO / 2 + 0.6 or y_linea > Cancha.ALTO_ARCO + 0.4:
 		return false
-	var z := clampf(p.z + v.z * t, -Cancha.ANCHO_ARCO / 2 - 0.3, Cancha.ANCHO_ARCO / 2 + 0.3)
-	var y := maxf(p.y + v.y * t - 4.9 * t * t, Pelota.RADIO)
+	var z := clampf(z_arquero, -Cancha.ANCHO_ARCO / 2 - 0.3, Cancha.ANCHO_ARCO / 2 + 0.3)
+	var y := maxf(y_arquero, Pelota.RADIO)
 	mente.objetivo = Vector3(k.x, 0, z)
 	mente.sprint = true
 
@@ -590,12 +603,32 @@ func _sacar(jugador: Jugador) -> void:
 			var esquina := equipo.arco_rival() + Vector3(0, 0, rng.randf_range(-3.0, 3.0))
 			jugador.patear(Jugador.Patada.TIRO, rng.randf_range(0.55, 0.8), _hacia(p, esquina))
 		Arbitro.Saque.TIRO_LIBRE:
+			if jugador.tiro_libre_directo and _patear_tiro_libre(jugador):
+				return
 			if _en_el_piso(p, equipo.arco_rival()) < 27.0 and absf(p.z) < 18.0:
 				_tirar(jugador)
 			else:
 				_pasar_como_sea(jugador)
 		_:
 			_pasar_como_sea(jugador)
+
+
+## Tiro libre directo por encima de la barrera (ver `TiroLibre.planear`). Más lejos
+## de 27 m casi siempre la toca para un compañero. Devuelve false si no pateó.
+func _patear_tiro_libre(jugador: Jugador) -> bool:
+	var desde := pelota.global_position
+	var distancia := _en_el_piso(desde, equipo.arco_rival())
+	if distancia > 27.0 and rng.randf() < 0.8:
+		return false
+	var plan := TiroLibre.planear(pelota, desde, equipo.arco_rival(), jugador.tiro, rng)
+	if plan.is_empty():
+		return false
+	# La máquina no es perfecta: un poco de error en la potencia y el efecto.
+	var error := float(parametro("error"))
+	var fuerza := float(plan["fuerza"]) + rng.randfn(0.0, 0.07 * (0.5 + error))
+	var comba := float(plan["comba"]) + rng.randfn(0.0, 0.18 * (0.5 + error))
+	jugador.patear_tiro_libre(plan["direccion"], fuerza, comba, plan["picado"])
+	return true
 
 
 func _pasar_como_sea(jugador: Jugador) -> void:

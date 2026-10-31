@@ -8,10 +8,14 @@ extends Node3D
 ## - Pasa el control al compañero que recibe un pase o que toma la pelota.
 ## - Dibuja un aro debajo del jugador que manejás.
 ## - Hace vibrar el celular al patear (si la vibración está activada).
+## - En un tiro libre directo, dibuja una flecha en el pasto hacia donde apunta.
 
 signal jugador_cambiado(jugador: Jugador)
 
 const COLOR_ARO := Color(1.0, 0.85, 0.1, 0.85)
+const COLOR_FLECHA := Color(1.0, 1.0, 1.0, 0.75)
+const COLOR_FLECHA_CARGANDO := Color(1.0, 0.55, 0.1, 0.85)
+const LARGO_FLECHA := 5.0
 
 @export var equipo := 0
 
@@ -19,6 +23,8 @@ var pelota: Pelota
 var jugador: Jugador
 
 var _aro: MeshInstance3D
+var _flecha: MeshInstance3D
+var _material_flecha: StandardMaterial3D
 
 
 func _ready() -> void:
@@ -41,6 +47,24 @@ func _ready() -> void:
 	_aro.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	_aro.top_level = true
 	add_child(_aro)
+	_crear_flecha()
+
+
+func _crear_flecha() -> void:
+	var caja := BoxMesh.new()
+	caja.size = Vector3(0.18, 0.02, LARGO_FLECHA)
+	_material_flecha = StandardMaterial3D.new()
+	_material_flecha.albedo_color = COLOR_FLECHA
+	_material_flecha.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	_material_flecha.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	caja.material = _material_flecha
+	_flecha = MeshInstance3D.new()
+	_flecha.name = "FlechaTiroLibre"
+	_flecha.mesh = caja
+	_flecha.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	_flecha.top_level = true
+	_flecha.visible = false
+	add_child(_flecha)
 
 
 ## Le da la pelota a seguir y el jugador con el que se empieza.
@@ -66,6 +90,19 @@ func _process(_delta: float) -> void:
 	if jugador:
 		var p := jugador.global_position
 		_aro.global_position = Vector3(p.x, 0.03, p.z)
+	_actualizar_flecha()
+
+
+func _actualizar_flecha() -> void:
+	var apuntando := jugador != null and jugador.tiro_libre_directo and jugador.tiene_pelota()
+	_flecha.visible = apuntando
+	if not apuntando:
+		return
+	var dir := jugador.direccion_mirada
+	var b := pelota.global_position
+	_flecha.global_position = Vector3(b.x, 0.04, b.z) + dir * (LARGO_FLECHA / 2 + 0.3)
+	_flecha.global_basis = Basis.looking_at(dir, Vector3.UP)
+	_material_flecha.albedo_color = COLOR_FLECHA_CARGANDO if jugador.potencia >= 0.0 else COLOR_FLECHA
 
 
 ## Pasa a manejar a otro jugador. El anterior queda quieto (o en manos de la IA).
