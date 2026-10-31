@@ -119,6 +119,7 @@ func _ready() -> void:
 
 	_crear_interfaz()
 	arbitro.aviso.connect(_mostrar_aviso)
+	arbitro.jugador_expulsado.connect(_al_expulsar)
 	arbitro.gol_convertido.connect(_al_gol)
 	arbitro.entretiempo.connect(_al_entretiempo)
 	arbitro.partido_terminado.connect(_al_terminar)
@@ -186,7 +187,7 @@ func aplicar_cambios() -> void:
 			en_cancha.append(str(datos.get("id", "")))
 		var entran: Array[String] = []
 		for id: Variant in ids:
-			if not en_cancha.has(str(id)):
+			if not en_cancha.has(str(id)) and not equipo.expulsados.has(str(id)):
 				entran.append(str(id))
 		for i in en_cancha.size():
 			if entran.is_empty():
@@ -279,6 +280,12 @@ func _pausar(pausa: bool) -> void:
 
 
 # --- Cambio de jugador ------------------------------------------------------------
+
+
+## Si echan al que maneja la persona, pasa al compañero más cerca de la pelota.
+func _al_expulsar(jugador: Jugador) -> void:
+	if control and control.jugador == jugador:
+		control.cambiar_a(control.companero_mas_cerca_de_la_pelota())
 
 
 func _al_cambiar_jugador_humano(jugador: Jugador) -> void:

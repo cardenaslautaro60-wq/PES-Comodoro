@@ -1,3 +1,4 @@
+# gdlint: ignore=max-public-methods
 class_name Jugador
 extends CharacterBody3D
 ## Un futbolista: corre, hace sprint con estamina, conduce, pasa, patea con barra
@@ -11,6 +12,15 @@ extends CharacterBody3D
 ## - Cuando tu equipo tiene la pelota: pase, tiro, pase largo y pase al hueco.
 ##   Se mantiene apretado para cargar la potencia y se suelta para patear.
 ## - Cuando la tiene el rival: el botón de pase presiona y el de tiro barre.
+##
+## El movimiento tiene inercia, como en los PES de la época: arranca rápido pero
+## tarda en llegar a la velocidad máxima, en sprint abre los giros y en un giro
+## cerrado planta el pie y frena antes de salir para el otro lado.
+##
+## En un tiro libre directo (`tiro_libre_directo`), el joystick apunta, el botón de
+## tiro carga la potencia y, mientras se carga, el joystick elige el efecto: hacia
+## un costado la pelota dobla para ese lado, hacia adelante baja de golpe (picada)
+## y hacia atrás flota.
 
 signal pelota_tomada
 signal pateo(tipo: Patada, potencia: float)
@@ -25,12 +35,27 @@ const ALTURA := 1.8
 const RADIO := 0.35
 ## Segundos que tarda en llenarse la barra de potencia.
 const TIEMPO_CARGA := 1.0
+## Aceleración en m/s² arrancando de parado (la achica la velocidad que ya lleva).
 const ACELERACION := 18.0
 const FRENADO := 24.0
-## Velocidad de giro en rad/s: suelto, con pelota y con pelota en sprint.
+## Velocidad de giro en rad/s: suelto (de parado y en sprint), con pelota y con pelota en sprint.
 const GIRO_SIN_PELOTA := 14.0
+const GIRO_SIN_PELOTA_SPRINT := 7.0
 const GIRO_CON_PELOTA := 8.0
 const GIRO_CON_PELOTA_SPRINT := 4.5
+## Un giro de más de este ángulo (en grados) frena al jugador, más cuanto más cerrado.
+const ANGULO_GIRO_LIBRE := 35.0
+## En un giro de 180° corriendo a fondo, la velocidad baja a esta fracción.
+const FRENO_GIRO_CERRADO := 0.3
+## Cuánto más adelante empuja la pelota en sprint (toques largos que se pueden robar).
+const TOQUE_LARGO_SPRINT := 0.3
+## Efecto de los tiros comunes, en rad/s: los colocados (poca potencia) doblan más.
+const EFECTO_TIRO_COLOCADO := 12.0
+const EFECTO_TIRO_FUERTE := 3.0
+## Velocidad a la que gira la puntería de un tiro libre, en rad/s.
+const VELOCIDAD_APUNTE := 0.9
+## Velocidad con la que salta (la barrera): unos 45 cm.
+const VELOCIDAD_SALTO := 3.0
 const DURACION_BARRIDA := 0.55
 const RECUPERACION_BARRIDA := 0.45
 const VELOCIDAD_BARRIDA := 9.5
@@ -89,6 +114,18 @@ var sentido := 0
 var inmovil := false
 ## Piel, pelo y barba para el modelo 3D (campo `apariencia` de los planteles).
 var apariencia := {}
+## Patea un tiro libre directo: apunta y le da efecto a mano (lo pone el árbitro).
+var tiro_libre_directo := false
+## Está en la barrera de un tiro libre (lo pone el árbitro). Salta cuando patean.
+var en_barrera := false
+## Lo echaron: ya no juega (ver `expulsar`).
+var expulsado := false
+## Cómo fue la última falta que hizo: {gravedad (0 a 1), con_pelota, de_atras}.
+## La lee el árbitro para decidir la tarjeta.
+var ultima_falta := {}
+## Efecto elegido para el tiro libre que se está cargando: x = comba (+ a la
+## derecha del que patea), y = picada (+ baja de golpe, - flota).
+var efecto_tiro_libre := Vector2.ZERO
 
 var _tiempo_estado := 0.0
 var _sin_control := 0.0
@@ -103,6 +140,7 @@ var _fase_toque := 0.0
 var _destino := Vector3.ZERO
 var _yendo_a_destino := false
 var _material_camiseta: Material
+var _salto_pendiente := false
 
 
 func _init() -> void:
@@ -167,8 +205,11 @@ func _physics_process(delta: float) -> void:
 	_actualizar_estamina(delta)
 	if is_on_floor():
 		velocity.y = 0.0
+		if _salto_pendiente:
+			velocity.y = VELOCIDAD_SALTO
 	else:
 		velocity.y -= _gravedad() * delta
+	_salto_pendiente = false
 	move_and_slide()
 	_orientar()
 
@@ -190,7 +231,7 @@ func en_ataque() -> bool:
 
 
 func puede_tomar_pelota() -> bool:
-	return estado == Estado.NORMAL and _sin_control <= 0.0
+	return estado == Estado.NORMAL and _sin_control <= 0.0 and not expulsado
 
 
 func esta_protegido() -> bool:
@@ -225,6 +266,9 @@ func punto_de_conduccion() -> Vector3:
 	var horizontal := Vector3(velocity.x, 0, velocity.z)
 	var ritmo := clampf(horizontal.length() / velocidad_maxima(true), 0.0, 1.0)
 	var toque := 0.25 * ritmo * (0.5 + 0.5 * sin(_fase_toque * TAU * (0.8 + 1.2 * ritmo)))
+	if entrada.sprint and ritmo > 0.6:
+		# En sprint la empuja más lejos: corre más pero se la pueden sacar.
+		toque += TOQUE_LARGO_SPRINT * (ritmo - 0.6) / 0.4
 	var punto := global_position + direccion_mirada * (RADIO + 0.3 + 0.35 * ritmo + toque)
 	punto.y = Pelota.RADIO
 	return punto
@@ -242,6 +286,7 @@ func patear(tipo: Patada, fuerza: float, direccion := Vector3.ZERO) -> Jugador:
 	var dir := _direccion_de_patada(direccion)
 	var destinatario: Jugador = null
 	var velocidad_pelota: Vector3
+	var giro := Vector3.ZERO
 
 	match tipo:
 		Patada.PASE:
@@ -267,16 +312,40 @@ func patear(tipo: Patada, fuerza: float, direccion := Vector3.ZERO) -> Jugador:
 				punto = destinatario.global_position + destinatario.velocity * 1.2
 			velocidad_pelota = _velocidad_por_arriba(punto, deg_to_rad(lerpf(26.0, 34.0, fuerza)))
 		Patada.TIRO:
-			velocidad_pelota = _velocidad_de_tiro(fuerza, dir)
+			var tiro_calculado := _tiro_con_efecto(fuerza, dir)
+			velocidad_pelota = tiro_calculado[0]
+			giro = tiro_calculado[1]
 
 	velocidad_pelota = _aplicar_error(velocidad_pelota, tipo, fuerza)
-	pelota.patear(velocidad_pelota, Vector3.ZERO, self, destinatario)
+	pelota.patear(velocidad_pelota, giro, self, destinatario)
+	_despues_de_patear(dir, tipo, fuerza)
+	return destinatario
+
+
+## Tiro libre a mano: sale hacia `direccion` (la altura y la fuerza dependen de
+## `fuerza`) con `comba` (-1 a 1, + dobla a la derecha del que patea) y `picado`
+## (-1 a 1, + baja de golpe, - flota). Ver `TiroLibre`.
+func patear_tiro_libre(direccion: Vector3, fuerza: float, comba: float, picado: float) -> void:
+	if not tiene_pelota():
+		return
+	fuerza = clampf(fuerza, 0.0, 1.0)
+	var dir := Vector3(direccion.x, 0, direccion.z).normalized()
+	var velocidad_pelota := TiroLibre.velocidad(dir, fuerza, tiro)
+	var giro := TiroLibre.giro(dir, comba, picado, tiro)
+	# El tiro libre se patea quieto y apuntando: sale más preciso que un tiro en carrera.
+	velocidad_pelota = _aplicar_error(velocidad_pelota, Patada.TIRO, fuerza * 0.5)
+	pelota.patear(velocidad_pelota, giro, self, null)
+	tiro_libre_directo = false
+	efecto_tiro_libre = Vector2.ZERO
+	_despues_de_patear(dir, Patada.TIRO, fuerza)
+
+
+func _despues_de_patear(dir: Vector3, tipo: Patada, fuerza: float) -> void:
 	_sin_control = 0.3
 	potencia = -1.0
 	_patada_pendiente = -1
 	direccion_mirada = dir
 	pateo.emit(tipo, fuerza)
-	return destinatario
 
 
 ## Se tira a barrer hacia `direccion` (o hacia dónde mira).
@@ -295,6 +364,40 @@ func barrer(direccion := Vector3.ZERO) -> void:
 	potencia = -1.0
 	estamina_actual = maxf(estamina_actual - 0.03, 0.0)
 	barrida_empezada.emit()
+
+
+## Le hace una falta a `victima`: la tira al piso y avisa al árbitro. `gravedad`
+## va de 0 (leve) a 1 (para roja).
+func cometer_falta(victima: Jugador, gravedad: float) -> void:
+	var de_atras := victima.direccion_mirada.dot(direccion_mirada) > 0.5
+	ultima_falta = {"gravedad": clampf(gravedad, 0.0, 1.0), "con_pelota": victima.tiene_pelota(), "de_atras": de_atras}
+	victima.derribar()
+	falta_cometida.emit(victima)
+
+
+## Salta (la barrera, cuando patean el tiro libre).
+func saltar() -> void:
+	if estado == Estado.NORMAL:
+		_salto_pendiente = true
+
+
+## Lo echan: sale de la cancha y deja de jugar. El equipo lo saca de su lista
+## (ver `EquipoPartido.expulsar`).
+func expulsar() -> void:
+	if tiene_pelota():
+		pelota.soltar()
+	expulsado = true
+	inmovil = true
+	en_barrera = false
+	tiro_libre_directo = false
+	entrada.limpiar()
+	remove_from_group("jugadores")
+	visible = false
+	collision_layer = 0
+	collision_mask = CapasFisica.MUNDO
+	global_position = Vector3(global_position.x, ALTURA / 2, Cancha.ANCHO / 2 + 6.0)
+	velocity = Vector3.ZERO
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 
 ## Lo tiran al piso (por una barrida). Si tenía la pelota, queda suelta.
@@ -389,6 +492,7 @@ func _procesar_botones(delta: float) -> void:
 			if ahora and potencia < 0.0:
 				potencia = 0.0
 				patada_cargando = tipo
+				efecto_tiro_libre = Vector2.ZERO
 			elif not ahora and potencia >= 0.0 and patada_cargando == tipo:
 				_soltar_patada(tipo)
 		elif ahora and tipo == Patada.TIRO:
@@ -397,13 +501,23 @@ func _procesar_botones(delta: float) -> void:
 
 	if not ataque:
 		potencia = -1.0
+	elif _cargando_tiro_libre():
+		# Mientras carga, el joystick elige el efecto (relativo a hacia dónde apunta).
+		var derecha := direccion_mirada.cross(Vector3.UP)
+		efecto_tiro_libre = Vector2(entrada.direccion.dot(derecha), entrada.direccion.dot(direccion_mirada))
 	presionando = not ataque and entrada.pase
+
+
+func _cargando_tiro_libre() -> bool:
+	return tiro_libre_directo and potencia >= 0.0 and patada_cargando == Patada.TIRO and tiene_pelota()
 
 
 func _soltar_patada(tipo: Patada) -> void:
 	var fuerza := potencia
 	potencia = -1.0
-	if tiene_pelota():
+	if tiro_libre_directo and tipo == Patada.TIRO and tiene_pelota():
+		patear_tiro_libre(direccion_mirada, fuerza, efecto_tiro_libre.x, efecto_tiro_libre.y)
+	elif tiene_pelota():
 		patear(tipo, fuerza)
 	else:
 		# Todavía no llegó la pelota: queda anotada para patear de primera.
@@ -428,26 +542,52 @@ func _mover(delta: float) -> void:
 	deseo = deseo.limit_length(1.0)
 
 	if inmovil:
-		if deseo.length() > 0.1:
+		if tiro_libre_directo and tiene_pelota():
+			_apuntar_tiro_libre(deseo, delta)
+		elif deseo.length() > 0.1:
 			direccion_mirada = _girar_hacia(direccion_mirada, deseo.normalized(), GIRO_CON_PELOTA * delta)
 		_frenar_en_seco(delta)
 		return
 	var con_sprint := entrada.sprint and estamina_actual > 0.05 and deseo.length() > 0.1
 	var rapidez := velocidad_maxima(con_sprint) * deseo.length()
+	var horizontal := Vector3(velocity.x, 0, velocity.z)
+	var actual := horizontal.length()
+	var ritmo := clampf(actual / velocidad_maxima(true), 0.0, 1.0)
 
 	if deseo.length() > 0.05:
-		var giro := GIRO_SIN_PELOTA
+		var giro := lerpf(GIRO_SIN_PELOTA, GIRO_SIN_PELOTA_SPRINT, ritmo) if con_sprint else GIRO_SIN_PELOTA
 		if tiene_pelota():
 			giro = GIRO_CON_PELOTA_SPRINT if con_sprint else GIRO_CON_PELOTA
 		direccion_mirada = _girar_hacia(direccion_mirada, deseo.normalized(), giro * delta)
+		if actual > 3.0:
+			# Giro cerrado a toda velocidad: planta el pie y frena antes de salir.
+			var angulo := rad_to_deg(horizontal.angle_to(deseo))
+			var cierre := clampf((angulo - ANGULO_GIRO_LIBRE) / (180.0 - ANGULO_GIRO_LIBRE), 0.0, 1.0)
+			rapidez *= lerpf(1.0, FRENO_GIRO_CERRADO, cierre * ritmo)
 
-	# Con la pelota corre hacia donde mira (tiene que girar); sin ella, va directo.
-	var objetivo := (direccion_mirada if tiene_pelota() else deseo.normalized()) * rapidez
-	var horizontal := Vector3(velocity.x, 0, velocity.z)
-	var aceleracion := ACELERACION if objetivo.length() >= horizontal.length() else FRENADO
+	# Con la pelota o en sprint corre hacia donde mira (tiene que girar); si no, va directo.
+	var hacia_mirada := tiene_pelota() or con_sprint
+	var objetivo := (direccion_mirada if hacia_mirada else deseo.normalized()) * rapidez
+	var aceleracion := _aceleracion(ritmo) if objetivo.length() >= actual else FRENADO
 	horizontal = horizontal.move_toward(objetivo, aceleracion * delta)
 	velocity.x = horizontal.x
 	velocity.z = horizontal.z
+
+
+## Aceleración según qué tan rápido va (`ritmo`, de 0 a 1 de la velocidad máxima en
+## sprint): el arranque es explosivo y los últimos metros por segundo cuestan.
+func _aceleracion(ritmo: float) -> float:
+	return ACELERACION * lerpf(0.85, 1.1, velocidad / 99.0) * lerpf(1.2, 0.45, ritmo)
+
+
+## Antes de cargar el tiro libre, el joystick hacia un costado gira la puntería de
+## a poco (para afinar). Mientras se carga, la puntería queda fija.
+func _apuntar_tiro_libre(deseo: Vector3, delta: float) -> void:
+	if potencia >= 0.0 or deseo.length() < 0.15:
+		return
+	var derecha := direccion_mirada.cross(Vector3.UP)
+	var lateral := deseo.dot(derecha)
+	direccion_mirada = direccion_mirada.rotated(Vector3.UP, -lateral * VELOCIDAD_APUNTE * delta).normalized()
 
 
 func _paso_de_barrida(delta: float) -> void:
@@ -484,10 +624,22 @@ func _comprobar_barrida() -> void:
 		if rival == null or rival.equipo == equipo or rival.estado == Estado.CAIDO:
 			continue
 		if _distancia_en_el_piso(rival.global_position, pie) < ALCANCE_BARRIDA:
-			rival.derribar()
-			falta_cometida.emit(rival)
+			cometer_falta(rival, _gravedad_de_barrida(rival))
 			_barrida_resuelta = true
 			return
+
+
+## Qué tan fea fue la barrida: de atrás es mucho peor, y también si el rival ya no
+## tenía la pelota (llegó tarde) o si se tiró de lejos, lanzado.
+func _gravedad_de_barrida(rival: Jugador) -> float:
+	var gravedad := 0.25
+	if rival.direccion_mirada.dot(_direccion_barrida) > 0.5:
+		gravedad += 0.4
+	if not rival.tiene_pelota():
+		gravedad += 0.15
+	if _tiempo_estado > DURACION_BARRIDA * 0.6:
+		gravedad += 0.1
+	return gravedad
 
 
 func _frenar_en_seco(delta: float) -> void:
@@ -536,6 +688,29 @@ func _velocidad_por_arriba(punto: Vector3, angulo: float) -> Vector3:
 	var hacia := Vector3(punto.x - desde.x, 0, punto.z - desde.z)
 	var rapidez := pelota.velocidad_para_volar(hacia.length(), angulo)
 	return hacia.normalized() * rapidez * cos(angulo) + Vector3.UP * rapidez * sin(angulo)
+
+
+## Tiro al arco con efecto: devuelve [velocidad, giro]. El tiro colocado (poca
+## potencia) dobla hacia el palo al que apunta, saliendo más cerca del arquero; el
+## fuerte va casi derecho. La dirección se corrige para que la curva termine en el
+## mismo lugar que el tiro sin efecto.
+func _tiro_con_efecto(fuerza: float, dir: Vector3) -> Array:
+	var velocidad_pelota := _velocidad_de_tiro(fuerza, dir)
+	var arco := Cancha.centro_del_arco(sentido_de_ataque())
+	var desde := pelota.global_position
+	var horizontal := Vector3(velocidad_pelota.x, 0, velocidad_pelota.z)
+	if horizontal.length() < 1.0 or absf(arco.x - desde.x) < 3.0 or absf(horizontal.x) < 0.1:
+		return [velocidad_pelota, Vector3.ZERO]
+	# Dónde cruzaría la línea del arco sin efecto.
+	var z_objetivo := desde.z + horizontal.z * (arco.x - desde.x) / horizontal.x
+	var derecha := horizontal.normalized().cross(Vector3.UP)
+	var lado := signf(Vector3(0, 0, z_objetivo - arco.z).dot(derecha))
+	if lado == 0.0:
+		return [velocidad_pelota, Vector3.ZERO]
+	var cantidad := lerpf(EFECTO_TIRO_COLOCADO, EFECTO_TIRO_FUERTE, fuerza) * lerpf(0.5, 1.0, tiro / 99.0)
+	var giro := TiroLibre.giro(horizontal.normalized(), lado * cantidad / TiroLibre.COMBA_MAXIMA, 0.0, 99)
+	var corregida := TiroLibre.corregir_direccion(pelota, desde, velocidad_pelota, giro, arco.x, z_objetivo)
+	return [corregida, TiroLibre.giro_corregido(giro, velocidad_pelota, corregida)]
 
 
 ## Tiro al arco rival. Con poca potencia sale rasante; con mucha sale alto y

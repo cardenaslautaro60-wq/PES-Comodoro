@@ -18,6 +18,9 @@ const ARCHIVOS_DE_PRUEBA := [
 	"res://tests/test_ia.gd",
 	"res://tests/test_camisetas.gd",
 	"res://tests/test_modelo_jugador.gd",
+	"res://tests/test_sensacion.gd",
+	"res://tests/test_tiro_libre.gd",
+	"res://tests/test_tarjetas.gd",
 ]
 const CARPETAS_CON_SCRIPTS := ["res://scripts"]
 

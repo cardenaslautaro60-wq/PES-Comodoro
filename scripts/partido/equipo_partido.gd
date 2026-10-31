@@ -45,6 +45,8 @@ var titulares: Array[Dictionary] = []
 ## 1 = ataca hacia x positivo, -1 = hacia x negativo.
 var sentido := 1
 var goles := 0
+## Ids (del plantel) de los expulsados: no vuelven a entrar.
+var expulsados: Array[String] = []
 ## Camisetas del club (titular, suplente y arquero), como en `datos/clubes/`.
 var camisetas := {}
 ## Materiales de los jugadores de campo y del arquero (ver `preparar_camisetas`).
@@ -113,8 +115,24 @@ func reemplazar(i: int, datos: Dictionary) -> void:
 	jugador.estamina_actual = 1.0
 
 
-## Cambia la formación. Los mismos 11 se reparten en los puestos nuevos.
+## Saca de la lista a un expulsado: el equipo sigue con uno menos y su lugar en la
+## formación queda vacío.
+func expulsar(jugador: Jugador) -> void:
+	var i := jugadores.find(jugador)
+	if i < 0:
+		return
+	expulsados.append(str(titulares[i].get("id", jugador.nombre_jugador)))
+	jugadores.remove_at(i)
+	puestos.remove_at(i)
+	lugares.remove_at(i)
+	titulares.remove_at(i)
+
+
+## Cambia la formación. Los mismos 11 se reparten en los puestos nuevos. Con un
+## expulsado no se puede cambiar (la formación es de 11).
 func cambiar_formacion(nombre_formacion: String) -> void:
+	if not expulsados.is_empty():
+		return
 	var antes := jugadores.duplicate()
 	var datos_antes := titulares.duplicate()
 	_aplicar_formacion_y_titulares(nombre_formacion, datos_antes)
